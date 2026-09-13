@@ -1,0 +1,6 @@
+machre triage: tests/corpus/hello-quarantined [arm64]
+LEVEL: CLEAN (score 3, 1 category)                    trust: AD HOC
+Signing     [LOW]    sig.adhoc         ad hoc, linker-signed; no certificate chain, not notarized
+Quarantine  [INFO]   quarantine.present downloaded by Safari
+Not flagged: entropy (max 5.16 __LINKEDIT), imports present (6), symbols present (12), PIE, no RWX segment.
+  diagnostics  none

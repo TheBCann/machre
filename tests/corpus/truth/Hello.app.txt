@@ -1,0 +1,2607 @@
+# machre corpus ground truth for Hello.app
+# generated 2026-09-12T08:24:14Z on 26.3 (25D125) by gen/truth.sh
+# macho=Hello.app/Contents/MacOS/Hello bundle=Hello.app
+
+===== /usr/bin/file Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello: Mach-O 64-bit executable arm64
+--- exit=0
+
+===== /usr/bin/stat -f size=%z mode=%Mp%Lp Hello.app/Contents/MacOS/Hello =====
+size=72272 mode=0755
+--- exit=0
+
+===== /usr/bin/shasum -a 256 Hello.app/Contents/MacOS/Hello =====
+e461359d491c338e945a3eba2f4b9004292958fc5ec911a139eb88f69420534c  Hello.app/Contents/MacOS/Hello
+--- exit=0
+
+===== /usr/bin/otool -hv Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64    ARM64        ALL  0x00     EXECUTE    21       2904   NOUNDEFS DYLDLINK TWOLEVEL PIE
+--- exit=0
+
+===== /usr/bin/otool -h -l Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777228          0  0x00           2    21       2904 0x00200085
+Load command 0
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __PAGEZERO
+   vmaddr 0x0000000000000000
+   vmsize 0x0000000100000000
+  fileoff 0
+ filesize 0
+  maxprot 0x00000000
+ initprot 0x00000000
+   nsects 0
+    flags 0x0
+Load command 1
+      cmd LC_SEGMENT_64
+  cmdsize 792
+  segname __TEXT
+   vmaddr 0x0000000100000000
+   vmsize 0x0000000000004000
+  fileoff 0
+ filesize 16384
+  maxprot 0x00000005
+ initprot 0x00000005
+   nsects 9
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x0000000100000ba8
+      size 0x000000000000068c
+    offset 2984
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __stubs
+   segname __TEXT
+      addr 0x0000000100001234
+      size 0x0000000000000078
+    offset 4660
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000408
+ reserved1 0 (index into indirect symbol table)
+ reserved2 12 (size of stubs)
+Section
+  sectname __objc_stubs
+   segname __TEXT
+      addr 0x00000001000012c0
+      size 0x00000000000001e0
+    offset 4800
+     align 2^5 (32)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_methlist
+   segname __TEXT
+      addr 0x00000001000014a0
+      size 0x0000000000000224
+    offset 5280
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_methname
+   segname __TEXT
+      addr 0x00000001000016c4
+      size 0x0000000000000248
+    offset 5828
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x000000010000190c
+      size 0x0000000000000076
+    offset 6412
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_classname
+   segname __TEXT
+      addr 0x0000000100001982
+      size 0x0000000000000044
+    offset 6530
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_methtype
+   segname __TEXT
+      addr 0x00000001000019c6
+      size 0x0000000000000124
+    offset 6598
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __unwind_info
+   segname __TEXT
+      addr 0x0000000100001aec
+      size 0x0000000000000088
+    offset 6892
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 2
+      cmd LC_SEGMENT_64
+  cmdsize 792
+  segname __DATA_CONST
+   vmaddr 0x0000000100004000
+   vmsize 0x0000000000004000
+  fileoff 16384
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 9
+    flags 0x10
+Section
+  sectname __got
+   segname __DATA_CONST
+      addr 0x0000000100004000
+      size 0x0000000000000070
+    offset 16384
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000006
+ reserved1 10 (index into indirect symbol table)
+ reserved2 0
+Section
+  sectname __cfstring
+   segname __DATA_CONST
+      addr 0x0000000100004070
+      size 0x0000000000000160
+    offset 16496
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_classlist
+   segname __DATA_CONST
+      addr 0x00000001000041d0
+      size 0x0000000000000010
+    offset 16848
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x10000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_catlist
+   segname __DATA_CONST
+      addr 0x00000001000041e0
+      size 0x0000000000000008
+    offset 16864
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x10000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_protolist
+   segname __DATA_CONST
+      addr 0x00000001000041e8
+      size 0x0000000000000010
+    offset 16872
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_imageinfo
+   segname __DATA_CONST
+      addr 0x00000001000041f8
+      size 0x0000000000000008
+    offset 16888
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_superrefs
+   segname __DATA_CONST
+      addr 0x0000000100004200
+      size 0x0000000000000008
+    offset 16896
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_arraydata
+   segname __DATA_CONST
+      addr 0x0000000100004208
+      size 0x0000000000000010
+    offset 16904
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_arrayobj
+   segname __DATA_CONST
+      addr 0x0000000100004218
+      size 0x0000000000000018
+    offset 16920
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 3
+      cmd LC_SEGMENT_64
+  cmdsize 552
+  segname __DATA
+   vmaddr 0x0000000100008000
+   vmsize 0x0000000000004000
+  fileoff 32768
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 6
+    flags 0x0
+Section
+  sectname __objc_const
+   segname __DATA
+      addr 0x0000000100008000
+      size 0x0000000000000378
+    offset 32768
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_selrefs
+   segname __DATA
+      addr 0x0000000100008378
+      size 0x0000000000000140
+    offset 33656
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x10000005
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_ivar
+   segname __DATA
+      addr 0x00000001000084b8
+      size 0x000000000000000c
+    offset 33976
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __objc_data
+   segname __DATA
+      addr 0x00000001000084c8
+      size 0x00000000000000a0
+    offset 33992
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __data
+   segname __DATA
+      addr 0x0000000100008568
+      size 0x00000000000000c0
+    offset 34152
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __bss
+   segname __DATA
+      addr 0x0000000100008628
+      size 0x0000000000000008
+    offset 0
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000001
+ reserved1 0
+ reserved2 0
+Load command 4
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __LINKEDIT
+   vmaddr 0x000000010000c000
+   vmsize 0x0000000000008000
+  fileoff 49152
+ filesize 23120
+  maxprot 0x00000001
+ initprot 0x00000001
+   nsects 0
+    flags 0x0
+Load command 5
+      cmd LC_DYLD_CHAINED_FIXUPS
+  cmdsize 16
+  dataoff 49152
+ datasize 624
+Load command 6
+      cmd LC_DYLD_EXPORTS_TRIE
+  cmdsize 16
+  dataoff 49776
+ datasize 152
+Load command 7
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 49952
+   nsyms 86
+  stroff 51424
+ strsize 2448
+Load command 8
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 61
+     iextdefsym 61
+     nextdefsym 6
+      iundefsym 67
+      nundefsym 19
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 51328
+  nindirectsyms 24
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 9
+          cmd LC_LOAD_DYLINKER
+      cmdsize 32
+         name /usr/lib/dyld (offset 12)
+Load command 10
+     cmd LC_UUID
+ cmdsize 24
+    uuid 9C807034-8D29-3821-83E8-4AFF5C9175A9
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform 1
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool 3
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+Load command 13
+       cmd LC_MAIN
+   cmdsize 24
+  entryoff 4268
+ stacksize 0
+Load command 14
+          cmd LC_LOAD_DYLIB
+      cmdsize 96
+         name /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 5026.5.4
+compatibility version 300.0.0
+Load command 15
+          cmd LC_LOAD_DYLIB
+      cmdsize 56
+         name /usr/lib/libobjc.A.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 228.0.0
+compatibility version 1.0.0
+Load command 16
+          cmd LC_LOAD_DYLIB
+      cmdsize 56
+         name /usr/lib/libSystem.B.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 1356.0.0
+compatibility version 1.0.0
+Load command 17
+          cmd LC_LOAD_DYLIB
+      cmdsize 104
+         name /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 5026.5.4
+compatibility version 150.0.0
+Load command 18
+      cmd LC_FUNCTION_STARTS
+  cmdsize 16
+  dataoff 49928
+ datasize 24
+Load command 19
+      cmd LC_DATA_IN_CODE
+  cmdsize 16
+  dataoff 49952
+ datasize 0
+Load command 20
+      cmd LC_CODE_SIGNATURE
+  cmdsize 16
+  dataoff 53872
+ datasize 18400
+--- exit=0
+
+===== /usr/bin/otool -L Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello:
+	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5026.5.4)
+	/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5026.5.4)
+--- exit=0
+
+===== /usr/bin/otool -tV Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello:
+(__TEXT,__text) section
+-[MachreAnimal initWithName:legs:]:
+0000000100000ba8	sub	sp, sp, #0x80
+0000000100000bac	stp	x29, x30, [sp, #0x70]
+0000000100000bb0	add	x29, sp, #0x70
+0000000100000bb4	mov	x8, x1
+0000000100000bb8	mov	x1, x2
+0000000100000bbc	str	x3, [sp, #0x28]
+0000000100000bc0	sub	x9, x29, #0x8
+0000000100000bc4	str	x9, [sp, #0x30]
+0000000100000bc8	stur	x0, [x29, #-0x8]
+0000000100000bcc	stur	x8, [x29, #-0x10]
+0000000100000bd0	sub	x0, x29, #0x18
+0000000100000bd4	stur	xzr, [x29, #-0x18]
+0000000100000bd8	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100000bdc	ldr	x3, [sp, #0x28]
+0000000100000be0	stur	x3, [x29, #-0x20]
+0000000100000be4	ldur	x8, [x29, #-0x8]
+0000000100000be8	stur	xzr, [x29, #-0x8]
+0000000100000bec	sub	x0, x29, #0x30
+0000000100000bf0	stur	x8, [x29, #-0x30]
+0000000100000bf4	adrp	x8, 4 ; 0x100004000
+0000000100000bf8	ldr	x8, [x8, #0x200] ; Objc class ref: bad class ref
+0000000100000bfc	stur	x8, [x29, #-0x28]
+0000000100000c00	adrp	x8, 8 ; 0x100008000
+0000000100000c04	ldr	x1, [x8, #0x378]
+0000000100000c08	bl	0x100001270 ; Objc message: _objc_msgSendSuper2
+0000000100000c0c	mov	x1, x0
+0000000100000c10	ldr	x0, [sp, #0x30]
+0000000100000c14	str	x1, [sp, #0x38]
+0000000100000c18	stur	x1, [x29, #-0x8]
+0000000100000c1c	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100000c20	ldr	x0, [sp, #0x38]
+0000000100000c24	cbz	x0, 0x100000c74
+0000000100000c28	b	0x100000c2c
+0000000100000c2c	ldr	x1, [sp, #0x20]
+0000000100000c30	ldur	x0, [x29, #-0x18]
+0000000100000c34	bl	_objc_msgSend$copy
+0000000100000c38	mov	x8, x0
+0000000100000c3c	ldur	x9, [x29, #-0x8]
+0000000100000c40	ldr	x0, [x9, #0x8]
+0000000100000c44	str	x8, [x9, #0x8]
+0000000100000c48	adrp	x8, 4 ; 0x100004000
+0000000100000c4c	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+0000000100000c50	blr	x8
+0000000100000c54	ldur	x8, [x29, #-0x20]
+0000000100000c58	ldur	x9, [x29, #-0x8]
+0000000100000c5c	str	x8, [x9, #0x10]
+0000000100000c60	adrp	x9, 8 ; 0x100008000
+0000000100000c64	ldr	x8, [x9, #0x628]
+0000000100000c68	add	x8, x8, #0x1
+0000000100000c6c	str	x8, [x9, #0x628]
+0000000100000c70	b	0x100000c74
+0000000100000c74	sub	x8, x29, #0x8
+0000000100000c78	str	x8, [sp, #0x8]
+0000000100000c7c	ldur	x0, [x29, #-0x8]
+0000000100000c80	adrp	x8, 4 ; 0x100004000
+0000000100000c84	ldr	x8, [x8, #0x48] ; literal pool symbol address: _objc_retain
+0000000100000c88	blr	x8
+0000000100000c8c	str	x0, [sp, #0x18]
+0000000100000c90	sub	x0, x29, #0x18
+0000000100000c94	mov	x1, #0x0
+0000000100000c98	str	x1, [sp, #0x10]
+0000000100000c9c	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100000ca0	ldr	x0, [sp, #0x8]
+0000000100000ca4	ldr	x1, [sp, #0x10]
+0000000100000ca8	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100000cac	ldr	x0, [sp, #0x18]
+0000000100000cb0	ldp	x29, x30, [sp, #0x70]
+0000000100000cb4	add	sp, sp, #0x80
+0000000100000cb8	ret
+-[MachreAnimal describe]:
+0000000100000cbc	sub	sp, sp, #0x50
+0000000100000cc0	stp	x29, x30, [sp, #0x40]
+0000000100000cc4	add	x29, sp, #0x40
+0000000100000cc8	mov	x8, x1
+0000000100000ccc	stur	x0, [x29, #-0x8]
+0000000100000cd0	stur	x8, [x29, #-0x10]
+0000000100000cd4	adrp	x8, 4 ; 0x100004000
+0000000100000cd8	ldr	x8, [x8, #0x8] ; literal pool symbol address: _OBJC_CLASS_$_NSString
+0000000100000cdc	str	x8, [sp, #0x18]
+0000000100000ce0	ldur	x0, [x29, #-0x8]
+0000000100000ce4	bl	_objc_msgSend$name
+0000000100000ce8	mov	x29, x29
+0000000100000cec	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000cf0	ldr	x1, [sp, #0x10]
+0000000100000cf4	str	x0, [sp, #0x20]
+0000000100000cf8	ldur	x0, [x29, #-0x8]
+0000000100000cfc	bl	_objc_msgSend$legs
+0000000100000d00	ldr	x1, [sp, #0x10]
+0000000100000d04	ldr	x10, [sp, #0x20]
+0000000100000d08	mov	x8, x0
+0000000100000d0c	ldr	x0, [sp, #0x18]
+0000000100000d10	mov	x9, sp
+0000000100000d14	str	x10, [x9]
+0000000100000d18	str	x8, [x9, #0x8]
+0000000100000d1c	adrp	x2, 4 ; 0x100004000
+0000000100000d20	add	x2, x2, #0x70 ; Objc cfstring ref: @"bad cfstring ref"
+0000000100000d24	bl	"_objc_msgSend$stringWithFormat:"
+0000000100000d28	mov	x29, x29
+0000000100000d2c	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000d30	mov	x1, x0
+0000000100000d34	ldr	x0, [sp, #0x20]
+0000000100000d38	stur	x1, [x29, #-0x18]
+0000000100000d3c	adrp	x8, 4 ; 0x100004000
+0000000100000d40	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+0000000100000d44	blr	x8
+0000000100000d48	ldur	x0, [x29, #-0x18]
+0000000100000d4c	ldp	x29, x30, [sp, #0x40]
+0000000100000d50	add	sp, sp, #0x50
+0000000100000d54	b	0x100001264 ; symbol stub for: _objc_autoreleaseReturnValue
++[MachreAnimal population]:
+0000000100000d58	sub	sp, sp, #0x10
+0000000100000d5c	str	x0, [sp, #0x8]
+0000000100000d60	str	x1, [sp]
+0000000100000d64	adrp	x8, 8 ; 0x100008000
+0000000100000d68	ldr	x0, [x8, #0x628]
+0000000100000d6c	add	sp, sp, #0x10
+0000000100000d70	ret
+-[MachreAnimal greet:]:
+0000000100000d74	sub	sp, sp, #0x70
+0000000100000d78	stp	x29, x30, [sp, #0x60]
+0000000100000d7c	add	x29, sp, #0x60
+0000000100000d80	mov	x8, x1
+0000000100000d84	mov	x1, x2
+0000000100000d88	stur	x0, [x29, #-0x8]
+0000000100000d8c	stur	x8, [x29, #-0x10]
+0000000100000d90	sub	x0, x29, #0x18
+0000000100000d94	str	x0, [sp, #0x30]
+0000000100000d98	mov	x8, #0x0
+0000000100000d9c	stur	x8, [x29, #-0x28]
+0000000100000da0	stur	xzr, [x29, #-0x18]
+0000000100000da4	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100000da8	ldr	x1, [sp, #0x18]
+0000000100000dac	adrp	x8, 4 ; 0x100004000
+0000000100000db0	ldr	x8, [x8, #0x8] ; literal pool symbol address: _OBJC_CLASS_$_NSString
+0000000100000db4	str	x8, [sp, #0x20]
+0000000100000db8	ldur	x0, [x29, #-0x8]
+0000000100000dbc	bl	_objc_msgSend$name
+0000000100000dc0	mov	x29, x29
+0000000100000dc4	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000dc8	ldr	x1, [sp, #0x18]
+0000000100000dcc	mov	x10, x0
+0000000100000dd0	ldr	x0, [sp, #0x20]
+0000000100000dd4	str	x10, [sp, #0x28]
+0000000100000dd8	ldur	x8, [x29, #-0x18]
+0000000100000ddc	mov	x9, sp
+0000000100000de0	str	x10, [x9]
+0000000100000de4	str	x8, [x9, #0x8]
+0000000100000de8	adrp	x2, 4 ; 0x100004000
+0000000100000dec	add	x2, x2, #0x90 ; Objc cfstring ref: @"bad cfstring ref"
+0000000100000df0	bl	"_objc_msgSend$stringWithFormat:"
+0000000100000df4	mov	x29, x29
+0000000100000df8	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000dfc	mov	x1, x0
+0000000100000e00	ldr	x0, [sp, #0x28]
+0000000100000e04	stur	x1, [x29, #-0x20]
+0000000100000e08	adrp	x8, 4 ; 0x100004000
+0000000100000e0c	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+0000000100000e10	blr	x8
+0000000100000e14	ldr	x0, [sp, #0x30]
+0000000100000e18	ldur	x1, [x29, #-0x28]
+0000000100000e1c	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100000e20	ldur	x0, [x29, #-0x20]
+0000000100000e24	ldp	x29, x30, [sp, #0x60]
+0000000100000e28	add	sp, sp, #0x70
+0000000100000e2c	b	0x100001264 ; symbol stub for: _objc_autoreleaseReturnValue
+-[MachreAnimal name]:
+0000000100000e30	sub	sp, sp, #0x10
+0000000100000e34	str	x0, [sp, #0x8]
+0000000100000e38	str	x1, [sp]
+0000000100000e3c	ldr	x8, [sp, #0x8]
+0000000100000e40	ldr	x0, [x8, #0x8]
+0000000100000e44	add	sp, sp, #0x10
+0000000100000e48	ret
+-[MachreAnimal setName:]:
+0000000100000e4c	sub	sp, sp, #0x30
+0000000100000e50	stp	x29, x30, [sp, #0x20]
+0000000100000e54	add	x29, sp, #0x20
+0000000100000e58	stur	x0, [x29, #-0x8]
+0000000100000e5c	str	x1, [sp, #0x10]
+0000000100000e60	str	x2, [sp, #0x8]
+0000000100000e64	ldr	x1, [sp, #0x10]
+0000000100000e68	ldur	x0, [x29, #-0x8]
+0000000100000e6c	ldr	x2, [sp, #0x8]
+0000000100000e70	mov	x3, #0x8
+0000000100000e74	bl	0x100001294 ; symbol stub for: _objc_setProperty_nonatomic_copy
+0000000100000e78	ldp	x29, x30, [sp, #0x20]
+0000000100000e7c	add	sp, sp, #0x30
+0000000100000e80	ret
+-[MachreAnimal legs]:
+0000000100000e84	sub	sp, sp, #0x10
+0000000100000e88	str	x0, [sp, #0x8]
+0000000100000e8c	str	x1, [sp]
+0000000100000e90	ldr	x8, [sp, #0x8]
+0000000100000e94	ldr	x0, [x8, #0x10]
+0000000100000e98	add	sp, sp, #0x10
+0000000100000e9c	ret
+-[MachreAnimal setLegs:]:
+0000000100000ea0	sub	sp, sp, #0x20
+0000000100000ea4	str	x0, [sp, #0x18]
+0000000100000ea8	str	x1, [sp, #0x10]
+0000000100000eac	str	x2, [sp, #0x8]
+0000000100000eb0	ldr	x8, [sp, #0x8]
+0000000100000eb4	ldr	x9, [sp, #0x18]
+0000000100000eb8	str	x8, [x9, #0x10]
+0000000100000ebc	add	sp, sp, #0x20
+0000000100000ec0	ret
+-[MachreAnimal .cxx_destruct]:
+0000000100000ec4	sub	sp, sp, #0x20
+0000000100000ec8	stp	x29, x30, [sp, #0x10]
+0000000100000ecc	add	x29, sp, #0x10
+0000000100000ed0	str	x0, [sp, #0x8]
+0000000100000ed4	str	x1, [sp]
+0000000100000ed8	ldr	x8, [sp, #0x8]
+0000000100000edc	add	x0, x8, #0x8
+0000000100000ee0	mov	x1, #0x0
+0000000100000ee4	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100000ee8	ldp	x29, x30, [sp, #0x10]
+0000000100000eec	add	sp, sp, #0x20
+0000000100000ef0	ret
+-[MachreDog bark]:
+0000000100000ef4	sub	sp, sp, #0x50
+0000000100000ef8	stp	x29, x30, [sp, #0x40]
+0000000100000efc	add	x29, sp, #0x40
+0000000100000f00	mov	x8, x1
+0000000100000f04	stur	x0, [x29, #-0x8]
+0000000100000f08	stur	x8, [x29, #-0x10]
+0000000100000f0c	ldur	x0, [x29, #-0x8]
+0000000100000f10	bl	_objc_msgSend$name
+0000000100000f14	mov	x29, x29
+0000000100000f18	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000f1c	ldr	x1, [sp, #0x18]
+0000000100000f20	stur	x0, [x29, #-0x18]
+0000000100000f24	ldur	x0, [x29, #-0x8]
+0000000100000f28	bl	_objc_msgSend$tricks
+0000000100000f2c	mov	x29, x29
+0000000100000f30	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000f34	ldr	x1, [sp, #0x18]
+0000000100000f38	str	x0, [sp, #0x20]
+0000000100000f3c	bl	_objc_msgSend$count
+0000000100000f40	ldur	x9, [x29, #-0x18]
+0000000100000f44	mov	x8, sp
+0000000100000f48	str	x9, [x8]
+0000000100000f4c	str	x0, [x8, #0x8]
+0000000100000f50	adrp	x0, 4 ; 0x100004000
+0000000100000f54	add	x0, x0, #0xb0 ; Objc cfstring ref: @"bad cfstring ref"
+0000000100000f58	bl	0x100001234 ; symbol stub for: _NSLog
+0000000100000f5c	ldr	x0, [sp, #0x20]
+0000000100000f60	adrp	x8, 4 ; 0x100004000
+0000000100000f64	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+0000000100000f68	blr	x8
+0000000100000f6c	ldur	x0, [x29, #-0x18]
+0000000100000f70	adrp	x8, 4 ; 0x100004000
+0000000100000f74	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+0000000100000f78	blr	x8
+0000000100000f7c	ldp	x29, x30, [sp, #0x40]
+0000000100000f80	add	sp, sp, #0x50
+0000000100000f84	ret
+-[MachreDog wave]:
+0000000100000f88	sub	sp, sp, #0x30
+0000000100000f8c	stp	x29, x30, [sp, #0x20]
+0000000100000f90	add	x29, sp, #0x20
+0000000100000f94	mov	x8, x1
+0000000100000f98	stur	x0, [x29, #-0x8]
+0000000100000f9c	str	x8, [sp, #0x10]
+0000000100000fa0	ldur	x0, [x29, #-0x8]
+0000000100000fa4	bl	_objc_msgSend$name
+0000000100000fa8	mov	x29, x29
+0000000100000fac	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000fb0	str	x0, [sp, #0x8]
+0000000100000fb4	mov	x8, sp
+0000000100000fb8	str	x0, [x8]
+0000000100000fbc	adrp	x0, 4 ; 0x100004000
+0000000100000fc0	add	x0, x0, #0xd0 ; Objc cfstring ref: @"bad cfstring ref"
+0000000100000fc4	bl	0x100001234 ; symbol stub for: _NSLog
+0000000100000fc8	ldr	x0, [sp, #0x8]
+0000000100000fcc	adrp	x8, 4 ; 0x100004000
+0000000100000fd0	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+0000000100000fd4	blr	x8
+0000000100000fd8	ldp	x29, x30, [sp, #0x20]
+0000000100000fdc	add	sp, sp, #0x30
+0000000100000fe0	ret
+-[MachreDog tricks]:
+0000000100000fe4	sub	sp, sp, #0x10
+0000000100000fe8	str	x0, [sp, #0x8]
+0000000100000fec	str	x1, [sp]
+0000000100000ff0	ldr	x8, [sp, #0x8]
+0000000100000ff4	ldr	x0, [x8, #0x18]
+0000000100000ff8	add	sp, sp, #0x10
+0000000100000ffc	ret
+-[MachreDog setTricks:]:
+0000000100001000	sub	sp, sp, #0x30
+0000000100001004	stp	x29, x30, [sp, #0x20]
+0000000100001008	add	x29, sp, #0x20
+000000010000100c	stur	x0, [x29, #-0x8]
+0000000100001010	str	x1, [sp, #0x10]
+0000000100001014	str	x2, [sp, #0x8]
+0000000100001018	ldr	x1, [sp, #0x8]
+000000010000101c	ldur	x8, [x29, #-0x8]
+0000000100001020	add	x0, x8, #0x18
+0000000100001024	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100001028	ldp	x29, x30, [sp, #0x20]
+000000010000102c	add	sp, sp, #0x30
+0000000100001030	ret
+-[MachreDog .cxx_destruct]:
+0000000100001034	sub	sp, sp, #0x20
+0000000100001038	stp	x29, x30, [sp, #0x10]
+000000010000103c	add	x29, sp, #0x10
+0000000100001040	str	x0, [sp, #0x8]
+0000000100001044	str	x1, [sp]
+0000000100001048	ldr	x8, [sp, #0x8]
+000000010000104c	add	x0, x8, #0x18
+0000000100001050	mov	x1, #0x0
+0000000100001054	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+0000000100001058	ldp	x29, x30, [sp, #0x10]
+000000010000105c	add	sp, sp, #0x20
+0000000100001060	ret
+-[MachreAnimal(Sounds) sound]:
+0000000100001064	sub	sp, sp, #0x10
+0000000100001068	str	x0, [sp, #0x8]
+000000010000106c	str	x1, [sp]
+0000000100001070	adrp	x0, 3 ; 0x100004000
+0000000100001074	add	x0, x0, #0xf0 ; Objc cfstring ref: @"bad cfstring ref"
+0000000100001078	add	sp, sp, #0x10
+000000010000107c	b	0x10000127c ; symbol stub for: _objc_retainAutoreleaseReturnValue
+-[NSString(MachreExtras) machreShout]:
+0000000100001080	sub	sp, sp, #0x20
+0000000100001084	stp	x29, x30, [sp, #0x10]
+0000000100001088	add	x29, sp, #0x10
+000000010000108c	mov	x8, x1
+0000000100001090	str	x0, [sp, #0x8]
+0000000100001094	str	x8, [sp]
+0000000100001098	ldr	x0, [sp, #0x8]
+000000010000109c	bl	_objc_msgSend$uppercaseString
+00000001000010a0	ldp	x29, x30, [sp, #0x10]
+00000001000010a4	add	sp, sp, #0x20
+00000001000010a8	ret
+_main:
+00000001000010ac	sub	sp, sp, #0x90
+00000001000010b0	stp	x29, x30, [sp, #0x80]
+00000001000010b4	add	x29, sp, #0x80
+00000001000010b8	mov	w8, #0x0
+00000001000010bc	stur	w8, [x29, #-0x1c]
+00000001000010c0	stur	wzr, [x29, #-0x4]
+00000001000010c4	stur	w0, [x29, #-0x8]
+00000001000010c8	stur	x1, [x29, #-0x10]
+00000001000010cc	bl	0x100001258 ; symbol stub for: _objc_autoreleasePoolPush
+00000001000010d0	stur	x0, [x29, #-0x28]
+00000001000010d4	adrp	x8, 7 ; 0x100008000
+00000001000010d8	add	x0, x8, #0x540
+00000001000010dc	bl	0x100001240 ; symbol stub for: _objc_alloc
+00000001000010e0	ldr	x1, [sp, #0x28]
+00000001000010e4	adrp	x2, 3 ; 0x100004000
+00000001000010e8	add	x2, x2, #0x110 ; Objc cfstring ref: @"bad cfstring ref"
+00000001000010ec	mov	x3, #0x4
+00000001000010f0	bl	"_objc_msgSend$initWithName:legs:"
+00000001000010f4	ldr	x1, [sp, #0x28]
+00000001000010f8	sub	x8, x29, #0x18
+00000001000010fc	stur	x8, [x29, #-0x30]
+0000000100001100	stur	x0, [x29, #-0x18]
+0000000100001104	ldur	x0, [x29, #-0x18]
+0000000100001108	adrp	x2, 3 ; 0x100004000
+000000010000110c	add	x2, x2, #0x218
+0000000100001110	bl	"_objc_msgSend$setTricks:"
+0000000100001114	ldr	x1, [sp, #0x28]
+0000000100001118	ldur	x0, [x29, #-0x18]
+000000010000111c	bl	_objc_msgSend$bark
+0000000100001120	ldr	x1, [sp, #0x28]
+0000000100001124	ldur	x0, [x29, #-0x18]
+0000000100001128	bl	_objc_msgSend$describe
+000000010000112c	mov	x29, x29
+0000000100001130	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100001134	ldr	x1, [sp, #0x28]
+0000000100001138	stur	x0, [x29, #-0x38]
+000000010000113c	ldur	x0, [x29, #-0x18]
+0000000100001140	adrp	x2, 3 ; 0x100004000
+0000000100001144	add	x2, x2, #0x190 ; Objc cfstring ref: @"bad cfstring ref"
+0000000100001148	bl	"_objc_msgSend$greet:"
+000000010000114c	mov	x29, x29
+0000000100001150	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100001154	ldr	x1, [sp, #0x28]
+0000000100001158	str	x0, [sp, #0x40]
+000000010000115c	ldur	x0, [x29, #-0x18]
+0000000100001160	bl	_objc_msgSend$sound
+0000000100001164	mov	x29, x29
+0000000100001168	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+000000010000116c	ldr	x1, [sp, #0x28]
+0000000100001170	str	x0, [sp, #0x38]
+0000000100001174	adrp	x0, 3 ; 0x100004000
+0000000100001178	add	x0, x0, #0x1b0 ; Objc cfstring ref: @"bad cfstring ref"
+000000010000117c	bl	_objc_msgSend$machreShout
+0000000100001180	mov	x29, x29
+0000000100001184	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100001188	ldr	x1, [sp, #0x28]
+000000010000118c	str	x0, [sp, #0x30]
+0000000100001190	adrp	x8, 7 ; 0x100008000
+0000000100001194	add	x0, x8, #0x4c8
+0000000100001198	bl	_objc_msgSend$population
+000000010000119c	ldr	x9, [sp, #0x30]
+00000001000011a0	ldr	x10, [sp, #0x38]
+00000001000011a4	ldr	x11, [sp, #0x40]
+00000001000011a8	ldur	x12, [x29, #-0x38]
+00000001000011ac	mov	x8, sp
+00000001000011b0	str	x12, [x8]
+00000001000011b4	str	x11, [x8, #0x8]
+00000001000011b8	str	x10, [x8, #0x10]
+00000001000011bc	str	x9, [x8, #0x18]
+00000001000011c0	str	x0, [x8, #0x20]
+00000001000011c4	adrp	x0, 3 ; 0x100004000
+00000001000011c8	add	x0, x0, #0x170 ; Objc cfstring ref: @"bad cfstring ref"
+00000001000011cc	bl	0x100001234 ; symbol stub for: _NSLog
+00000001000011d0	ldr	x0, [sp, #0x30]
+00000001000011d4	adrp	x8, 3 ; 0x100004000
+00000001000011d8	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+00000001000011dc	blr	x8
+00000001000011e0	ldr	x0, [sp, #0x38]
+00000001000011e4	adrp	x8, 3 ; 0x100004000
+00000001000011e8	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+00000001000011ec	blr	x8
+00000001000011f0	ldr	x0, [sp, #0x40]
+00000001000011f4	adrp	x8, 3 ; 0x100004000
+00000001000011f8	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+00000001000011fc	blr	x8
+0000000100001200	ldur	x0, [x29, #-0x38]
+0000000100001204	adrp	x8, 3 ; 0x100004000
+0000000100001208	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+000000010000120c	blr	x8
+0000000100001210	ldur	x0, [x29, #-0x30]
+0000000100001214	mov	x1, #0x0
+0000000100001218	bl	0x1000012a0 ; symbol stub for: _objc_storeStrong
+000000010000121c	ldur	x0, [x29, #-0x28]
+0000000100001220	bl	0x10000124c ; symbol stub for: _objc_autoreleasePoolPop
+0000000100001224	ldur	w0, [x29, #-0x1c]
+0000000100001228	ldp	x29, x30, [sp, #0x80]
+000000010000122c	add	sp, sp, #0x90
+0000000100001230	ret
+--- exit=0
+
+===== /usr/bin/otool -Iv Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello:
+Indirect symbols for (__TEXT,__stubs) 10 entries
+address            index name
+0x0000000100001234    67 _NSLog
+0x0000000100001240    74 _objc_alloc
+0x000000010000124c    75 _objc_autoreleasePoolPop
+0x0000000100001258    76 _objc_autoreleasePoolPush
+0x0000000100001264    77 _objc_autoreleaseReturnValue
+0x0000000100001270    79 _objc_msgSendSuper2
+0x000000010000127c    82 _objc_retainAutoreleaseReturnValue
+0x0000000100001288    83 _objc_retainAutoreleasedReturnValue
+0x0000000100001294    84 _objc_setProperty_nonatomic_copy
+0x00000001000012a0    85 _objc_storeStrong
+Indirect symbols for (__DATA_CONST,__got) 14 entries
+address            index name
+0x0000000100004000    67 _NSLog
+0x0000000100004008    70 _OBJC_CLASS_$_NSString
+0x0000000100004010    74 _objc_alloc
+0x0000000100004018    75 _objc_autoreleasePoolPop
+0x0000000100004020    76 _objc_autoreleasePoolPush
+0x0000000100004028    77 _objc_autoreleaseReturnValue
+0x0000000100004030    78 _objc_msgSend
+0x0000000100004038    79 _objc_msgSendSuper2
+0x0000000100004040    80 _objc_release
+0x0000000100004048    81 _objc_retain
+0x0000000100004050    82 _objc_retainAutoreleaseReturnValue
+0x0000000100004058    83 _objc_retainAutoreleasedReturnValue
+0x0000000100004060    84 _objc_setProperty_nonatomic_copy
+0x0000000100004068    85 _objc_storeStrong
+--- exit=0
+
+===== /usr/bin/nm -m Hello.app/Contents/MacOS/Hello =====
+0000000100000d58 (__TEXT,__text) non-external +[MachreAnimal population]
+0000000100000ec4 (__TEXT,__text) non-external -[MachreAnimal .cxx_destruct]
+0000000100000cbc (__TEXT,__text) non-external -[MachreAnimal describe]
+0000000100000d74 (__TEXT,__text) non-external -[MachreAnimal greet:]
+0000000100000ba8 (__TEXT,__text) non-external -[MachreAnimal initWithName:legs:]
+0000000100000e84 (__TEXT,__text) non-external -[MachreAnimal legs]
+0000000100000e30 (__TEXT,__text) non-external -[MachreAnimal name]
+0000000100000ea0 (__TEXT,__text) non-external -[MachreAnimal setLegs:]
+0000000100000e4c (__TEXT,__text) non-external -[MachreAnimal setName:]
+0000000100001064 (__TEXT,__text) non-external -[MachreAnimal(Sounds) sound]
+0000000100001034 (__TEXT,__text) non-external -[MachreDog .cxx_destruct]
+0000000100000ef4 (__TEXT,__text) non-external -[MachreDog bark]
+0000000100001000 (__TEXT,__text) non-external -[MachreDog setTricks:]
+0000000100000fe4 (__TEXT,__text) non-external -[MachreDog tricks]
+0000000100000f88 (__TEXT,__text) non-external -[MachreDog wave]
+0000000100001080 (__TEXT,__text) non-external -[NSString(MachreExtras) machreShout]
+                 (undefined) external _NSLog (from Foundation)
+00000001000084c8 (__DATA,__objc_data) external _OBJC_CLASS_$_MachreAnimal
+0000000100008540 (__DATA,__objc_data) external _OBJC_CLASS_$_MachreDog
+                 (undefined) external _OBJC_CLASS_$_NSConstantArray (from CoreFoundation)
+                 (undefined) external _OBJC_CLASS_$_NSObject (from libobjc)
+                 (undefined) external _OBJC_CLASS_$_NSString (from Foundation)
+00000001000084bc (__DATA,__objc_ivar) non-external (was a private external) _OBJC_IVAR_$_MachreAnimal._legs
+00000001000084b8 (__DATA,__objc_ivar) non-external (was a private external) _OBJC_IVAR_$_MachreAnimal._name
+00000001000084c0 (__DATA,__objc_ivar) non-external (was a private external) _OBJC_IVAR_$_MachreDog._tricks
+00000001000084f0 (__DATA,__objc_data) external _OBJC_METACLASS_$_MachreAnimal
+0000000100008518 (__DATA,__objc_data) external _OBJC_METACLASS_$_MachreDog
+                 (undefined) external _OBJC_METACLASS_$_NSObject (from libobjc)
+00000001000014a0 (__TEXT,__objc_methlist) non-external __OBJC_$_CATEGORY_INSTANCE_METHODS_NSString_$_MachreExtras
+0000000100008338 (__DATA,__objc_const) non-external __OBJC_$_CATEGORY_NSString_$_MachreExtras
+00000001000014b8 (__TEXT,__objc_methlist) non-external __OBJC_$_CLASS_METHODS_MachreAnimal
+00000001000014d0 (__TEXT,__objc_methlist) non-external __OBJC_$_INSTANCE_METHODS_MachreAnimal(Sounds)
+0000000100001548 (__TEXT,__objc_methlist) non-external __OBJC_$_INSTANCE_METHODS_MachreDog
+0000000100008170 (__DATA,__objc_const) non-external __OBJC_$_INSTANCE_VARIABLES_MachreAnimal
+00000001000082b0 (__DATA,__objc_const) non-external __OBJC_$_INSTANCE_VARIABLES_MachreDog
+00000001000081b8 (__DATA,__objc_const) non-external __OBJC_$_PROP_LIST_MachreAnimal
+00000001000082d8 (__DATA,__objc_const) non-external __OBJC_$_PROP_LIST_MachreDog
+0000000100008000 (__DATA,__objc_const) non-external __OBJC_$_PROP_LIST_NSObject
+0000000100001590 (__TEXT,__objc_methlist) non-external __OBJC_$_PROTOCOL_INSTANCE_METHODS_MachreGreeter
+00000001000015a8 (__TEXT,__objc_methlist) non-external __OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+0000000100001698 (__TEXT,__objc_methlist) non-external __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_MachreGreeter
+00000001000016b0 (__TEXT,__objc_methlist) non-external __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+0000000100008100 (__DATA,__objc_const) non-external __OBJC_$_PROTOCOL_METHOD_TYPES_MachreGreeter
+0000000100008048 (__DATA,__objc_const) non-external __OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+00000001000080e8 (__DATA,__objc_const) non-external __OBJC_$_PROTOCOL_REFS_MachreGreeter
+0000000100008110 (__DATA,__objc_const) non-external __OBJC_CLASS_PROTOCOLS_$_MachreAnimal
+0000000100008220 (__DATA,__objc_const) non-external __OBJC_CLASS_RO_$_MachreAnimal
+00000001000082f0 (__DATA,__objc_const) non-external __OBJC_CLASS_RO_$_MachreDog
+00000001000041f0 (__DATA_CONST,__objc_protolist) non-external (was a private external) __OBJC_LABEL_PROTOCOL_$_MachreGreeter
+00000001000041e8 (__DATA_CONST,__objc_protolist) non-external (was a private external) __OBJC_LABEL_PROTOCOL_$_NSObject
+0000000100008128 (__DATA,__objc_const) non-external __OBJC_METACLASS_RO_$_MachreAnimal
+0000000100008268 (__DATA,__objc_const) non-external __OBJC_METACLASS_RO_$_MachreDog
+00000001000085c8 (__DATA,__data) non-external (was a private external) __OBJC_PROTOCOL_$_MachreGreeter
+0000000100008568 (__DATA,__data) non-external (was a private external) __OBJC_PROTOCOL_$_NSObject
+                 (undefined) external ___CFConstantStringClassReference (from CoreFoundation)
+0000000100000000 (__TEXT,__text) [referenced dynamically] external __mh_execute_header
+                 (undefined) external __objc_empty_cache (from libobjc)
+0000000100008628 (__DATA,__bss) non-external _gPopulation
+00000001000010ac (__TEXT,__text) external _main
+                 (undefined) external _objc_alloc (from libobjc)
+                 (undefined) external _objc_autoreleasePoolPop (from libobjc)
+                 (undefined) external _objc_autoreleasePoolPush (from libobjc)
+                 (undefined) external _objc_autoreleaseReturnValue (from libobjc)
+                 (undefined) external _objc_msgSend (from libobjc)
+00000001000012c0 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$bark
+00000001000012e0 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$copy
+0000000100001300 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$count
+0000000100001320 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$describe
+0000000100001340 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$greet:
+0000000100001360 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$initWithName:legs:
+0000000100001380 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$legs
+00000001000013a0 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$machreShout
+00000001000013c0 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$name
+00000001000013e0 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$population
+0000000100001400 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$setTricks:
+0000000100001420 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$sound
+0000000100001440 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$stringWithFormat:
+0000000100001460 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$tricks
+0000000100001480 (__TEXT,__objc_stubs) non-external (was a private external) _objc_msgSend$uppercaseString
+                 (undefined) external _objc_msgSendSuper2 (from libobjc)
+                 (undefined) external _objc_release (from libobjc)
+                 (undefined) external _objc_retain (from libobjc)
+                 (undefined) external _objc_retainAutoreleaseReturnValue (from libobjc)
+                 (undefined) external _objc_retainAutoreleasedReturnValue (from libobjc)
+                 (undefined) external _objc_setProperty_nonatomic_copy (from libobjc)
+                 (undefined) external _objc_storeStrong (from libobjc)
+--- exit=0
+
+===== /usr/bin/nm -a Hello.app/Contents/MacOS/Hello =====
+0000000100000d58 t +[MachreAnimal population]
+0000000100000ec4 t -[MachreAnimal .cxx_destruct]
+0000000100000cbc t -[MachreAnimal describe]
+0000000100000d74 t -[MachreAnimal greet:]
+0000000100000ba8 t -[MachreAnimal initWithName:legs:]
+0000000100000e84 t -[MachreAnimal legs]
+0000000100000e30 t -[MachreAnimal name]
+0000000100000ea0 t -[MachreAnimal setLegs:]
+0000000100000e4c t -[MachreAnimal setName:]
+0000000100001064 t -[MachreAnimal(Sounds) sound]
+0000000100001034 t -[MachreDog .cxx_destruct]
+0000000100000ef4 t -[MachreDog bark]
+0000000100001000 t -[MachreDog setTricks:]
+0000000100000fe4 t -[MachreDog tricks]
+0000000100000f88 t -[MachreDog wave]
+0000000100001080 t -[NSString(MachreExtras) machreShout]
+                 U _NSLog
+00000001000084c8 S _OBJC_CLASS_$_MachreAnimal
+0000000100008540 S _OBJC_CLASS_$_MachreDog
+                 U _OBJC_CLASS_$_NSConstantArray
+                 U _OBJC_CLASS_$_NSObject
+                 U _OBJC_CLASS_$_NSString
+00000001000084bc s _OBJC_IVAR_$_MachreAnimal._legs
+00000001000084b8 s _OBJC_IVAR_$_MachreAnimal._name
+00000001000084c0 s _OBJC_IVAR_$_MachreDog._tricks
+00000001000084f0 S _OBJC_METACLASS_$_MachreAnimal
+0000000100008518 S _OBJC_METACLASS_$_MachreDog
+                 U _OBJC_METACLASS_$_NSObject
+00000001000014a0 s __OBJC_$_CATEGORY_INSTANCE_METHODS_NSString_$_MachreExtras
+0000000100008338 s __OBJC_$_CATEGORY_NSString_$_MachreExtras
+00000001000014b8 s __OBJC_$_CLASS_METHODS_MachreAnimal
+00000001000014d0 s __OBJC_$_INSTANCE_METHODS_MachreAnimal(Sounds)
+0000000100001548 s __OBJC_$_INSTANCE_METHODS_MachreDog
+0000000100008170 s __OBJC_$_INSTANCE_VARIABLES_MachreAnimal
+00000001000082b0 s __OBJC_$_INSTANCE_VARIABLES_MachreDog
+00000001000081b8 s __OBJC_$_PROP_LIST_MachreAnimal
+00000001000082d8 s __OBJC_$_PROP_LIST_MachreDog
+0000000100008000 s __OBJC_$_PROP_LIST_NSObject
+0000000100001590 s __OBJC_$_PROTOCOL_INSTANCE_METHODS_MachreGreeter
+00000001000015a8 s __OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+0000000100001698 s __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_MachreGreeter
+00000001000016b0 s __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+0000000100008100 s __OBJC_$_PROTOCOL_METHOD_TYPES_MachreGreeter
+0000000100008048 s __OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+00000001000080e8 s __OBJC_$_PROTOCOL_REFS_MachreGreeter
+0000000100008110 s __OBJC_CLASS_PROTOCOLS_$_MachreAnimal
+0000000100008220 s __OBJC_CLASS_RO_$_MachreAnimal
+00000001000082f0 s __OBJC_CLASS_RO_$_MachreDog
+00000001000041f0 s __OBJC_LABEL_PROTOCOL_$_MachreGreeter
+00000001000041e8 s __OBJC_LABEL_PROTOCOL_$_NSObject
+0000000100008128 s __OBJC_METACLASS_RO_$_MachreAnimal
+0000000100008268 s __OBJC_METACLASS_RO_$_MachreDog
+00000001000085c8 d __OBJC_PROTOCOL_$_MachreGreeter
+0000000100008568 d __OBJC_PROTOCOL_$_NSObject
+                 U ___CFConstantStringClassReference
+0000000100000000 T __mh_execute_header
+                 U __objc_empty_cache
+0000000100008628 b _gPopulation
+00000001000010ac T _main
+                 U _objc_alloc
+                 U _objc_autoreleasePoolPop
+                 U _objc_autoreleasePoolPush
+                 U _objc_autoreleaseReturnValue
+                 U _objc_msgSend
+00000001000012c0 s _objc_msgSend$bark
+00000001000012e0 s _objc_msgSend$copy
+0000000100001300 s _objc_msgSend$count
+0000000100001320 s _objc_msgSend$describe
+0000000100001340 s _objc_msgSend$greet:
+0000000100001360 s _objc_msgSend$initWithName:legs:
+0000000100001380 s _objc_msgSend$legs
+00000001000013a0 s _objc_msgSend$machreShout
+00000001000013c0 s _objc_msgSend$name
+00000001000013e0 s _objc_msgSend$population
+0000000100001400 s _objc_msgSend$setTricks:
+0000000100001420 s _objc_msgSend$sound
+0000000100001440 s _objc_msgSend$stringWithFormat:
+0000000100001460 s _objc_msgSend$tricks
+0000000100001480 s _objc_msgSend$uppercaseString
+                 U _objc_msgSendSuper2
+                 U _objc_release
+                 U _objc_retain
+                 U _objc_retainAutoreleaseReturnValue
+                 U _objc_retainAutoreleasedReturnValue
+                 U _objc_setProperty_nonatomic_copy
+                 U _objc_storeStrong
+--- exit=0
+
+===== /usr/bin/dyld_info -platform -uuid -segments -linked_dylibs -load_commands Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+    -platform:
+        platform     minOS      sdk
+           macOS     26.0      26.5   
+    -uuid:
+        9C807034-8D29-3821-83E8-4AFF5C9175A9
+    -segments:
+        load-offset   segment  section       sect-size  seg-size   init/max-prot
+        0x00000000    __TEXT                                16KB    r.x/r.x
+        0x100000BA8             __text             1676
+        0x100001234             __stubs             120
+        0x1000012C0             __objc_stubs        480
+        0x1000014A0             __objc_methlist     548
+        0x1000016C4             __objc_methname     584
+        0x10000190C             __cstring           118
+        0x100001982             __objc_classname     68
+        0x1000019C6             __objc_methtype     292
+        0x100001AEC             __unwind_info       136
+        0x00004000    __DATA_CONST                          16KB    rw./rw.
+        0x100004000             __got               112
+        0x100004070             __cfstring          352
+        0x1000041D0             __objc_classlist     16
+        0x1000041E0             __objc_catlist        8
+        0x1000041E8             __objc_protolist     16
+        0x1000041F8             __objc_imageinfo      8
+        0x100004200             __objc_superrefs      8
+        0x100004208             __objc_arraydata     16
+        0x100004218             __objc_arrayobj      24
+        0x00008000    __DATA                                16KB    rw./rw.
+        0x100008000             __objc_const        888
+        0x100008378             __objc_selrefs      320
+        0x1000084B8             __objc_ivar          12
+        0x1000084C8             __objc_data         160
+        0x100008568             __data              192
+        0x100008628             __bss                 8
+    -linked_dylibs:
+        attributes     load path
+                       /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+                       /usr/lib/libobjc.A.dylib
+                       /usr/lib/libSystem.B.dylib
+                       /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+    -load_commands:
+Load command #0
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__PAGEZERO"
+          vmaddr: 0x0000000000000000
+          vmsize: 0x0000000100000000
+         fileoff: 0x00000000
+        filesize: 0x00000000
+         maxprot: ...
+        initprot: ...
+          nsects: 0
+Load command #1
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x318
+         segname: "__TEXT"
+          vmaddr: 0x0000000100000000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00000000
+        filesize: 0x00004000
+         maxprot: r.x
+        initprot: r.x
+          nsects: 9
+        sections[0].sectname: "__text"
+        sections[0].addr:     0x0000000100000BA8
+        sections[0].size:     0x000000000000068C
+        sections[0].offset:   0x00000BA8
+        sections[0].align:    2^2
+        sections[0].type:      S_ATTR_PURE_INSTRUCTIONS|S_ATTR_SOME_INSTRUCTIONS
+        sections[1].sectname: "__stubs"
+        sections[1].addr:     0x0000000100001234
+        sections[1].size:     0x0000000000000078
+        sections[1].offset:   0x00001234
+        sections[1].align:    2^2
+        sections[1].type:      S_SYMBOL_STUBS
+        sections[1].reserved2: 12
+        sections[2].sectname: "__objc_stubs"
+        sections[2].addr:     0x00000001000012C0
+        sections[2].size:     0x00000000000001E0
+        sections[2].offset:   0x000012C0
+        sections[2].align:    2^5
+        sections[2].type:      S_ATTR_PURE_INSTRUCTIONS|S_ATTR_SOME_INSTRUCTIONS
+        sections[3].sectname: "__objc_methlist"
+        sections[3].addr:     0x00000001000014A0
+        sections[3].size:     0x0000000000000224
+        sections[3].offset:   0x000014A0
+        sections[3].align:    2^3
+        sections[4].sectname: "__objc_methname"
+        sections[4].addr:     0x00000001000016C4
+        sections[4].size:     0x0000000000000248
+        sections[4].offset:   0x000016C4
+        sections[4].align:    2^0
+        sections[4].type:      S_CSTRING_LITERALS
+        sections[5].sectname: "__cstring"
+        sections[5].addr:     0x000000010000190C
+        sections[5].size:     0x0000000000000076
+        sections[5].offset:   0x0000190C
+        sections[5].align:    2^0
+        sections[5].type:      S_CSTRING_LITERALS
+        sections[6].sectname: "__objc_classname"
+        sections[6].addr:     0x0000000100001982
+        sections[6].size:     0x0000000000000044
+        sections[6].offset:   0x00001982
+        sections[6].align:    2^0
+        sections[6].type:      S_CSTRING_LITERALS
+        sections[7].sectname: "__objc_methtype"
+        sections[7].addr:     0x00000001000019C6
+        sections[7].size:     0x0000000000000124
+        sections[7].offset:   0x000019C6
+        sections[7].align:    2^0
+        sections[7].type:      S_CSTRING_LITERALS
+        sections[8].sectname: "__unwind_info"
+        sections[8].addr:     0x0000000100001AEC
+        sections[8].size:     0x0000000000000088
+        sections[8].offset:   0x00001AEC
+        sections[8].align:    2^2
+Load command #2
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x318
+         segname: "__DATA_CONST"
+          vmaddr: 0x0000000100004000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00004000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          flags: SG_READ_ONLY
+          nsects: 9
+        sections[0].sectname: "__got"
+        sections[0].addr:     0x0000000100004000
+        sections[0].size:     0x0000000000000070
+        sections[0].offset:   0x00004000
+        sections[0].align:    2^3
+        sections[0].type:      S_NON_LAZY_SYMBOL_POINTERS
+        sections[0].reserved1: 10
+        sections[1].sectname: "__cfstring"
+        sections[1].addr:     0x0000000100004070
+        sections[1].size:     0x0000000000000160
+        sections[1].offset:   0x00004070
+        sections[1].align:    2^3
+        sections[2].sectname: "__objc_classlist"
+        sections[2].addr:     0x00000001000041D0
+        sections[2].size:     0x0000000000000010
+        sections[2].offset:   0x000041D0
+        sections[2].align:    2^3
+        sections[2].type:      
+        sections[3].sectname: "__objc_catlist"
+        sections[3].addr:     0x00000001000041E0
+        sections[3].size:     0x0000000000000008
+        sections[3].offset:   0x000041E0
+        sections[3].align:    2^3
+        sections[3].type:      
+        sections[4].sectname: "__objc_protolist"
+        sections[4].addr:     0x00000001000041E8
+        sections[4].size:     0x0000000000000010
+        sections[4].offset:   0x000041E8
+        sections[4].align:    2^3
+        sections[5].sectname: "__objc_imageinfo"
+        sections[5].addr:     0x00000001000041F8
+        sections[5].size:     0x0000000000000008
+        sections[5].offset:   0x000041F8
+        sections[5].align:    2^2
+        sections[6].sectname: "__objc_superrefs"
+        sections[6].addr:     0x0000000100004200
+        sections[6].size:     0x0000000000000008
+        sections[6].offset:   0x00004200
+        sections[6].align:    2^3
+        sections[7].sectname: "__objc_arraydata"
+        sections[7].addr:     0x0000000100004208
+        sections[7].size:     0x0000000000000010
+        sections[7].offset:   0x00004208
+        sections[7].align:    2^3
+        sections[8].sectname: "__objc_arrayobj"
+        sections[8].addr:     0x0000000100004218
+        sections[8].size:     0x0000000000000018
+        sections[8].offset:   0x00004218
+        sections[8].align:    2^3
+Load command #3
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x228
+         segname: "__DATA"
+          vmaddr: 0x0000000100008000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00008000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          nsects: 6
+        sections[0].sectname: "__objc_const"
+        sections[0].addr:     0x0000000100008000
+        sections[0].size:     0x0000000000000378
+        sections[0].offset:   0x00008000
+        sections[0].align:    2^3
+        sections[1].sectname: "__objc_selrefs"
+        sections[1].addr:     0x0000000100008378
+        sections[1].size:     0x0000000000000140
+        sections[1].offset:   0x00008378
+        sections[1].align:    2^3
+        sections[1].type:      
+        sections[2].sectname: "__objc_ivar"
+        sections[2].addr:     0x00000001000084B8
+        sections[2].size:     0x000000000000000C
+        sections[2].offset:   0x000084B8
+        sections[2].align:    2^2
+        sections[3].sectname: "__objc_data"
+        sections[3].addr:     0x00000001000084C8
+        sections[3].size:     0x00000000000000A0
+        sections[3].offset:   0x000084C8
+        sections[3].align:    2^3
+        sections[4].sectname: "__data"
+        sections[4].addr:     0x0000000100008568
+        sections[4].size:     0x00000000000000C0
+        sections[4].offset:   0x00008568
+        sections[4].align:    2^3
+        sections[5].sectname: "__bss"
+        sections[5].addr:     0x0000000100008628
+        sections[5].size:     0x0000000000000008
+        sections[5].align:    2^3
+        sections[5].type:      S_ZEROFILL
+Load command #4
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__LINKEDIT"
+          vmaddr: 0x000000010000C000
+          vmsize: 0x0000000000008000
+         fileoff: 0x0000C000
+        filesize: 0x00005A50
+         maxprot: r..
+        initprot: r..
+          nsects: 0
+Load command #5
+             cmd: LC_DYLD_CHAINED_FIXUPS
+         cmdsize: 0x10
+         dataoff: 0xC000
+        datasize: 0x270
+Load command #6
+             cmd: LC_DYLD_EXPORTS_TRIE
+         cmdsize: 0x10
+         dataoff: 0xC270
+        datasize: 0x98
+Load command #7
+             cmd: LC_SYMTAB
+         cmdsize: 0x18
+          symoff: 0xC320
+           nsyms: 86
+          stroff: 0xC8E0
+         strsize: 0x990
+Load command #8
+             cmd: LC_DYSYMTAB
+         cmdsize: 0x50
+       ilocalsym: 0
+       nlocalsym: 61
+      iextdefsym: 61
+      nextdefsym: 6
+       iundefsym: 67
+       nundefsym: 19
+  indirectsymoff: 0x0000C880
+   nindirectsyms: 24
+       ilocalsym: 0
+Load command #9
+             cmd: LC_LOAD_DYLINKER
+         cmdsize: 0x20
+            name: "/usr/lib/dyld"
+Load command #10
+             cmd: LC_UUID
+         cmdsize: 0x18
+            uuid: 9C807034-8D29-3821-83E8-4AFF5C9175A9
+Load command #11
+             cmd: LC_BUILD_VERSION
+         cmdsize: 0x20
+        platform: macOS
+          min-OS: 26.0
+             sdk: 26.5
+         tool[0].name:    ld
+         tool[0].version: 1267.0
+Load command #12
+             cmd: LC_SOURCE_VERSION
+         cmdsize: 0x10
+         version: 0.0
+Load command #13
+             cmd: LC_MAIN
+         cmdsize: 0x18
+        entryoff: 0x10AC
+Load command #14
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x60
+            name: "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation"
+        cur-vers: 5026.5.4
+     compat-vers: 300.0
+Load command #15
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x38
+            name: "/usr/lib/libobjc.A.dylib"
+        cur-vers: 228.0
+     compat-vers: 1.0
+Load command #16
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x38
+            name: "/usr/lib/libSystem.B.dylib"
+        cur-vers: 1356.0
+     compat-vers: 1.0
+Load command #17
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x68
+            name: "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+        cur-vers: 5026.5.4
+     compat-vers: 150.0
+Load command #18
+             cmd: LC_FUNCTION_STARTS
+         cmdsize: 0x10
+         dataoff: 0xC308
+        datasize: 0x18
+Load command #19
+             cmd: LC_DATA_IN_CODE
+         cmdsize: 0x10
+         dataoff: 0xC320
+        datasize: 0x0
+Load command #20
+             cmd: LC_CODE_SIGNATURE
+         cmdsize: 0x10
+         dataoff: 0xD270
+        datasize: 0x47E0
+--- exit=0
+
+===== /usr/bin/dyld_info -fixup_chains Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+    -fixup_chains:
+      fixups_version:   0x00000000
+      starts_offset:    0x00000020
+      imports_offset:   0x00000068
+      symbols_offset:   0x000000B4
+      imports_count:    19
+      imports_format:   1 (DYLD_CHAINED_IMPORT)
+      symbols_format:   0
+        seg[2]:
+          page_size:       0x4000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00004000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0000
+        seg[3]:
+          page_size:       0x4000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00008000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0008
+--- exit=0
+
+===== /usr/bin/dyld_info -fixups Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+    -fixups:
+        segment         section          address             type   target
+        __DATA_CONST    __got            0x100004000           bind  Foundation/_NSLog
+        __DATA_CONST    __got            0x100004008           bind  Foundation/_OBJC_CLASS_$_NSString
+        __DATA_CONST    __got            0x100004010           bind  libobjc/_objc_alloc
+        __DATA_CONST    __got            0x100004018           bind  libobjc/_objc_autoreleasePoolPop
+        __DATA_CONST    __got            0x100004020           bind  libobjc/_objc_autoreleasePoolPush
+        __DATA_CONST    __got            0x100004028           bind  libobjc/_objc_autoreleaseReturnValue
+        __DATA_CONST    __got            0x100004030           bind  libobjc/_objc_msgSend
+        __DATA_CONST    __got            0x100004038           bind  libobjc/_objc_msgSendSuper2
+        __DATA_CONST    __got            0x100004040           bind  libobjc/_objc_release
+        __DATA_CONST    __got            0x100004048           bind  libobjc/_objc_retain
+        __DATA_CONST    __got            0x100004050           bind  libobjc/_objc_retainAutoreleaseReturnValue
+        __DATA_CONST    __got            0x100004058           bind  libobjc/_objc_retainAutoreleasedReturnValue
+        __DATA_CONST    __got            0x100004060           bind  libobjc/_objc_setProperty_nonatomic_copy
+        __DATA_CONST    __got            0x100004068           bind  libobjc/_objc_storeStrong
+        __DATA_CONST    __cfstring       0x100004070           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x100004080         rebase  0x10000190C
+        __DATA_CONST    __cfstring       0x100004090           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x1000040A0         rebase  0x10000191C
+        __DATA_CONST    __cfstring       0x1000040B0           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x1000040C0         rebase  0x100001929
+        __DATA_CONST    __cfstring       0x1000040D0           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x1000040E0         rebase  0x10000193F
+        __DATA_CONST    __cfstring       0x1000040F0           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x100004100         rebase  0x100001947
+        __DATA_CONST    __cfstring       0x100004110           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x100004120         rebase  0x10000194F
+        __DATA_CONST    __cfstring       0x100004130           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x100004140         rebase  0x100001953
+        __DATA_CONST    __cfstring       0x100004150           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x100004160         rebase  0x100001957
+        __DATA_CONST    __cfstring       0x100004170           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x100004180         rebase  0x10000195C
+        __DATA_CONST    __cfstring       0x100004190           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x1000041A0         rebase  0x100001978
+        __DATA_CONST    __cfstring       0x1000041B0           bind  CoreFoundation/___CFConstantStringClassReference
+        __DATA_CONST    __cfstring       0x1000041C0         rebase  0x10000197C
+        __DATA_CONST    __objc_classlist 0x1000041D0         rebase  0x1000084C8
+        __DATA_CONST    __objc_classlist 0x1000041D8         rebase  0x100008540
+        __DATA_CONST    __objc_catlist   0x1000041E0         rebase  0x100008338
+        __DATA_CONST    __objc_protolist 0x1000041E8         rebase  0x100008568
+        __DATA_CONST    __objc_protolist 0x1000041F0         rebase  0x1000085C8
+        __DATA_CONST    __objc_superrefs 0x100004200         rebase  0x1000084C8
+        __DATA_CONST    __objc_arraydata 0x100004208         rebase  0x100004130
+        __DATA_CONST    __objc_arraydata 0x100004210         rebase  0x100004150
+        __DATA_CONST    __objc_arrayobj  0x100004218           bind  CoreFoundation/_OBJC_CLASS_$_NSConstantArray
+        __DATA_CONST    __objc_arrayobj  0x100004228         rebase  0x100004208
+        __DATA          __objc_const     0x100008008         rebase  0x1000017D4
+        __DATA          __objc_const     0x100008010         rebase  0x100001754
+        __DATA          __objc_const     0x100008018         rebase  0x1000018F0
+        __DATA          __objc_const     0x100008020         rebase  0x1000016CC
+        __DATA          __objc_const     0x100008028         rebase  0x1000017C1
+        __DATA          __objc_const     0x100008030         rebase  0x100001743
+        __DATA          __objc_const     0x100008038         rebase  0x1000017A7
+        __DATA          __objc_const     0x100008040         rebase  0x1000016D9
+        __DATA          __objc_const     0x100008048         rebase  0x1000019CE
+        __DATA          __objc_const     0x100008050         rebase  0x1000019D9
+        __DATA          __objc_const     0x100008058         rebase  0x1000019E1
+        __DATA          __objc_const     0x100008060         rebase  0x1000019E9
+        __DATA          __objc_const     0x100008068         rebase  0x1000019F4
+        __DATA          __objc_const     0x100008070         rebase  0x100001A02
+        __DATA          __objc_const     0x100008078         rebase  0x100001A13
+        __DATA          __objc_const     0x100008080         rebase  0x100001A1B
+        __DATA          __objc_const     0x100008088         rebase  0x100001A1B
+        __DATA          __objc_const     0x100008090         rebase  0x100001A54
+        __DATA          __objc_const     0x100008098         rebase  0x100001A26
+        __DATA          __objc_const     0x1000080A0         rebase  0x1000019E1
+        __DATA          __objc_const     0x1000080A8         rebase  0x100001A31
+        __DATA          __objc_const     0x1000080B0         rebase  0x1000019E1
+        __DATA          __objc_const     0x1000080B8         rebase  0x100001A3A
+        __DATA          __objc_const     0x1000080C0         rebase  0x100001A42
+        __DATA          __objc_const     0x1000080C8         rebase  0x100001A3A
+        __DATA          __objc_const     0x1000080D0         rebase  0x1000019D9
+        __DATA          __objc_const     0x1000080D8         rebase  0x100001A69
+        __DATA          __objc_const     0x1000080E0         rebase  0x100001A69
+        __DATA          __objc_const     0x1000080F0         rebase  0x100008568
+        __DATA          __objc_const     0x100008100         rebase  0x100001A8E
+        __DATA          __objc_const     0x100008108         rebase  0x100001A86
+        __DATA          __objc_const     0x100008118         rebase  0x1000085C8
+        __DATA          __objc_const     0x100008140         rebase  0x100001982
+        __DATA          __objc_const     0x100008148         rebase  0x1000014B8
+        __DATA          __objc_const     0x100008150         rebase  0x100008110
+        __DATA          __objc_const     0x100008178         rebase  0x1000084B8
+        __DATA          __objc_const     0x100008180         rebase  0x10000176B
+        __DATA          __objc_const     0x100008188         rebase  0x100001AD1
+        __DATA          __objc_const     0x100008198         rebase  0x1000084BC
+        __DATA          __objc_const     0x1000081A0         rebase  0x100001765
+        __DATA          __objc_const     0x1000081A8         rebase  0x100001ADD
+        __DATA          __objc_const     0x1000081C0         rebase  0x10000182B
+        __DATA          __objc_const     0x1000081C8         rebase  0x10000172B
+        __DATA          __objc_const     0x1000081D0         rebase  0x10000181A
+        __DATA          __objc_const     0x1000081D8         rebase  0x100001759
+        __DATA          __objc_const     0x1000081E0         rebase  0x1000017D4
+        __DATA          __objc_const     0x1000081E8         rebase  0x100001754
+        __DATA          __objc_const     0x1000081F0         rebase  0x1000018F0
+        __DATA          __objc_const     0x1000081F8         rebase  0x1000016CC
+        __DATA          __objc_const     0x100008200         rebase  0x1000017C1
+        __DATA          __objc_const     0x100008208         rebase  0x100001743
+        __DATA          __objc_const     0x100008210         rebase  0x1000017A7
+        __DATA          __objc_const     0x100008218         rebase  0x1000016D9
+        __DATA          __objc_const     0x100008230         rebase  0x1000019A6
+        __DATA          __objc_const     0x100008238         rebase  0x100001982
+        __DATA          __objc_const     0x100008240         rebase  0x1000014D0
+        __DATA          __objc_const     0x100008248         rebase  0x100008110
+        __DATA          __objc_const     0x100008250         rebase  0x100008170
+        __DATA          __objc_const     0x100008260         rebase  0x1000081B8
+        __DATA          __objc_const     0x100008280         rebase  0x1000019A8
+        __DATA          __objc_const     0x1000082B8         rebase  0x1000084C0
+        __DATA          __objc_const     0x1000082C0         rebase  0x1000016C4
+        __DATA          __objc_const     0x1000082C8         rebase  0x100001ADF
+        __DATA          __objc_const     0x1000082E0         rebase  0x1000018FB
+        __DATA          __objc_const     0x1000082E8         rebase  0x100001702
+        __DATA          __objc_const     0x100008300         rebase  0x1000019A6
+        __DATA          __objc_const     0x100008308         rebase  0x1000019A8
+        __DATA          __objc_const     0x100008310         rebase  0x100001548
+        __DATA          __objc_const     0x100008320         rebase  0x1000082B0
+        __DATA          __objc_const     0x100008330         rebase  0x1000082D8
+        __DATA          __objc_const     0x100008338         rebase  0x1000019B9
+        __DATA          __objc_const     0x100008340           bind  Foundation/_OBJC_CLASS_$_NSString
+        __DATA          __objc_const     0x100008348         rebase  0x1000014A0
+        __DATA          __objc_selrefs   0x100008378         rebase  0x1000017D9
+        __DATA          __objc_selrefs   0x100008380         rebase  0x10000177D
+        __DATA          __objc_selrefs   0x100008388         rebase  0x10000179C
+        __DATA          __objc_selrefs   0x100008390         rebase  0x1000017A1
+        __DATA          __objc_selrefs   0x100008398         rebase  0x1000017B8
+        __DATA          __objc_selrefs   0x1000083A0         rebase  0x1000017CD
+        __DATA          __objc_selrefs   0x1000083A8         rebase  0x1000017DE
+        __DATA          __objc_selrefs   0x1000083B0         rebase  0x10000181A
+        __DATA          __objc_selrefs   0x1000083B8         rebase  0x10000181F
+        __DATA          __objc_selrefs   0x1000083C0         rebase  0x10000182B
+        __DATA          __objc_selrefs   0x1000083C8         rebase  0x100001884
+        __DATA          __objc_selrefs   0x1000083D0         rebase  0x1000018CD
+        __DATA          __objc_selrefs   0x1000083D8         rebase  0x1000018D8
+        __DATA          __objc_selrefs   0x1000083E0         rebase  0x1000018DE
+        __DATA          __objc_selrefs   0x1000083E8         rebase  0x1000018FB
+        __DATA          __objc_selrefs   0x1000083F0         rebase  0x10000171B
+        __DATA          __objc_selrefs   0x1000083F8         rebase  0x1000018C4
+        __DATA          __objc_selrefs   0x100008400         rebase  0x1000018BB
+        __DATA          __objc_selrefs   0x100008408         rebase  0x1000016EC
+        __DATA          __objc_selrefs   0x100008410         rebase  0x100001902
+        __DATA          __objc_selrefs   0x100008418         rebase  0x1000017F1
+        __DATA          __objc_selrefs   0x100008420         rebase  0x100001782
+        __DATA          __objc_selrefs   0x100008428         rebase  0x1000018B6
+        __DATA          __objc_selrefs   0x100008430         rebase  0x100001830
+        __DATA          __objc_selrefs   0x100008438         rebase  0x100001841
+        __DATA          __objc_selrefs   0x100008440         rebase  0x10000185D
+        __DATA          __objc_selrefs   0x100008448         rebase  0x1000016FA
+        __DATA          __objc_selrefs   0x100008450         rebase  0x1000017FA
+        __DATA          __objc_selrefs   0x100008458         rebase  0x100001809
+        __DATA          __objc_selrefs   0x100008460         rebase  0x100001788
+        __DATA          __objc_selrefs   0x100008468         rebase  0x10000188F
+        __DATA          __objc_selrefs   0x100008470         rebase  0x1000018A3
+        __DATA          __objc_selrefs   0x100008478         rebase  0x1000016D1
+        __DATA          __objc_selrefs   0x100008480         rebase  0x100001771
+        __DATA          __objc_selrefs   0x100008488         rebase  0x1000018AA
+        __DATA          __objc_selrefs   0x100008490         rebase  0x100001907
+        __DATA          __objc_selrefs   0x100008498         rebase  0x1000017D4
+        __DATA          __objc_selrefs   0x1000084A0         rebase  0x1000018F0
+        __DATA          __objc_selrefs   0x1000084A8         rebase  0x1000017C1
+        __DATA          __objc_selrefs   0x1000084B0         rebase  0x1000017A7
+        __DATA          __objc_data      0x1000084C8         rebase  0x1000084F0
+        __DATA          __objc_data      0x1000084D0           bind  libobjc/_OBJC_CLASS_$_NSObject
+        __DATA          __objc_data      0x1000084D8           bind  libobjc/__objc_empty_cache
+        __DATA          __objc_data      0x1000084E8         rebase  0x100008220
+        __DATA          __objc_data      0x1000084F0           bind  libobjc/_OBJC_METACLASS_$_NSObject
+        __DATA          __objc_data      0x1000084F8           bind  libobjc/_OBJC_METACLASS_$_NSObject
+        __DATA          __objc_data      0x100008500           bind  libobjc/__objc_empty_cache
+        __DATA          __objc_data      0x100008510         rebase  0x100008128
+        __DATA          __objc_data      0x100008518           bind  libobjc/_OBJC_METACLASS_$_NSObject
+        __DATA          __objc_data      0x100008520         rebase  0x1000084F0
+        __DATA          __objc_data      0x100008528           bind  libobjc/__objc_empty_cache
+        __DATA          __objc_data      0x100008538         rebase  0x100008268
+        __DATA          __objc_data      0x100008540         rebase  0x100008518
+        __DATA          __objc_data      0x100008548         rebase  0x1000084C8
+        __DATA          __objc_data      0x100008550           bind  libobjc/__objc_empty_cache
+        __DATA          __objc_data      0x100008560         rebase  0x1000082F0
+        __DATA          __data           0x100008570         rebase  0x10000199D
+        __DATA          __data           0x100008580         rebase  0x1000015A8
+        __DATA          __data           0x100008590         rebase  0x1000016B0
+        __DATA          __data           0x1000085A0         rebase  0x100008000
+        __DATA          __data           0x1000085B0         rebase  0x100008048
+        __DATA          __data           0x1000085D0         rebase  0x10000198F
+        __DATA          __data           0x1000085D8         rebase  0x1000080E8
+        __DATA          __data           0x1000085E0         rebase  0x100001590
+        __DATA          __data           0x1000085F0         rebase  0x100001698
+        __DATA          __data           0x100008610         rebase  0x100008100
+--- exit=0
+
+===== /usr/bin/dyld_info -exports Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+    -exports:
+        offset      symbol
+        0x000084C8  _OBJC_CLASS_$_MachreAnimal
+        0x00008540  _OBJC_CLASS_$_MachreDog
+        0x000084F0  _OBJC_METACLASS_$_MachreAnimal
+        0x00008518  _OBJC_METACLASS_$_MachreDog
+        0x00000000  __mh_execute_header
+        0x000010AC  _main
+--- exit=0
+
+===== /usr/bin/dyld_info -imports Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+    -imports:
+      0x0000  _NSLog  (from Foundation)
+      0x0001  _OBJC_CLASS_$_NSString  (from Foundation)
+      0x0002  _objc_alloc  (from libobjc)
+      0x0003  _objc_autoreleasePoolPop  (from libobjc)
+      0x0004  _objc_autoreleasePoolPush  (from libobjc)
+      0x0005  _objc_autoreleaseReturnValue  (from libobjc)
+      0x0006  _objc_msgSend  (from libobjc)
+      0x0007  _objc_msgSendSuper2  (from libobjc)
+      0x0008  _objc_release  (from libobjc)
+      0x0009  _objc_retain  (from libobjc)
+      0x000A  _objc_retainAutoreleaseReturnValue  (from libobjc)
+      0x000B  _objc_retainAutoreleasedReturnValue  (from libobjc)
+      0x000C  _objc_setProperty_nonatomic_copy  (from libobjc)
+      0x000D  _objc_storeStrong  (from libobjc)
+      0x000E  ___CFConstantStringClassReference  (from CoreFoundation)
+      0x000F  _OBJC_CLASS_$_NSConstantArray  (from CoreFoundation)
+      0x0010  __objc_empty_cache  (from libobjc)
+      0x0011  _OBJC_CLASS_$_NSObject  (from libobjc)
+      0x0012  _OBJC_METACLASS_$_NSObject  (from libobjc)
+--- exit=0
+
+===== /usr/bin/dyld_info -objc Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+    -objc:
+        @interface MachreAnimal : NSObject <MachreGreeter>
+          0x100001064  -[MachreAnimal sound]
+          0x100000BA8  -[MachreAnimal initWithName:legs:]
+          0x100000CBC  -[MachreAnimal describe]
+          0x100000D74  -[MachreAnimal greet:]
+          0x100000E30  -[MachreAnimal name]
+          0x100000E4C  -[MachreAnimal setName:]
+          0x100000E84  -[MachreAnimal legs]
+          0x100000EA0  -[MachreAnimal setLegs:]
+          0x100000EC4  -[MachreAnimal .cxx_destruct]
+          0x100000D58  +[MachreAnimal population]
+        @end
+        @interface MachreDog : MachreAnimal 
+          0x100000EF4  -[MachreDog bark]
+          0x100000F88  -[MachreDog wave]
+          0x100000FE4  -[MachreDog tricks]
+          0x100001000  -[MachreDog setTricks:]
+          0x100001034  -[MachreDog .cxx_destruct]
+        @end
+        @interface NSString(MachreExtras)
+          0x100001080  -[NSString machreShout]
+        @end
+        @protocol NSObject : 
+          -[NSObject isEqual:]
+          -[NSObject class]
+          -[NSObject self]
+          -[NSObject performSelector:]
+          -[NSObject performSelector:withObject:]
+          -[NSObject performSelector:withObject:withObject:]
+          -[NSObject isProxy]
+          -[NSObject isKindOfClass:]
+          -[NSObject isMemberOfClass:]
+          -[NSObject conformsToProtocol:]
+          -[NSObject respondsToSelector:]
+          -[NSObject retain]
+          -[NSObject release]
+          -[NSObject autorelease]
+          -[NSObject retainCount]
+          -[NSObject zone]
+          -[NSObject hash]
+          -[NSObject superclass]
+          -[NSObject description]
+          -[NSObject debugDescription]
+        @end
+        @protocol MachreGreeter : <NSObject>
+          -[MachreGreeter greet:]
+          -[MachreGreeter wave]
+        @end
+--- exit=0
+
+===== /usr/bin/dyld_info -inits Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+    -inits:
+--- exit=0
+
+===== /usr/bin/dyld_info -function_starts Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+    -function_starts:
+        0x100000BA8  -[MachreAnimal initWithName:legs:]
+        0x100000CBC  -[MachreAnimal describe]
+        0x100000D58  +[MachreAnimal population]
+        0x100000D74  -[MachreAnimal greet:]
+        0x100000E30  -[MachreAnimal name]
+        0x100000E4C  -[MachreAnimal setName:]
+        0x100000E84  -[MachreAnimal legs]
+        0x100000EA0  -[MachreAnimal setLegs:]
+        0x100000EC4  -[MachreAnimal .cxx_destruct]
+        0x100000EF4  -[MachreDog bark]
+        0x100000F88  -[MachreDog wave]
+        0x100000FE4  -[MachreDog tricks]
+        0x100001000  -[MachreDog setTricks:]
+        0x100001034  -[MachreDog .cxx_destruct]
+        0x100001064  -[MachreAnimal(Sounds) sound]
+        0x100001080  -[NSString(MachreExtras) machreShout]
+        0x1000010AC  _main
+--- exit=0
+
+===== /usr/bin/dyld_info -validate_only Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello [arm64]:
+--- exit=0
+
+===== /usr/bin/vtool -show Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello:
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform MACOS
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool LD
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+--- exit=0
+
+===== /usr/bin/codesign -dvvv --entitlements - Hello.app =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/MacOS/Hello
+Identifier=com.machre.corpus.Hello
+Format=app bundle with Mach-O thin (arm64)
+CodeDirectory v=20400 size=336 flags=0x2(adhoc) hashes=4+3 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=299d8d10a0a1388165b948d94d22a8ef80494065
+CandidateCDHashFull sha256=299d8d10a0a1388165b948d94d22a8ef8049406551261535919d27b003413352
+Hash choices=sha256
+CMSDigest=299d8d10a0a1388165b948d94d22a8ef8049406551261535919d27b003413352
+CMSDigestType=2
+CDHash=299d8d10a0a1388165b948d94d22a8ef80494065
+Signature=adhoc
+Info.plist entries=12
+TeamIdentifier=not set
+Sealed Resources version=2 rules=13 files=1
+Internal requirements count=0 size=12
+--- exit=0
+
+===== /usr/bin/codesign -d --entitlements - --xml Hello.app =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/MacOS/Hello
+--- exit=0
+
+===== /usr/bin/codesign -d -r - Hello.app =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/MacOS/Hello
+# designated => cdhash H"299d8d10a0a1388165b948d94d22a8ef80494065"
+--- exit=0
+
+===== /usr/bin/codesign --verify --verbose=4 --strict Hello.app =====
+--prepared:/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
+--validated:/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
+Hello.app: valid on disk
+Hello.app: satisfies its Designated Requirement
+--- exit=0
+
+===== /usr/sbin/spctl -a -vv -t exec Hello.app =====
+Hello.app: rejected
+--- exit=3
+
+===== /usr/bin/xattr -l Hello.app/Contents/MacOS/Hello =====
+--- exit=0
+
+===== /usr/bin/plutil -p Hello.app/Contents/Info.plist =====
+{
+  "CFBundleDevelopmentRegion" => "en"
+  "CFBundleExecutable" => "Hello"
+  "CFBundleIdentifier" => "com.machre.corpus.Hello"
+  "CFBundleInfoDictionaryVersion" => "6.0"
+  "CFBundleName" => "Hello"
+  "CFBundlePackageType" => "APPL"
+  "CFBundleShortVersionString" => "1.0"
+  "CFBundleSupportedPlatforms" => [
+    0 => "MacOSX"
+  ]
+  "CFBundleVersion" => "1"
+  "LSMinimumSystemVersion" => "13.0"
+  "NSHumanReadableCopyright" => "machre test corpus"
+  "NSPrincipalClass" => "NSApplication"
+}
+--- exit=0
+
+===== /usr/bin/plutil -lint Hello.app/Contents/Info.plist =====
+Hello.app/Contents/Info.plist: OK
+--- exit=0
+
+===== /usr/bin/file Hello.app/Contents/Info.plist =====
+Hello.app/Contents/Info.plist: Apple binary property list
+--- exit=0
+
+===== /usr/bin/find Hello.app -type f =====
+Hello.app/Contents/_CodeSignature/CodeResources
+Hello.app/Contents/MacOS/Hello
+Hello.app/Contents/Frameworks/libhello.dylib
+Hello.app/Contents/Info.plist
+--- exit=0
+
+===== /usr/bin/codesign -dvvv Hello.app/Contents/Frameworks/libhello.dylib =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
+Identifier=libhello-55554944b088136359fc3f74998c5cfa3243722e
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=330 flags=0x2(adhoc) hashes=4+2 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=41b85e203bb8c224afbb5cc02bb4a5d28049b754
+CandidateCDHashFull sha256=41b85e203bb8c224afbb5cc02bb4a5d28049b75477288c6b5fc22ebcc00e5ca7
+Hash choices=sha256
+CMSDigest=41b85e203bb8c224afbb5cc02bb4a5d28049b75477288c6b5fc22ebcc00e5ca7
+CMSDigestType=2
+CDHash=41b85e203bb8c224afbb5cc02bb4a5d28049b754
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements count=0 size=12
+--- exit=0
+
+===== /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump --macho --objc-meta-data Hello.app/Contents/MacOS/Hello =====
+Hello.app/Contents/MacOS/Hello:
+Contents of (__DATA_CONST,__objc_classlist) section
+00000001000041d0 0x1000084c8 _OBJC_CLASS_$_MachreAnimal
+    isa        0x1000084f0 _OBJC_METACLASS_$_MachreAnimal
+    superclass 0x0 _OBJC_CLASS_$_NSObject
+    cache      0x0 __objc_empty_cache
+    vtable     0x0
+    data       0x100008220 __OBJC_CLASS_RO_$_MachreAnimal
+        flags          0x184 RO_HAS_CXX_STRUCTORS
+        instanceStart  8
+        instanceSize   24
+        reserved       0x00000000
+        ivarLayout     0x1000019a6
+        layout map:    0x01 
+        name           0x100001982 MachreAnimal
+        baseMethods    0x1000014d0 __OBJC_$_INSTANCE_METHODS_MachreAnimal(Sounds)
+            entsize 12 (relative)
+            count   9
+            name    0x6f00 (0x1000083d8 extends past end of file)
+            types   0x505 (0x1000019e1 extends past end of file)
+            imp     0xfffffb84 (0x100001064 extends past end of file)
+            name    0x6ec4 (0x1000083a8 extends past end of file)
+            types   0x5c5 (0x100001aad extends past end of file)
+            imp     0xfffff6bc (0x100000ba8 extends past end of file)
+            name    0x6ea8 (0x100008398 extends past end of file)
+            types   0x4ed (0x1000019e1 extends past end of file)
+            imp     0xfffff7c4 (0x100000cbc extends past end of file)
+            name    0x6ea4 (0x1000083a0 extends past end of file)
+            types   0x57b (0x100001a7b extends past end of file)
+            imp     0xfffff870 (0x100000d74 extends past end of file)
+            name    0x6eb8 (0x1000083c0 extends past end of file)
+            types   0x4d5 (0x1000019e1 extends past end of file)
+            imp     0xfffff920 (0x100000e30 extends past end of file)
+            name    0x6ee4 (0x1000083f8 extends past end of file)
+            types   0x5a3 (0x100001abb extends past end of file)
+            imp     0xfffff930 (0x100000e4c extends past end of file)
+            name    0x6e90 (0x1000083b0 extends past end of file)
+            types   0x4a2 (0x1000019c6 extends past end of file)
+            imp     0xfffff95c (0x100000e84 extends past end of file)
+            name    0x6ed4 (0x100008400 extends past end of file)
+            types   0x596 (0x100001ac6 extends past end of file)
+            imp     0xfffff96c (0x100000ea0 extends past end of file)
+            name    0x6ed0 (0x100008408 extends past end of file)
+            types   0x54a (0x100001a86 extends past end of file)
+            imp     0xfffff984 (0x100000ec4 extends past end of file)
+        baseProtocols  0x100008110 __OBJC_CLASS_PROTOCOLS_$_MachreAnimal
+            count    1
+            list[0]  0x1000085c8 __OBJC_PROTOCOL_$_MachreGreeter
+                isa       0x0
+                name      0x10000198f MachreGreeter
+                protocols 0x1000080e8 __OBJC_$_PROTOCOL_REFS_MachreGreeter
+                    count    1
+                    list[0]  0x100008568 __OBJC_PROTOCOL_$_NSObject
+                        isa       0x0
+                        name      0x10000199d NSObject
+                        protocols 0x0
+                        instanceMethods 0x1000015a8 __OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+                            entsize 12 (relative)
+                            count   19
+                            name    0x6e68 (0x100008418 extends past end of file)
+                            types   0x41a (0x1000019ce extends past end of file)
+                            imp     0x0
+                            name    0x6e64 (0x100008420 extends past end of file)
+                            types   0x419 (0x1000019d9 extends past end of file)
+                            imp     0x0
+                            name    0x6e60 (0x100008428 extends past end of file)
+                            types   0x415 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                            name    0x6e5c (0x100008430 extends past end of file)
+                            types   0x411 (0x1000019e9 extends past end of file)
+                            imp     0x0
+                            name    0x6e58 (0x100008438 extends past end of file)
+                            types   0x410 (0x1000019f4 extends past end of file)
+                            imp     0x0
+                            name    0x6e54 (0x100008440 extends past end of file)
+                            types   0x412 (0x100001a02 extends past end of file)
+                            imp     0x0
+                            name    0x6e50 (0x100008448 extends past end of file)
+                            types   0x417 (0x100001a13 extends past end of file)
+                            imp     0x0
+                            name    0x6e4c (0x100008450 extends past end of file)
+                            types   0x413 (0x100001a1b extends past end of file)
+                            imp     0x0
+                            name    0x6e48 (0x100008458 extends past end of file)
+                            types   0x407 (0x100001a1b extends past end of file)
+                            imp     0x0
+                            name    0x6e44 (0x100008460 extends past end of file)
+                            types   0x3ae (0x1000019ce extends past end of file)
+                            imp     0x0
+                            name    0x6e40 (0x100008468 extends past end of file)
+                            types   0x3fa (0x100001a26 extends past end of file)
+                            imp     0x0
+                            name    0x6e3c (0x100008470 extends past end of file)
+                            types   0x3a9 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                            name    0x6e38 (0x100008478 extends past end of file)
+                            types   0x3ed (0x100001a31 extends past end of file)
+                            imp     0x0
+                            name    0x6e34 (0x100008480 extends past end of file)
+                            types   0x391 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                            name    0x6e30 (0x100008488 extends past end of file)
+                            types   0x3de (0x100001a3a extends past end of file)
+                            imp     0x0
+                            name    0x6e2c (0x100008490 extends past end of file)
+                            types   0x3da (0x100001a42 extends past end of file)
+                            imp     0x0
+                            name    0x6e28 (0x100008498 extends past end of file)
+                            types   0x3c6 (0x100001a3a extends past end of file)
+                            imp     0x0
+                            name    0x6e24 (0x1000084a0 extends past end of file)
+                            types   0x359 (0x1000019d9 extends past end of file)
+                            imp     0x0
+                            name    0x6e20 (0x1000084a8 extends past end of file)
+                            types   0x355 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                        classMethods 0x0
+                        optionalInstanceMethods 0x1000016b0 __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+                            entsize 12 (relative)
+                            count   1
+                            name    0x6df8 (0x1000084b0 extends past end of file)
+                            types   0x325 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                        optionalClassMethods 0x0
+                        instanceProperties 0x100008000 __OBJC_$_PROP_LIST_NSObject
+                            entsize    16
+                            count      4
+                            name       0x1000017d4 hash
+                            attributes 0x100001754 TQ,R
+                            name       0x1000018f0 superclass
+                            attributes 0x1000016cc T#,R
+                            name       0x1000017c1 description
+                            attributes 0x100001743 T@"NSString",R,C
+                            name       0x1000017a7 debugDescription
+                            attributes 0x1000016d9 T@"NSString",?,R,C
+                instanceMethods 0x100001590 __OBJC_$_PROTOCOL_INSTANCE_METHODS_MachreGreeter
+                    entsize 12 (relative)
+                    count   1
+                    name    0x6e08 (0x1000083a0 extends past end of file)
+                    types   0x4df (0x100001a7b extends past end of file)
+                    imp     0x0
+                classMethods 0x0
+                optionalInstanceMethods 0x100001698 __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_MachreGreeter
+                    entsize 12 (relative)
+                    count   1
+                    name    0x6d70 (0x100008410 extends past end of file)
+                    types   0x3e2 (0x100001a86 extends past end of file)
+                    imp     0x0
+                optionalClassMethods 0x0
+                instanceProperties 0x0
+        ivars          0x100008170 __OBJC_$_INSTANCE_VARIABLES_MachreAnimal
+            entsize   32
+            count     2
+            offset    0x1000084b8 _OBJC_IVAR_$_MachreAnimal._name 8
+            name      0x10000176b _name
+            type      0x100001ad1 @"NSString"
+            alignment 3
+            size      8
+            offset    0x1000084bc _OBJC_IVAR_$_MachreAnimal._legs 16
+            name      0x100001765 _legs
+            type      0x100001add q
+            alignment 3
+            size      8
+        weakIvarLayout 0x0
+        baseProperties 0x1000081b8 __OBJC_$_PROP_LIST_MachreAnimal
+            entsize    16
+            count      6
+            name       0x10000182b name
+            attributes 0x10000172b T@"NSString",C,N,V_name
+            name       0x10000181a legs
+            attributes 0x100001759 Tq,N,V_legs
+            name       0x1000017d4 hash
+            attributes 0x100001754 TQ,R
+            name       0x1000018f0 superclass
+            attributes 0x1000016cc T#,R
+            name       0x1000017c1 description
+            attributes 0x100001743 T@"NSString",R,C
+            name       0x1000017a7 debugDescription
+            attributes 0x1000016d9 T@"NSString",?,R,C
+Meta Class
+    isa        0x0 _OBJC_METACLASS_$_NSObject
+    superclass 0x0 _OBJC_METACLASS_$_NSObject
+    cache      0x0 __objc_empty_cache
+    vtable     0x0
+    data       0x100008128 __OBJC_METACLASS_RO_$_MachreAnimal
+        flags          0x185 RO_META RO_HAS_CXX_STRUCTORS
+        instanceStart  40
+        instanceSize   40
+        reserved       0x00000000
+        ivarLayout     0x0
+        name           0x100001982 MachreAnimal
+        baseMethods    0x1000014b8 __OBJC_$_CLASS_METHODS_MachreAnimal
+            entsize 12 (relative)
+            count   1
+            name    0x6f08 (0x1000083c8 extends past end of file)
+            types   0x502 (0x1000019c6 extends past end of file)
+            imp     0xfffff890 (0x100000d58 extends past end of file)
+        baseProtocols  0x100008110 __OBJC_CLASS_PROTOCOLS_$_MachreAnimal
+            count    1
+            list[0]  0x1000085c8 __OBJC_PROTOCOL_$_MachreGreeter
+                isa       0x0
+                name      0x10000198f MachreGreeter
+                protocols 0x1000080e8 __OBJC_$_PROTOCOL_REFS_MachreGreeter
+                    count    1
+                    list[0]  0x100008568 __OBJC_PROTOCOL_$_NSObject
+                        isa       0x0
+                        name      0x10000199d NSObject
+                        protocols 0x0
+                        instanceMethods 0x1000015a8 __OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+                            entsize 12 (relative)
+                            count   19
+                            name    0x6e68 (0x100008418 extends past end of file)
+                            types   0x41a (0x1000019ce extends past end of file)
+                            imp     0x0
+                            name    0x6e64 (0x100008420 extends past end of file)
+                            types   0x419 (0x1000019d9 extends past end of file)
+                            imp     0x0
+                            name    0x6e60 (0x100008428 extends past end of file)
+                            types   0x415 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                            name    0x6e5c (0x100008430 extends past end of file)
+                            types   0x411 (0x1000019e9 extends past end of file)
+                            imp     0x0
+                            name    0x6e58 (0x100008438 extends past end of file)
+                            types   0x410 (0x1000019f4 extends past end of file)
+                            imp     0x0
+                            name    0x6e54 (0x100008440 extends past end of file)
+                            types   0x412 (0x100001a02 extends past end of file)
+                            imp     0x0
+                            name    0x6e50 (0x100008448 extends past end of file)
+                            types   0x417 (0x100001a13 extends past end of file)
+                            imp     0x0
+                            name    0x6e4c (0x100008450 extends past end of file)
+                            types   0x413 (0x100001a1b extends past end of file)
+                            imp     0x0
+                            name    0x6e48 (0x100008458 extends past end of file)
+                            types   0x407 (0x100001a1b extends past end of file)
+                            imp     0x0
+                            name    0x6e44 (0x100008460 extends past end of file)
+                            types   0x3ae (0x1000019ce extends past end of file)
+                            imp     0x0
+                            name    0x6e40 (0x100008468 extends past end of file)
+                            types   0x3fa (0x100001a26 extends past end of file)
+                            imp     0x0
+                            name    0x6e3c (0x100008470 extends past end of file)
+                            types   0x3a9 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                            name    0x6e38 (0x100008478 extends past end of file)
+                            types   0x3ed (0x100001a31 extends past end of file)
+                            imp     0x0
+                            name    0x6e34 (0x100008480 extends past end of file)
+                            types   0x391 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                            name    0x6e30 (0x100008488 extends past end of file)
+                            types   0x3de (0x100001a3a extends past end of file)
+                            imp     0x0
+                            name    0x6e2c (0x100008490 extends past end of file)
+                            types   0x3da (0x100001a42 extends past end of file)
+                            imp     0x0
+                            name    0x6e28 (0x100008498 extends past end of file)
+                            types   0x3c6 (0x100001a3a extends past end of file)
+                            imp     0x0
+                            name    0x6e24 (0x1000084a0 extends past end of file)
+                            types   0x359 (0x1000019d9 extends past end of file)
+                            imp     0x0
+                            name    0x6e20 (0x1000084a8 extends past end of file)
+                            types   0x355 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                        classMethods 0x0
+                        optionalInstanceMethods 0x1000016b0 __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+                            entsize 12 (relative)
+                            count   1
+                            name    0x6df8 (0x1000084b0 extends past end of file)
+                            types   0x325 (0x1000019e1 extends past end of file)
+                            imp     0x0
+                        optionalClassMethods 0x0
+                        instanceProperties 0x100008000 __OBJC_$_PROP_LIST_NSObject
+                            entsize    16
+                            count      4
+                            name       0x1000017d4 hash
+                            attributes 0x100001754 TQ,R
+                            name       0x1000018f0 superclass
+                            attributes 0x1000016cc T#,R
+                            name       0x1000017c1 description
+                            attributes 0x100001743 T@"NSString",R,C
+                            name       0x1000017a7 debugDescription
+                            attributes 0x1000016d9 T@"NSString",?,R,C
+                instanceMethods 0x100001590 __OBJC_$_PROTOCOL_INSTANCE_METHODS_MachreGreeter
+                    entsize 12 (relative)
+                    count   1
+                    name    0x6e08 (0x1000083a0 extends past end of file)
+                    types   0x4df (0x100001a7b extends past end of file)
+                    imp     0x0
+                classMethods 0x0
+                optionalInstanceMethods 0x100001698 __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_MachreGreeter
+                    entsize 12 (relative)
+                    count   1
+                    name    0x6d70 (0x100008410 extends past end of file)
+                    types   0x3e2 (0x100001a86 extends past end of file)
+                    imp     0x0
+                optionalClassMethods 0x0
+                instanceProperties 0x0
+        ivars          0x0
+        weakIvarLayout 0x0
+        baseProperties 0x0
+00000001000041d8 0x100008540 _OBJC_CLASS_$_MachreDog
+    isa        0x100008518 _OBJC_METACLASS_$_MachreDog
+    superclass 0x1000084c8 _OBJC_CLASS_$_MachreAnimal
+    cache      0x0 __objc_empty_cache
+    vtable     0x0
+    data       0x1000082f0 __OBJC_CLASS_RO_$_MachreDog
+        flags          0x184 RO_HAS_CXX_STRUCTORS
+        instanceStart  24
+        instanceSize   32
+        reserved       0x00000000
+        ivarLayout     0x1000019a6
+        layout map:    0x01 
+        name           0x1000019a8 MachreDog
+        baseMethods    0x100001548 __OBJC_$_INSTANCE_METHODS_MachreDog
+            entsize 12 (relative)
+            count   5
+            name    0x6e30 (0x100008380 extends past end of file)
+            types   0x532 (0x100001a86 extends past end of file)
+            imp     0xfffff99c (0x100000ef4 extends past end of file)
+            name    0x6eb4 (0x100008410 extends past end of file)
+            types   0x526 (0x100001a86 extends past end of file)
+            imp     0xfffffa24 (0x100000f88 extends past end of file)
+            name    0x6e80 (0x1000083e8 extends past end of file)
+            types   0x475 (0x1000019e1 extends past end of file)
+            imp     0xfffffa74 (0x100000fe4 extends past end of file)
+            name    0x6e5c (0x1000083d0 extends past end of file)
+            types   0x543 (0x100001abb extends past end of file)
+            imp     0xfffffa84 (0x100001000 extends past end of file)
+            name    0x6e88 (0x100008408 extends past end of file)
+            types   0x502 (0x100001a86 extends past end of file)
+            imp     0xfffffaac (0x100001034 extends past end of file)
+        baseProtocols  0x0
+        ivars          0x1000082b0 __OBJC_$_INSTANCE_VARIABLES_MachreDog
+            entsize   32
+            count     1
+            offset    0x1000084c0 _OBJC_IVAR_$_MachreDog._tricks 24
+            name      0x1000016c4 _tricks
+            type      0x100001adf @"NSArray"
+            alignment 3
+            size      8
+        weakIvarLayout 0x0
+        baseProperties 0x1000082d8 __OBJC_$_PROP_LIST_MachreDog
+            entsize    16
+            count      1
+            name       0x1000018fb tricks
+            attributes 0x100001702 T@"NSArray",&,N,V_tricks
+Meta Class
+    isa        0x0 _OBJC_METACLASS_$_NSObject
+    superclass 0x1000084f0 _OBJC_METACLASS_$_MachreAnimal
+    cache      0x0 __objc_empty_cache
+    vtable     0x0
+    data       0x100008268 __OBJC_METACLASS_RO_$_MachreDog
+        flags          0x185 RO_META RO_HAS_CXX_STRUCTORS
+        instanceStart  40
+        instanceSize   40
+        reserved       0x00000000
+        ivarLayout     0x0
+        name           0x1000019a8 MachreDog
+        baseMethods    0x0
+        baseProtocols  0x0
+        ivars          0x0
+        weakIvarLayout 0x0
+        baseProperties 0x0
+Contents of (__DATA_CONST,__objc_superrefs) section
+0000000100004200 0x1000084c8 _OBJC_CLASS_$_MachreAnimal
+Contents of (__DATA_CONST,__objc_catlist) section
+00000001000041e0 0x100008338 __OBJC_$_CATEGORY_NSString_$_MachreExtras
+    name      0x1000019b9 MachreExtras
+    cls       0x0 _OBJC_CLASS_$_NSString
+    instanceMethods 0x1000014a0 __OBJC_$_CATEGORY_INSTANCE_METHODS_NSString_$_MachreExtras
+        entsize 12 (relative)
+        count   1
+        name    0x6f10 (0x1000083b8 extends past end of file)
+        types   0x535 (0x1000019e1 extends past end of file)
+        imp     0xfffffbd0 (0x100001080 extends past end of file)
+    classMethods 0x0
+    protocols 0x0
+    instanceProperties 0x0
+Contents of (__DATA_CONST,__objc_protolist) section
+00000001000041e8 0x100008568 __OBJC_PROTOCOL_$_NSObject
+    isa       0x0
+    name      0x10000199d NSObject
+    protocols 0x0
+    instanceMethods 0x1000015a8 __OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+        entsize 12 (relative)
+        count   19
+        name    0x6e68 (0x100008418 extends past end of file)
+        types   0x41a (0x1000019ce extends past end of file)
+        imp     0x0
+        name    0x6e64 (0x100008420 extends past end of file)
+        types   0x419 (0x1000019d9 extends past end of file)
+        imp     0x0
+        name    0x6e60 (0x100008428 extends past end of file)
+        types   0x415 (0x1000019e1 extends past end of file)
+        imp     0x0
+        name    0x6e5c (0x100008430 extends past end of file)
+        types   0x411 (0x1000019e9 extends past end of file)
+        imp     0x0
+        name    0x6e58 (0x100008438 extends past end of file)
+        types   0x410 (0x1000019f4 extends past end of file)
+        imp     0x0
+        name    0x6e54 (0x100008440 extends past end of file)
+        types   0x412 (0x100001a02 extends past end of file)
+        imp     0x0
+        name    0x6e50 (0x100008448 extends past end of file)
+        types   0x417 (0x100001a13 extends past end of file)
+        imp     0x0
+        name    0x6e4c (0x100008450 extends past end of file)
+        types   0x413 (0x100001a1b extends past end of file)
+        imp     0x0
+        name    0x6e48 (0x100008458 extends past end of file)
+        types   0x407 (0x100001a1b extends past end of file)
+        imp     0x0
+        name    0x6e44 (0x100008460 extends past end of file)
+        types   0x3ae (0x1000019ce extends past end of file)
+        imp     0x0
+        name    0x6e40 (0x100008468 extends past end of file)
+        types   0x3fa (0x100001a26 extends past end of file)
+        imp     0x0
+        name    0x6e3c (0x100008470 extends past end of file)
+        types   0x3a9 (0x1000019e1 extends past end of file)
+        imp     0x0
+        name    0x6e38 (0x100008478 extends past end of file)
+        types   0x3ed (0x100001a31 extends past end of file)
+        imp     0x0
+        name    0x6e34 (0x100008480 extends past end of file)
+        types   0x391 (0x1000019e1 extends past end of file)
+        imp     0x0
+        name    0x6e30 (0x100008488 extends past end of file)
+        types   0x3de (0x100001a3a extends past end of file)
+        imp     0x0
+        name    0x6e2c (0x100008490 extends past end of file)
+        types   0x3da (0x100001a42 extends past end of file)
+        imp     0x0
+        name    0x6e28 (0x100008498 extends past end of file)
+        types   0x3c6 (0x100001a3a extends past end of file)
+        imp     0x0
+        name    0x6e24 (0x1000084a0 extends past end of file)
+        types   0x359 (0x1000019d9 extends past end of file)
+        imp     0x0
+        name    0x6e20 (0x1000084a8 extends past end of file)
+        types   0x355 (0x1000019e1 extends past end of file)
+        imp     0x0
+    classMethods 0x0
+    optionalInstanceMethods 0x1000016b0 __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+        entsize 12 (relative)
+        count   1
+        name    0x6df8 (0x1000084b0 extends past end of file)
+        types   0x325 (0x1000019e1 extends past end of file)
+        imp     0x0
+    optionalClassMethods 0x0
+    instanceProperties 0x100008000 __OBJC_$_PROP_LIST_NSObject
+        entsize    16
+        count      4
+        name       0x1000017d4 hash
+        attributes 0x100001754 TQ,R
+        name       0x1000018f0 superclass
+        attributes 0x1000016cc T#,R
+        name       0x1000017c1 description
+        attributes 0x100001743 T@"NSString",R,C
+        name       0x1000017a7 debugDescription
+        attributes 0x1000016d9 T@"NSString",?,R,C
+00000001000041f0 0x1000085c8 __OBJC_PROTOCOL_$_MachreGreeter
+    isa       0x0
+    name      0x10000198f MachreGreeter
+    protocols 0x1000080e8 __OBJC_$_PROTOCOL_REFS_MachreGreeter
+        count    1
+        list[0]  0x100008568 __OBJC_PROTOCOL_$_NSObject
+            isa       0x0
+            name      0x10000199d NSObject
+            protocols 0x0
+            instanceMethods 0x1000015a8 __OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+                entsize 12 (relative)
+                count   19
+                name    0x6e68 (0x100008418 extends past end of file)
+                types   0x41a (0x1000019ce extends past end of file)
+                imp     0x0
+                name    0x6e64 (0x100008420 extends past end of file)
+                types   0x419 (0x1000019d9 extends past end of file)
+                imp     0x0
+                name    0x6e60 (0x100008428 extends past end of file)
+                types   0x415 (0x1000019e1 extends past end of file)
+                imp     0x0
+                name    0x6e5c (0x100008430 extends past end of file)
+                types   0x411 (0x1000019e9 extends past end of file)
+                imp     0x0
+                name    0x6e58 (0x100008438 extends past end of file)
+                types   0x410 (0x1000019f4 extends past end of file)
+                imp     0x0
+                name    0x6e54 (0x100008440 extends past end of file)
+                types   0x412 (0x100001a02 extends past end of file)
+                imp     0x0
+                name    0x6e50 (0x100008448 extends past end of file)
+                types   0x417 (0x100001a13 extends past end of file)
+                imp     0x0
+                name    0x6e4c (0x100008450 extends past end of file)
+                types   0x413 (0x100001a1b extends past end of file)
+                imp     0x0
+                name    0x6e48 (0x100008458 extends past end of file)
+                types   0x407 (0x100001a1b extends past end of file)
+                imp     0x0
+                name    0x6e44 (0x100008460 extends past end of file)
+                types   0x3ae (0x1000019ce extends past end of file)
+                imp     0x0
+                name    0x6e40 (0x100008468 extends past end of file)
+                types   0x3fa (0x100001a26 extends past end of file)
+                imp     0x0
+                name    0x6e3c (0x100008470 extends past end of file)
+                types   0x3a9 (0x1000019e1 extends past end of file)
+                imp     0x0
+                name    0x6e38 (0x100008478 extends past end of file)
+                types   0x3ed (0x100001a31 extends past end of file)
+                imp     0x0
+                name    0x6e34 (0x100008480 extends past end of file)
+                types   0x391 (0x1000019e1 extends past end of file)
+                imp     0x0
+                name    0x6e30 (0x100008488 extends past end of file)
+                types   0x3de (0x100001a3a extends past end of file)
+                imp     0x0
+                name    0x6e2c (0x100008490 extends past end of file)
+                types   0x3da (0x100001a42 extends past end of file)
+                imp     0x0
+                name    0x6e28 (0x100008498 extends past end of file)
+                types   0x3c6 (0x100001a3a extends past end of file)
+                imp     0x0
+                name    0x6e24 (0x1000084a0 extends past end of file)
+                types   0x359 (0x1000019d9 extends past end of file)
+                imp     0x0
+                name    0x6e20 (0x1000084a8 extends past end of file)
+                types   0x355 (0x1000019e1 extends past end of file)
+                imp     0x0
+            classMethods 0x0
+            optionalInstanceMethods 0x1000016b0 __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+                entsize 12 (relative)
+                count   1
+                name    0x6df8 (0x1000084b0 extends past end of file)
+                types   0x325 (0x1000019e1 extends past end of file)
+                imp     0x0
+            optionalClassMethods 0x0
+            instanceProperties 0x100008000 __OBJC_$_PROP_LIST_NSObject
+                entsize    16
+                count      4
+                name       0x1000017d4 hash
+                attributes 0x100001754 TQ,R
+                name       0x1000018f0 superclass
+                attributes 0x1000016cc T#,R
+                name       0x1000017c1 description
+                attributes 0x100001743 T@"NSString",R,C
+                name       0x1000017a7 debugDescription
+                attributes 0x1000016d9 T@"NSString",?,R,C
+    instanceMethods 0x100001590 __OBJC_$_PROTOCOL_INSTANCE_METHODS_MachreGreeter
+        entsize 12 (relative)
+        count   1
+        name    0x6e08 (0x1000083a0 extends past end of file)
+        types   0x4df (0x100001a7b extends past end of file)
+        imp     0x0
+    classMethods 0x0
+    optionalInstanceMethods 0x100001698 __OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_MachreGreeter
+        entsize 12 (relative)
+        count   1
+        name    0x6d70 (0x100008410 extends past end of file)
+        types   0x3e2 (0x100001a86 extends past end of file)
+        imp     0x0
+    optionalClassMethods 0x0
+    instanceProperties 0x0
+Contents of (__DATA,__objc_selrefs) section
+     0x1000017d9 init
+     0x10000177d bark
+     0x10000179c copy
+     0x1000017a1 count
+     0x1000017b8 describe
+     0x1000017cd greet:
+     0x1000017de initWithName:legs:
+     0x10000181a legs
+     0x10000181f machreShout
+     0x10000182b name
+     0x100001884 population
+     0x1000018cd setTricks:
+     0x1000018d8 sound
+     0x1000018de stringWithFormat:
+     0x1000018fb tricks
+     0x10000171b uppercaseString
+     0x1000018c4 setName:
+     0x1000018bb setLegs:
+     0x1000016ec .cxx_destruct
+     0x100001902 wave
+     0x1000017f1 isEqual:
+     0x100001782 class
+     0x1000018b6 self
+     0x100001830 performSelector:
+     0x100001841 performSelector:withObject:
+     0x10000185d performSelector:withObject:withObject:
+     0x1000016fa isProxy
+     0x1000017fa isKindOfClass:
+     0x100001809 isMemberOfClass:
+     0x100001788 conformsToProtocol:
+     0x10000188f respondsToSelector:
+     0x1000018a3 retain
+     0x1000016d1 release
+     0x100001771 autorelease
+     0x1000018aa retainCount
+     0x100001907 zone
+     0x1000017d4 hash
+     0x1000018f0 superclass
+     0x1000017c1 description
+     0x1000017a7 debugDescription
+Contents of (__DATA_CONST,__objc_imageinfo) section
+    version 0
+    flags   0x40 OBJC_IMAGE_HAS_CATEGORY_CLASS_PROPERTIES
+--- exit=0
+
+===== /usr/bin/strings -n 6 | head -200 =====
+_tricks
+release
+T@"NSString",?,R,C
+.cxx_destruct
+isProxy
+T@"NSArray",&,N,V_tricks
+uppercaseString
+T@"NSString",C,N,V_name
+T@"NSString",R,C
+Tq,N,V_legs
+autorelease
+conformsToProtocol:
+debugDescription
+describe
+description
+greet:
+initWithName:legs:
+isEqual:
+isKindOfClass:
+isMemberOfClass:
+machreShout
+performSelector:
+performSelector:withObject:
+performSelector:withObject:withObject:
+population
+respondsToSelector:
+retain
+retainCount
+setLegs:
+setName:
+setTricks:
+stringWithFormat:
+superclass
+tricks
+%@ has %ld legs
+%@ greets %@
+%@: woof (%lu tricks)
+%@ wags
+generic
+%@ / %@ / %@ / %@ / pop=%ld
+MachreAnimal
+MachreGreeter
+NSObject
+MachreDog
+Sounds
+MachreExtras
+q16@0:8
+B24@0:8@16
+#16@0:8
+@16@0:8
+@24@0:8:16
+@32@0:8:16@24
+@40@0:8:16@24@32
+B16@0:8
+B24@0:8#16
+B24@0:8:16
+Vv16@0:8
+Q16@0:8
+^{_NSZone=}16@0:8
+B24@0:8@"Protocol"16
+@"NSString"16@0:8
+@24@0:8@16
+v16@0:8
+@"NSString"24@0:8@"NSString"16
+@32@0:8@16q24
+v24@0:8@16
+v24@0:8q16
+@"NSString"
+@"NSArray"
+--- exit=0

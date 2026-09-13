@@ -1,0 +1,48 @@
+Executable=<corpus>/hello-entitled
+Identifier=com.machre.corpus.hello-entitled
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=473 flags=0x2(adhoc) hashes=4+7 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=43dad8517620dc4a94fe35dc2abe6481fd2148ca
+CandidateCDHashFull sha256=43dad8517620dc4a94fe35dc2abe6481fd2148caefc132f56d2a41daf2c09b4b
+Hash choices=sha256
+CMSDigest=43dad8517620dc4a94fe35dc2abe6481fd2148caefc132f56d2a41daf2c09b4b
+CMSDigestType=2
+CDHash=43dad8517620dc4a94fe35dc2abe6481fd2148ca
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements count=0 size=12
+--- machre: embedded signature (LC_CODE_SIGNATURE dataoff=49888 datasize=19312) ---
+SuperBlob magic=0xfade0cc0 length=1308 count=5
+  slot 0x0     CodeDirectory     offset 52     length 473    magic 0xfade0c02
+  slot 0x2     Requirements      offset 525    length 12     magic 0xfade0c01
+  slot 0x5     Entitlements      offset 537    length 514    magic 0xfade7171
+  slot 0x7     DER entitlements  offset 1051   length 249    magic 0xfade7172
+  slot 0x10000 CMS signature     offset 1300   length 8      magic 0xfade0b01
+CodeDirectory page size=16384 (2^14)  code limit=49888  code slots=4  special slots=7  platform=0
+  exec segment base=0x0 limit=0x4000 flags=0x1 (main-binary)
+  page hashes: 4/4 match the file on disk
+  -1  Info.plist            0000000000000000000000000000000000000000000000000000000000000000  not bound
+  -2  Requirements          987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986  verified
+  -3  Resource Directory    0000000000000000000000000000000000000000000000000000000000000000  not bound
+  -4  Application Specific  0000000000000000000000000000000000000000000000000000000000000000  not bound
+  -5  Entitlements          f89d7d4d712053e0a402f41b0ec8f200b68a927123c9acb95071884daaf9176e  verified
+  -6  Rep Specific          0000000000000000000000000000000000000000000000000000000000000000  not bound
+  -7  DER Entitlements      5105adb66b7d432f459ffe055dc4f72b760035b889741681e08a043b25e30aa7  verified
+  0  0x0     7959c247b897502cabe1406569ce38c27c0d9810d3b0047af338f59b80541283
+  1  0x4000  d298e7936c9161f5e4aed7922e0e000d7c04985e827ca1b8b64937374bc7fb30
+  2  0x8000  d9331cfab00b69ab4be9b8d12734708b0f3368ac144d1c50240f448c52c1c63a
+  3  0xc000  653cb5487c68b9fac749cedca043ca92b1c266fcad65482fa38a946f263be759
+Designated requirement (synthesized, empty requirements blob):
+  designated => cdhash H"43dad8517620dc4a94fe35dc2abe6481fd2148ca"
+Entitlements: 5 keys (source both, XML payload 506 B, DER blob 249 B, DER == XML)
+  com.apple.application-identifier
+  com.apple.security.cs.allow-jit   [dangerous: writable+executable memory is allowed]
+  com.apple.security.cs.disable-library-validation   [dangerous: any signed library may be loaded into the process (injection)]
+  com.apple.security.get-task-allow   [dangerous: any process may attach a debugger and read/write memory]
+  com.apple.security.network.client
+Certificates: none (no CMS blob)
+Security.framework: not evaluated (--no-security); offline ladder (unverified): AD HOC
+  diagnostics  none

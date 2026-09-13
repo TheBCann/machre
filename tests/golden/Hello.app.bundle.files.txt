@@ -1,0 +1,21 @@
+tests/corpus/Hello.app: app bundle, 4 files, 143079 bytes
+  identifier   com.machre.corpus.Hello
+  package      APPL
+  executable   Contents/MacOS/Hello
+  info.plist   Contents/Info.plist   bplist   12 entries
+  version      1   short 1.0   min system 13.0
+  principal    NSApplication
+  flags        none
+  nested code  1
+    Contents/Frameworks/libhello.dylib  dylib  arm64  41b85e203bb8c224afbb5cc02bb4a5d28049b754  41b85e203bb8c224afbb5cc02bb4a5d28049b754  yes
+    Contents/Frameworks/libhello.dylib: cdhash H"41b85e203bb8c224afbb5cc02bb4a5d28049b754"
+  resources    Sealed Resources version=2 rules=13 files=1
+  verify       ok   1 checked, 0 mismatched, 0 missing, 0 unsealed
+  ticket       none
+  profile      none
+  security     not evaluated (--no-security)
+  files        4 of 9 entries
+     2437  Contents/_CodeSignature/CodeResources
+    72272  Contents/MacOS/Hello
+    67872  Contents/Frameworks/libhello.dylib
+      498  Contents/Info.plist

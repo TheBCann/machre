@@ -1,0 +1,4 @@
+  strings      3 shown of 3 (min 4)
+    0x100000668  __TEXT,__cstring  cstring  plain   hello from machre corpus
+    0x100000681  __TEXT,__cstring  cstring  format  %s (%d args)
+    0x10000068e  __TEXT,__cstring  cstring  plain   exit

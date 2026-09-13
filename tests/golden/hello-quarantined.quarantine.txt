@@ -1,0 +1,10 @@
+hello-quarantined: 1 extended attribute
+  xattrs       com.apple.quarantine
+  quarantine   0083;68c3a1b2;Safari;9B2E1C3A-5F4D-4E6B-8A7C-1D2E3F4A5B6C
+  flags        0x0083
+  timestamp    2025-09-12T04:29:38Z (unix 1757651378)
+  agent        Safari
+  uuid         9B2E1C3A-5F4D-4E6B-8A7C-1D2E3F4A5B6C
+  translocated no
+  provenance   no
+  diagnostics  none

@@ -1,0 +1,28 @@
+legacy-bind: 15 symbols (6 defined, 9 undefined, 0 stabs, 13 external, 2 local)
+   0  0x100000608  t  section    (__TEXT,__text)  0x0000             _cmp_int
+   1  0x100008070  d  section    (__DATA,__data)  0x0000             __dyld_private
+   2  0x100000000  T  section    (__TEXT,__text)  0x0010             __mh_execute_header
+   3  0x100000630  T  section    (__TEXT,__text)  0x0000             _main
+   4  0x100008048  D  section    (__DATA,__data)  0x0000             _names
+   5  0x100008020  D  section    (__DATA,__data)  0x0000             _table
+   6  0x0          U  undefined  (undefined)      0x0100  libSystem  ___stack_chk_fail
+   7  0x0          U  undefined  (undefined)      0x0100  libSystem  ___stack_chk_guard
+   8  0x0          U  undefined  (undefined)      0x0100  libSystem  _free
+   9  0x0          U  undefined  (undefined)      0x0100  libSystem  _malloc
+  10  0x0          U  undefined  (undefined)      0x0100  libSystem  _printf
+  11  0x0          U  undefined  (undefined)      0x0100  libSystem  _puts
+  12  0x0          U  undefined  (undefined)      0x0100  libSystem  _qsort
+  13  0x0          U  undefined  (undefined)      0x0100  libSystem  _strlen
+  14  0x0          U  undefined  (undefined)      0x0100  libSystem  dyld_stub_binder
+  indirect     10 entries (declared 10)
+    0  __TEXT,__stubs           6  ___stack_chk_fail
+    1  __TEXT,__stubs          10  _printf
+    2  __TEXT,__stubs          12  _qsort
+    3  __TEXT,__stubs          13  _strlen
+    4  __DATA_CONST,__got       7  ___stack_chk_guard
+    5  __DATA_CONST,__got      14  dyld_stub_binder
+    6  __DATA,__la_symbol_ptr   6  ___stack_chk_fail
+    7  __DATA,__la_symbol_ptr  10  _printf
+    8  __DATA,__la_symbol_ptr  12  _qsort
+    9  __DATA,__la_symbol_ptr  13  _strlen
+  diagnostics  none

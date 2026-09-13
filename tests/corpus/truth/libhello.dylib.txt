@@ -1,0 +1,617 @@
+# machre corpus ground truth for libhello.dylib
+# generated 2026-09-12T08:24:06Z on 26.3 (25D125) by gen/truth.sh
+# macho=libhello.dylib bundle=none
+
+===== /usr/bin/file libhello.dylib =====
+libhello.dylib: Mach-O 64-bit dynamically linked shared library arm64
+--- exit=0
+
+===== /usr/bin/stat -f size=%z mode=%Mp%Lp libhello.dylib =====
+size=50016 mode=0755
+--- exit=0
+
+===== /usr/bin/shasum -a 256 libhello.dylib =====
+f103de690e44fb1571225261ce28f78406a28cbb51abad9ec9dd7d02e67ba60b  libhello.dylib
+--- exit=0
+
+===== /usr/bin/otool -hv libhello.dylib =====
+libhello.dylib:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64    ARM64        ALL  0x00       DYLIB    17       1168   NOUNDEFS DYLDLINK TWOLEVEL NO_REEXPORTED_DYLIBS
+--- exit=0
+
+===== /usr/bin/otool -h -l libhello.dylib =====
+libhello.dylib:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777228          0  0x00           6    17       1168 0x00100085
+Load command 0
+      cmd LC_SEGMENT_64
+  cmdsize 392
+  segname __TEXT
+   vmaddr 0x0000000000000000
+   vmsize 0x0000000000004000
+  fileoff 0
+ filesize 16384
+  maxprot 0x00000005
+ initprot 0x00000005
+   nsects 4
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x00000000000004d0
+      size 0x0000000000000080
+    offset 1232
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __stubs
+   segname __TEXT
+      addr 0x0000000000000550
+      size 0x000000000000000c
+    offset 1360
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000408
+ reserved1 0 (index into indirect symbol table)
+ reserved2 12 (size of stubs)
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x000000000000055c
+      size 0x0000000000000013
+    offset 1372
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __unwind_info
+   segname __TEXT
+      addr 0x0000000000000570
+      size 0x0000000000000060
+    offset 1392
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 1
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA_CONST
+   vmaddr 0x0000000000004000
+   vmsize 0x0000000000004000
+  fileoff 16384
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x10
+Section
+  sectname __got
+   segname __DATA_CONST
+      addr 0x0000000000004000
+      size 0x0000000000000008
+    offset 16384
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000006
+ reserved1 1 (index into indirect symbol table)
+ reserved2 0
+Load command 2
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA
+   vmaddr 0x0000000000008000
+   vmsize 0x0000000000004000
+  fileoff 32768
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x0
+Section
+  sectname __data
+   segname __DATA
+      addr 0x0000000000008000
+      size 0x0000000000000004
+    offset 32768
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 3
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __LINKEDIT
+   vmaddr 0x000000000000c000
+   vmsize 0x0000000000004000
+  fileoff 49152
+ filesize 864
+  maxprot 0x00000001
+ initprot 0x00000001
+   nsects 0
+    flags 0x0
+Load command 4
+          cmd LC_ID_DYLIB
+      cmdsize 48
+         name @rpath/libhello.dylib (offset 24)
+   time stamp 1 Wed Dec 31 19:00:01 1969
+      current version 1.2.3
+compatibility version 1.0.0
+Load command 5
+      cmd LC_DYLD_CHAINED_FIXUPS
+  cmdsize 16
+  dataoff 49152
+ datasize 96
+Load command 6
+      cmd LC_DYLD_EXPORTS_TRIE
+  cmdsize 16
+  dataoff 49248
+ datasize 64
+Load command 7
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 49320
+   nsyms 5
+  stroff 49408
+ strsize 64
+Load command 8
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 0
+     iextdefsym 0
+     nextdefsym 4
+      iundefsym 4
+      nundefsym 1
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 49400
+  nindirectsyms 2
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 9
+     cmd LC_UUID
+ cmdsize 24
+    uuid B0881363-59FC-3F74-998C-5CFA3243722E
+Load command 10
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform 1
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool 3
+  version 1267.0
+Load command 11
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+Load command 12
+          cmd LC_LOAD_DYLIB
+      cmdsize 56
+         name /usr/lib/libSystem.B.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 1356.0.0
+compatibility version 1.0.0
+Load command 13
+          cmd LC_RPATH
+      cmdsize 40
+         path @loader_path/../Frameworks (offset 12)
+Load command 14
+      cmd LC_FUNCTION_STARTS
+  cmdsize 16
+  dataoff 49312
+ datasize 8
+Load command 15
+      cmd LC_DATA_IN_CODE
+  cmdsize 16
+  dataoff 49320
+ datasize 0
+Load command 16
+      cmd LC_CODE_SIGNATURE
+  cmdsize 16
+  dataoff 49472
+ datasize 544
+--- exit=0
+
+===== /usr/bin/otool -L libhello.dylib =====
+libhello.dylib:
+	@rpath/libhello.dylib (compatibility version 1.0.0, current version 1.2.3)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+--- exit=0
+
+===== /usr/bin/otool -tV libhello.dylib =====
+libhello.dylib:
+(__TEXT,__text) section
+_hello_add:
+00000000000004d0	sub	sp, sp, #0x10
+00000000000004d4	str	w0, [sp, #0xc]
+00000000000004d8	str	w1, [sp, #0x8]
+00000000000004dc	ldr	w8, [sp, #0xc]
+00000000000004e0	ldr	w9, [sp, #0x8]
+00000000000004e4	add	w0, w8, w9
+00000000000004e8	add	sp, sp, #0x10
+00000000000004ec	ret
+_hello_mul:
+00000000000004f0	sub	sp, sp, #0x10
+00000000000004f4	str	w0, [sp, #0xc]
+00000000000004f8	str	w1, [sp, #0x8]
+00000000000004fc	ldr	w8, [sp, #0xc]
+0000000000000500	ldr	w9, [sp, #0x8]
+0000000000000504	mul	w0, w8, w9
+0000000000000508	add	sp, sp, #0x10
+000000000000050c	ret
+_hello_print:
+0000000000000510	sub	sp, sp, #0x30
+0000000000000514	stp	x29, x30, [sp, #0x20]
+0000000000000518	add	x29, sp, #0x20
+000000000000051c	stur	x0, [x29, #-0x8]
+0000000000000520	ldur	x10, [x29, #-0x8]
+0000000000000524	adrp	x8, 8 ; 0x8000
+0000000000000528	ldr	w8, [x8]
+000000000000052c	mov	x9, sp
+0000000000000530	str	x10, [x9]
+0000000000000534	str	x8, [x9, #0x8]
+0000000000000538	adrp	x0, 0 ; 0x0
+000000000000053c	add	x0, x0, #0x55c ; literal pool for: "libhello: %s (%d)\n"
+0000000000000540	bl	0x550 ; symbol stub for: _printf
+0000000000000544	ldp	x29, x30, [sp, #0x20]
+0000000000000548	add	sp, sp, #0x30
+000000000000054c	ret
+--- exit=0
+
+===== /usr/bin/otool -Iv libhello.dylib =====
+libhello.dylib:
+Indirect symbols for (__TEXT,__stubs) 1 entries
+address            index name
+0x0000000000000550     4 _printf
+Indirect symbols for (__DATA_CONST,__got) 1 entries
+address            index name
+0x0000000000004000     4 _printf
+--- exit=0
+
+===== /usr/bin/nm -m libhello.dylib =====
+00000000000004d0 (__TEXT,__text) external _hello_add
+0000000000008000 (__DATA,__data) external _hello_global
+00000000000004f0 (__TEXT,__text) external _hello_mul
+0000000000000510 (__TEXT,__text) external _hello_print
+                 (undefined) external _printf (from libSystem)
+--- exit=0
+
+===== /usr/bin/nm -a libhello.dylib =====
+00000000000004d0 T _hello_add
+0000000000008000 D _hello_global
+00000000000004f0 T _hello_mul
+0000000000000510 T _hello_print
+                 U _printf
+--- exit=0
+
+===== /usr/bin/dyld_info -platform -uuid -segments -linked_dylibs -load_commands libhello.dylib =====
+libhello.dylib [arm64]:
+    -platform:
+        platform     minOS      sdk
+           macOS     26.0      26.5   
+    -uuid:
+        B0881363-59FC-3F74-998C-5CFA3243722E
+    -segments:
+        load-offset   segment  section       sect-size  seg-size   init/max-prot
+        0x00000000    __TEXT                                16KB    r.x/r.x
+        0x000004D0             __text              128
+        0x00000550             __stubs              12
+        0x0000055C             __cstring            19
+        0x00000570             __unwind_info        96
+        0x00004000    __DATA_CONST                          16KB    rw./rw.
+        0x00004000             __got                 8
+        0x00008000    __DATA                                16KB    rw./rw.
+        0x00008000             __data                4
+    -linked_dylibs:
+        attributes     load path
+                       /usr/lib/libSystem.B.dylib
+    -rpaths:
+        @loader_path/../Frameworks
+    -load_commands:
+Load command #0
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x188
+         segname: "__TEXT"
+          vmaddr: 0x0000000000000000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00000000
+        filesize: 0x00004000
+         maxprot: r.x
+        initprot: r.x
+          nsects: 4
+        sections[0].sectname: "__text"
+        sections[0].addr:     0x00000000000004D0
+        sections[0].size:     0x0000000000000080
+        sections[0].offset:   0x000004D0
+        sections[0].align:    2^2
+        sections[0].type:      S_ATTR_PURE_INSTRUCTIONS|S_ATTR_SOME_INSTRUCTIONS
+        sections[1].sectname: "__stubs"
+        sections[1].addr:     0x0000000000000550
+        sections[1].size:     0x000000000000000C
+        sections[1].offset:   0x00000550
+        sections[1].align:    2^2
+        sections[1].type:      S_SYMBOL_STUBS
+        sections[1].reserved2: 12
+        sections[2].sectname: "__cstring"
+        sections[2].addr:     0x000000000000055C
+        sections[2].size:     0x0000000000000013
+        sections[2].offset:   0x0000055C
+        sections[2].align:    2^0
+        sections[2].type:      S_CSTRING_LITERALS
+        sections[3].sectname: "__unwind_info"
+        sections[3].addr:     0x0000000000000570
+        sections[3].size:     0x0000000000000060
+        sections[3].offset:   0x00000570
+        sections[3].align:    2^2
+Load command #1
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA_CONST"
+          vmaddr: 0x0000000000004000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00004000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          flags: SG_READ_ONLY
+          nsects: 1
+        sections[0].sectname: "__got"
+        sections[0].addr:     0x0000000000004000
+        sections[0].size:     0x0000000000000008
+        sections[0].offset:   0x00004000
+        sections[0].align:    2^3
+        sections[0].type:      S_NON_LAZY_SYMBOL_POINTERS
+        sections[0].reserved1: 1
+Load command #2
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA"
+          vmaddr: 0x0000000000008000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00008000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          nsects: 1
+        sections[0].sectname: "__data"
+        sections[0].addr:     0x0000000000008000
+        sections[0].size:     0x0000000000000004
+        sections[0].offset:   0x00008000
+        sections[0].align:    2^2
+Load command #3
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__LINKEDIT"
+          vmaddr: 0x000000000000C000
+          vmsize: 0x0000000000004000
+         fileoff: 0x0000C000
+        filesize: 0x00000360
+         maxprot: r..
+        initprot: r..
+          nsects: 0
+Load command #4
+             cmd: LC_ID_DYLIB
+         cmdsize: 0x30
+            name: "@rpath/libhello.dylib"
+        cur-vers: 1.2.3
+     compat-vers: 1.0
+Load command #5
+             cmd: LC_DYLD_CHAINED_FIXUPS
+         cmdsize: 0x10
+         dataoff: 0xC000
+        datasize: 0x60
+Load command #6
+             cmd: LC_DYLD_EXPORTS_TRIE
+         cmdsize: 0x10
+         dataoff: 0xC060
+        datasize: 0x40
+Load command #7
+             cmd: LC_SYMTAB
+         cmdsize: 0x18
+          symoff: 0xC0A8
+           nsyms: 5
+          stroff: 0xC100
+         strsize: 0x40
+Load command #8
+             cmd: LC_DYSYMTAB
+         cmdsize: 0x50
+       ilocalsym: 0
+       nlocalsym: 0
+      iextdefsym: 0
+      nextdefsym: 4
+       iundefsym: 4
+       nundefsym: 1
+  indirectsymoff: 0x0000C0F8
+   nindirectsyms: 2
+       ilocalsym: 0
+Load command #9
+             cmd: LC_UUID
+         cmdsize: 0x18
+            uuid: B0881363-59FC-3F74-998C-5CFA3243722E
+Load command #10
+             cmd: LC_BUILD_VERSION
+         cmdsize: 0x20
+        platform: macOS
+          min-OS: 26.0
+             sdk: 26.5
+         tool[0].name:    ld
+         tool[0].version: 1267.0
+Load command #11
+             cmd: LC_SOURCE_VERSION
+         cmdsize: 0x10
+         version: 0.0
+Load command #12
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x38
+            name: "/usr/lib/libSystem.B.dylib"
+        cur-vers: 1356.0
+     compat-vers: 1.0
+Load command #13
+             cmd: LC_RPATH
+         cmdsize: 0x28
+           rpath:"@loader_path/../Frameworks"
+Load command #14
+             cmd: LC_FUNCTION_STARTS
+         cmdsize: 0x10
+         dataoff: 0xC0A0
+        datasize: 0x8
+Load command #15
+             cmd: LC_DATA_IN_CODE
+         cmdsize: 0x10
+         dataoff: 0xC0A8
+        datasize: 0x0
+Load command #16
+             cmd: LC_CODE_SIGNATURE
+         cmdsize: 0x10
+         dataoff: 0xC140
+        datasize: 0x220
+--- exit=0
+
+===== /usr/bin/dyld_info -fixup_chains libhello.dylib =====
+libhello.dylib [arm64]:
+    -fixup_chains:
+      fixups_version:   0x00000000
+      starts_offset:    0x00000020
+      imports_offset:   0x00000050
+      symbols_offset:   0x00000054
+      imports_count:    1
+      imports_format:   1 (DYLD_CHAINED_IMPORT)
+      symbols_format:   0
+        seg[1]:
+          page_size:       0x4000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00004000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0000
+--- exit=0
+
+===== /usr/bin/dyld_info -fixups libhello.dylib =====
+libhello.dylib [arm64]:
+    -fixups:
+        segment         section          address             type   target
+        __DATA_CONST    __got            0x00004000           bind  libSystem/_printf
+--- exit=0
+
+===== /usr/bin/dyld_info -exports libhello.dylib =====
+libhello.dylib [arm64]:
+    -exports:
+        offset      symbol
+        0x000004D0  _hello_add
+        0x00008000  _hello_global
+        0x000004F0  _hello_mul
+        0x00000510  _hello_print
+--- exit=0
+
+===== /usr/bin/dyld_info -imports libhello.dylib =====
+libhello.dylib [arm64]:
+    -imports:
+      0x0000  _printf  (from libSystem)
+--- exit=0
+
+===== /usr/bin/dyld_info -objc libhello.dylib =====
+libhello.dylib [arm64]:
+    -objc:
+--- exit=0
+
+===== /usr/bin/dyld_info -inits libhello.dylib =====
+libhello.dylib [arm64]:
+    -inits:
+--- exit=0
+
+===== /usr/bin/dyld_info -function_starts libhello.dylib =====
+libhello.dylib [arm64]:
+    -function_starts:
+        0x000004D0  _hello_add
+        0x000004F0  _hello_mul
+        0x00000510  _hello_print
+--- exit=0
+
+===== /usr/bin/dyld_info -validate_only libhello.dylib =====
+libhello.dylib [arm64]:
+--- exit=0
+
+===== /usr/bin/vtool -show libhello.dylib =====
+libhello.dylib:
+Load command 10
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform MACOS
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool LD
+  version 1267.0
+Load command 11
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+--- exit=0
+
+===== /usr/bin/codesign -dvvv --entitlements - libhello.dylib =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib
+Identifier=libhello.dylib
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=519 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=cca7ad289c7d46892c071b76cdd25a431df06b7d
+CandidateCDHashFull sha256=cca7ad289c7d46892c071b76cdd25a431df06b7d4abbf647dbc7a94fae106dd8
+Hash choices=sha256
+CMSDigest=cca7ad289c7d46892c071b76cdd25a431df06b7d4abbf647dbc7a94fae106dd8
+CMSDigestType=2
+CDHash=cca7ad289c7d46892c071b76cdd25a431df06b7d
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+--- exit=0
+
+===== /usr/bin/codesign -d --entitlements - --xml libhello.dylib =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib
+--- exit=0
+
+===== /usr/bin/codesign -d -r - libhello.dylib =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib
+# designated => cdhash H"cca7ad289c7d46892c071b76cdd25a431df06b7d"
+--- exit=0
+
+===== /usr/bin/codesign --verify --verbose=4 --strict libhello.dylib =====
+libhello.dylib: valid on disk
+libhello.dylib: satisfies its Designated Requirement
+--- exit=0
+
+===== /usr/sbin/spctl -a -vv -t exec libhello.dylib =====
+libhello.dylib: rejected
+--- exit=3
+
+===== /usr/bin/xattr -l libhello.dylib =====
+--- exit=0
+
+===== /usr/bin/strings -n 6 | head -200 =====
+libhello: %s (%d)
+--- exit=0

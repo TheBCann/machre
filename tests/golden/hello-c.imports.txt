@@ -1,0 +1,9 @@
+hello-c: 6 imports from 1 dylibs (chained)
+   1  /usr/lib/libSystem.B.dylib
+  ___snprintf_chk     libSystem  1    1  0x100004000
+  ___stack_chk_fail   libSystem  1    1  0x100004008
+  ___stack_chk_guard  libSystem  1    1  0x100004010
+  _exit               libSystem  1    1  0x100004018
+  _puts               libSystem  1    1  0x100004020
+  _strcmp             libSystem  1    1  0x100004028
+  diagnostics  none

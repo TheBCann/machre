@@ -1,0 +1,739 @@
+# machre corpus ground truth for high-entropy
+# generated 2026-09-12T08:24:09Z on 26.3 (25D125) by gen/truth.sh
+# macho=high-entropy bundle=none
+
+===== /usr/bin/file high-entropy =====
+high-entropy: Mach-O 64-bit executable arm64
+--- exit=0
+
+===== /usr/bin/stat -f size=%z mode=%Mp%Lp high-entropy =====
+size=99536 mode=0755
+--- exit=0
+
+===== /usr/bin/shasum -a 256 high-entropy =====
+b5923b662decbce9c1448d2859c0b98b8f411161d1e928dbd9b3ec8850ac5551  high-entropy
+--- exit=0
+
+===== /usr/bin/otool -hv high-entropy =====
+high-entropy:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64    ARM64        ALL  0x00     EXECUTE    18       1208   NOUNDEFS DYLDLINK TWOLEVEL PIE
+--- exit=0
+
+===== /usr/bin/otool -h -l high-entropy =====
+high-entropy:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777228          0  0x00           2    18       1208 0x00200085
+Load command 0
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __PAGEZERO
+   vmaddr 0x0000000000000000
+   vmsize 0x0000000100000000
+  fileoff 0
+ filesize 0
+  maxprot 0x00000000
+ initprot 0x00000000
+   nsects 0
+    flags 0x0
+Load command 1
+      cmd LC_SEGMENT_64
+  cmdsize 392
+  segname __TEXT
+   vmaddr 0x0000000100000000
+   vmsize 0x0000000000004000
+  fileoff 0
+ filesize 16384
+  maxprot 0x00000005
+ initprot 0x00000005
+   nsects 4
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x00000001000004f8
+      size 0x0000000000000084
+    offset 1272
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __stubs
+   segname __TEXT
+      addr 0x000000010000057c
+      size 0x000000000000000c
+    offset 1404
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000408
+ reserved1 0 (index into indirect symbol table)
+ reserved2 12 (size of stubs)
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x0000000100000588
+      size 0x0000000000000008
+    offset 1416
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __unwind_info
+   segname __TEXT
+      addr 0x0000000100000590
+      size 0x0000000000000058
+    offset 1424
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 2
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA_CONST
+   vmaddr 0x0000000100004000
+   vmsize 0x0000000000004000
+  fileoff 16384
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x10
+Section
+  sectname __got
+   segname __DATA_CONST
+      addr 0x0000000100004000
+      size 0x0000000000000008
+    offset 16384
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000006
+ reserved1 1 (index into indirect symbol table)
+ reserved2 0
+Load command 3
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __RANDOM
+   vmaddr 0x0000000100008000
+   vmsize 0x0000000000010000
+  fileoff 32768
+ filesize 65536
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x0
+Section
+  sectname __blob
+   segname __RANDOM
+      addr 0x0000000100008000
+      size 0x0000000000010000
+    offset 32768
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 4
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __LINKEDIT
+   vmaddr 0x0000000100018000
+   vmsize 0x0000000000004000
+  fileoff 98304
+ filesize 1232
+  maxprot 0x00000001
+ initprot 0x00000001
+   nsects 0
+    flags 0x0
+Load command 5
+      cmd LC_DYLD_CHAINED_FIXUPS
+  cmdsize 16
+  dataoff 98304
+ datasize 96
+Load command 6
+      cmd LC_DYLD_EXPORTS_TRIE
+  cmdsize 16
+  dataoff 98400
+ datasize 72
+Load command 7
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 98480
+   nsyms 4
+  stroff 98552
+ strsize 56
+Load command 8
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 0
+     iextdefsym 0
+     nextdefsym 3
+      iundefsym 3
+      nundefsym 1
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 98544
+  nindirectsyms 2
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 9
+          cmd LC_LOAD_DYLINKER
+      cmdsize 32
+         name /usr/lib/dyld (offset 12)
+Load command 10
+     cmd LC_UUID
+ cmdsize 24
+    uuid 99FA3C15-0EB7-3F4A-B357-7021903FAE41
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform 1
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool 3
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+Load command 13
+       cmd LC_MAIN
+   cmdsize 24
+  entryoff 1272
+ stacksize 0
+Load command 14
+          cmd LC_LOAD_DYLIB
+      cmdsize 56
+         name /usr/lib/libSystem.B.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 1356.0.0
+compatibility version 1.0.0
+Load command 15
+      cmd LC_FUNCTION_STARTS
+  cmdsize 16
+  dataoff 98472
+ datasize 8
+Load command 16
+      cmd LC_DATA_IN_CODE
+  cmdsize 16
+  dataoff 98480
+ datasize 0
+Load command 17
+      cmd LC_CODE_SIGNATURE
+  cmdsize 16
+  dataoff 98608
+ datasize 928
+--- exit=0
+
+===== /usr/bin/otool -L high-entropy =====
+high-entropy:
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+--- exit=0
+
+===== /usr/bin/otool -tV high-entropy =====
+high-entropy:
+(__TEXT,__text) section
+_main:
+00000001000004f8	sub	sp, sp, #0x30
+00000001000004fc	stp	x29, x30, [sp, #0x20]
+0000000100000500	add	x29, sp, #0x20
+0000000100000504	stur	wzr, [x29, #-0x4]
+0000000100000508	stur	wzr, [x29, #-0x8]
+000000010000050c	stur	wzr, [x29, #-0xc]
+0000000100000510	b	0x100000514
+0000000100000514	ldur	w8, [x29, #-0xc]
+0000000100000518	subs	w8, w8, #0x10, lsl #12
+000000010000051c	b.ge	0x100000554
+0000000100000520	b	0x100000524
+0000000100000524	ldursw	x9, [x29, #-0xc]
+0000000100000528	adrp	x8, 8 ; 0x100008000
+000000010000052c	add	x8, x8, #0x0
+0000000100000530	ldrb	w9, [x8, x9]
+0000000100000534	ldur	w8, [x29, #-0x8]
+0000000100000538	add	w8, w8, w9
+000000010000053c	stur	w8, [x29, #-0x8]
+0000000100000540	b	0x100000544
+0000000100000544	ldur	w8, [x29, #-0xc]
+0000000100000548	add	w8, w8, #0x1
+000000010000054c	stur	w8, [x29, #-0xc]
+0000000100000550	b	0x100000514
+0000000100000554	ldur	w8, [x29, #-0x8]
+0000000100000558	mov	x9, sp
+000000010000055c	str	x8, [x9]
+0000000100000560	adrp	x0, 0 ; 0x100000000
+0000000100000564	add	x0, x0, #0x588 ; literal pool for: "sum=%u\n"
+0000000100000568	bl	0x10000057c ; symbol stub for: _printf
+000000010000056c	mov	w0, #0x0
+0000000100000570	ldp	x29, x30, [sp, #0x20]
+0000000100000574	add	sp, sp, #0x30
+0000000100000578	ret
+--- exit=0
+
+===== /usr/bin/otool -Iv high-entropy =====
+high-entropy:
+Indirect symbols for (__TEXT,__stubs) 1 entries
+address            index name
+0x000000010000057c     3 _printf
+Indirect symbols for (__DATA_CONST,__got) 1 entries
+address            index name
+0x0000000100004000     3 _printf
+--- exit=0
+
+===== /usr/bin/nm -m high-entropy =====
+0000000100000000 (__TEXT,__text) [referenced dynamically] external __mh_execute_header
+00000001000004f8 (__TEXT,__text) external _main
+                 (undefined) external _printf (from libSystem)
+0000000100008000 (__RANDOM,__blob) external _random_blob
+--- exit=0
+
+===== /usr/bin/nm -a high-entropy =====
+0000000100000000 T __mh_execute_header
+00000001000004f8 T _main
+                 U _printf
+0000000100008000 S _random_blob
+--- exit=0
+
+===== /usr/bin/dyld_info -platform -uuid -segments -linked_dylibs -load_commands high-entropy =====
+high-entropy [arm64]:
+    -platform:
+        platform     minOS      sdk
+           macOS     26.0      26.5   
+    -uuid:
+        99FA3C15-0EB7-3F4A-B357-7021903FAE41
+    -segments:
+        load-offset   segment  section       sect-size  seg-size   init/max-prot
+        0x00000000    __TEXT                                16KB    r.x/r.x
+        0x1000004F8             __text              132
+        0x10000057C             __stubs              12
+        0x100000588             __cstring             8
+        0x100000590             __unwind_info        88
+        0x00004000    __DATA_CONST                          16KB    rw./rw.
+        0x100004000             __got                 8
+        0x00008000    __RANDOM                              64KB    rw./rw.
+        0x100008000             __blob            65536
+    -linked_dylibs:
+        attributes     load path
+                       /usr/lib/libSystem.B.dylib
+    -load_commands:
+Load command #0
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__PAGEZERO"
+          vmaddr: 0x0000000000000000
+          vmsize: 0x0000000100000000
+         fileoff: 0x00000000
+        filesize: 0x00000000
+         maxprot: ...
+        initprot: ...
+          nsects: 0
+Load command #1
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x188
+         segname: "__TEXT"
+          vmaddr: 0x0000000100000000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00000000
+        filesize: 0x00004000
+         maxprot: r.x
+        initprot: r.x
+          nsects: 4
+        sections[0].sectname: "__text"
+        sections[0].addr:     0x00000001000004F8
+        sections[0].size:     0x0000000000000084
+        sections[0].offset:   0x000004F8
+        sections[0].align:    2^2
+        sections[0].type:      S_ATTR_PURE_INSTRUCTIONS|S_ATTR_SOME_INSTRUCTIONS
+        sections[1].sectname: "__stubs"
+        sections[1].addr:     0x000000010000057C
+        sections[1].size:     0x000000000000000C
+        sections[1].offset:   0x0000057C
+        sections[1].align:    2^2
+        sections[1].type:      S_SYMBOL_STUBS
+        sections[1].reserved2: 12
+        sections[2].sectname: "__cstring"
+        sections[2].addr:     0x0000000100000588
+        sections[2].size:     0x0000000000000008
+        sections[2].offset:   0x00000588
+        sections[2].align:    2^0
+        sections[2].type:      S_CSTRING_LITERALS
+        sections[3].sectname: "__unwind_info"
+        sections[3].addr:     0x0000000100000590
+        sections[3].size:     0x0000000000000058
+        sections[3].offset:   0x00000590
+        sections[3].align:    2^2
+Load command #2
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA_CONST"
+          vmaddr: 0x0000000100004000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00004000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          flags: SG_READ_ONLY
+          nsects: 1
+        sections[0].sectname: "__got"
+        sections[0].addr:     0x0000000100004000
+        sections[0].size:     0x0000000000000008
+        sections[0].offset:   0x00004000
+        sections[0].align:    2^3
+        sections[0].type:      S_NON_LAZY_SYMBOL_POINTERS
+        sections[0].reserved1: 1
+Load command #3
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__RANDOM"
+          vmaddr: 0x0000000100008000
+          vmsize: 0x0000000000010000
+         fileoff: 0x00008000
+        filesize: 0x00010000
+         maxprot: rw.
+        initprot: rw.
+          nsects: 1
+        sections[0].sectname: "__blob"
+        sections[0].addr:     0x0000000100008000
+        sections[0].size:     0x0000000000010000
+        sections[0].offset:   0x00008000
+        sections[0].align:    2^0
+Load command #4
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__LINKEDIT"
+          vmaddr: 0x0000000100018000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00018000
+        filesize: 0x000004D0
+         maxprot: r..
+        initprot: r..
+          nsects: 0
+Load command #5
+             cmd: LC_DYLD_CHAINED_FIXUPS
+         cmdsize: 0x10
+         dataoff: 0x18000
+        datasize: 0x60
+Load command #6
+             cmd: LC_DYLD_EXPORTS_TRIE
+         cmdsize: 0x10
+         dataoff: 0x18060
+        datasize: 0x48
+Load command #7
+             cmd: LC_SYMTAB
+         cmdsize: 0x18
+          symoff: 0x180B0
+           nsyms: 4
+          stroff: 0x180F8
+         strsize: 0x38
+Load command #8
+             cmd: LC_DYSYMTAB
+         cmdsize: 0x50
+       ilocalsym: 0
+       nlocalsym: 0
+      iextdefsym: 0
+      nextdefsym: 3
+       iundefsym: 3
+       nundefsym: 1
+  indirectsymoff: 0x000180F0
+   nindirectsyms: 2
+       ilocalsym: 0
+Load command #9
+             cmd: LC_LOAD_DYLINKER
+         cmdsize: 0x20
+            name: "/usr/lib/dyld"
+Load command #10
+             cmd: LC_UUID
+         cmdsize: 0x18
+            uuid: 99FA3C15-0EB7-3F4A-B357-7021903FAE41
+Load command #11
+             cmd: LC_BUILD_VERSION
+         cmdsize: 0x20
+        platform: macOS
+          min-OS: 26.0
+             sdk: 26.5
+         tool[0].name:    ld
+         tool[0].version: 1267.0
+Load command #12
+             cmd: LC_SOURCE_VERSION
+         cmdsize: 0x10
+         version: 0.0
+Load command #13
+             cmd: LC_MAIN
+         cmdsize: 0x18
+        entryoff: 0x4F8
+Load command #14
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x38
+            name: "/usr/lib/libSystem.B.dylib"
+        cur-vers: 1356.0
+     compat-vers: 1.0
+Load command #15
+             cmd: LC_FUNCTION_STARTS
+         cmdsize: 0x10
+         dataoff: 0x180A8
+        datasize: 0x8
+Load command #16
+             cmd: LC_DATA_IN_CODE
+         cmdsize: 0x10
+         dataoff: 0x180B0
+        datasize: 0x0
+Load command #17
+             cmd: LC_CODE_SIGNATURE
+         cmdsize: 0x10
+         dataoff: 0x18130
+        datasize: 0x3A0
+--- exit=0
+
+===== /usr/bin/dyld_info -fixup_chains high-entropy =====
+high-entropy [arm64]:
+    -fixup_chains:
+      fixups_version:   0x00000000
+      starts_offset:    0x00000020
+      imports_offset:   0x00000050
+      symbols_offset:   0x00000054
+      imports_count:    1
+      imports_format:   1 (DYLD_CHAINED_IMPORT)
+      symbols_format:   0
+        seg[2]:
+          page_size:       0x4000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00004000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0000
+--- exit=0
+
+===== /usr/bin/dyld_info -fixups high-entropy =====
+high-entropy [arm64]:
+    -fixups:
+        segment         section          address             type   target
+        __DATA_CONST    __got            0x100004000           bind  libSystem/_printf
+--- exit=0
+
+===== /usr/bin/dyld_info -exports high-entropy =====
+high-entropy [arm64]:
+    -exports:
+        offset      symbol
+        0x00000000  __mh_execute_header
+        0x000004F8  _main
+        0x00008000  _random_blob
+--- exit=0
+
+===== /usr/bin/dyld_info -imports high-entropy =====
+high-entropy [arm64]:
+    -imports:
+      0x0000  _printf  (from libSystem)
+--- exit=0
+
+===== /usr/bin/dyld_info -objc high-entropy =====
+high-entropy [arm64]:
+    -objc:
+--- exit=0
+
+===== /usr/bin/dyld_info -inits high-entropy =====
+high-entropy [arm64]:
+    -inits:
+--- exit=0
+
+===== /usr/bin/dyld_info -function_starts high-entropy =====
+high-entropy [arm64]:
+    -function_starts:
+        0x1000004F8  _main
+--- exit=0
+
+===== /usr/bin/dyld_info -validate_only high-entropy =====
+high-entropy [arm64]:
+--- exit=0
+
+===== /usr/bin/vtool -show high-entropy =====
+high-entropy:
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform MACOS
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool LD
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+--- exit=0
+
+===== /usr/bin/codesign -dvvv --entitlements - high-entropy =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy
+Identifier=high-entropy
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=901 flags=0x20002(adhoc,linker-signed) hashes=25+0 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=087d0597bfbcbc47220b6b598dc76d322f046470
+CandidateCDHashFull sha256=087d0597bfbcbc47220b6b598dc76d322f046470b1b61af1975a25bde9710bea
+Hash choices=sha256
+CMSDigest=087d0597bfbcbc47220b6b598dc76d322f046470b1b61af1975a25bde9710bea
+CMSDigestType=2
+CDHash=087d0597bfbcbc47220b6b598dc76d322f046470
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+--- exit=0
+
+===== /usr/bin/codesign -d --entitlements - --xml high-entropy =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy
+--- exit=0
+
+===== /usr/bin/codesign -d -r - high-entropy =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy
+# designated => cdhash H"087d0597bfbcbc47220b6b598dc76d322f046470"
+--- exit=0
+
+===== /usr/bin/codesign --verify --verbose=4 --strict high-entropy =====
+high-entropy: valid on disk
+high-entropy: satisfies its Designated Requirement
+--- exit=0
+
+===== /usr/sbin/spctl -a -vv -t exec high-entropy =====
+high-entropy: rejected
+--- exit=3
+
+===== /usr/bin/xattr -l high-entropy =====
+--- exit=0
+
+===== /usr/bin/strings -n 6 | head -200 =====
+sum=%u
+$AjLPC
+l;:3G%u
+F\yIQQUY
+ja1eD!
+v%\Y)fP
+x2_k!O
+)]<&&9
+%W?u"8
+8%UpuZ9
+%}zc[H4
+&6?CR@5
+yBautX
+;dt%hDG$
+`I a^f
+wb8L}C
+c5'^4n
+>N&Ycn
+iakX80
+M3Dq{"
+1#G{UtG
+S=^Hn&
++gWN:Z
+q9 -$O!
+I*q-&o
+"TJQ2M
+%U=dZ'
+q76;j%"
+c*<=;H
+y)/}5
+$$3JBd=
+(u#ShWp
+!Lu(_`
+qD-2fZ>
+Z}Rf*]
+nx>!|o
+LN4Jjjw
+*C"9ugBV
+mY9]:
+!s%!pH
+cOY:/ny
+h_JPeUK
+{DxPv
+ <1|*[
+!A42s
+>M1u>t
+:=IrJx
+Sb8_XbnK
+/>MUY|K
+6Rftq7
+)tGm=L3
+`XV. '.N/O
+$y7~4\
+Ah\L}
+{`Ph_
+3ub0Mj
+(-Hr~p$
+NbNW`y
+F{C,tiG
+`F\FXgQ
+\|Mn"JGm
+65h$|k)
+]]>,I
+{l1&Vn
+-~YiT~
+,,cuVY
+ei87}B|
+kBSi7_
+J<T.z9
+hPkv T
+#+'1nh
+4I&>X,
+}MSzN5
+6Fc`}S
+'ITp5\
+/[u|.\
+(n6U4w
++Krh$s
+)%7|M3
+;'a7MF
+.osj&$j
+mW(!\Z3
+$!&jGy
+JV=WmAG
+_}Aw&+
+^aGM=x
+2Xbp.P
+AvNcw!k1%
+!W]K>X
+qaEHf]
+!oTX4D
+o7`kw-
+a}W~-
+[oL(O{
+S])@;\
+Rwo-:j
++x> l#
+zB_uv0
+3@\EZ
+;zsKe
+dSQ6IT#r
+a cxS'dKuq
+yl6#3t
+mR}UKUU
+{HI3fx
+x#Z|VkN
+7nbQ&I
+=pF90_
+c1StSL
+M6Q&j9
+l5'z)B
+=JDZ0V
+D/Icx'
+--- exit=0

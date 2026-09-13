@@ -1,0 +1,6 @@
+legacy-bind: 4 exports (dyld_info)
+  0x100000000  regular    __mh_execute_header
+  0x100000630  regular    _main
+  0x100008048  regular    _names
+  0x100008020  regular    _table
+  diagnostics  none

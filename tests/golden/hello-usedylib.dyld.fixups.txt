@@ -1,0 +1,7 @@
+hello-usedylib: dyld data (chained)
+  fixups       4 (0 rebases, 4 binds, 0 auth, 0 lazy, 0 weak)
+    0x100004000  __DATA_CONST  __got  bind  libhello/_hello_add
+    0x100004008  __DATA_CONST  __got  bind  libhello/_hello_global
+    0x100004010  __DATA_CONST  __got  bind  libhello/_hello_mul
+    0x100004018  __DATA_CONST  __got  bind  libhello/_hello_print
+  diagnostics  none

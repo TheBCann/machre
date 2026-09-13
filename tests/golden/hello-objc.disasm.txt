@@ -1,0 +1,41 @@
+tests/corpus/hello-objc:
+(__TEXT,__text) section
+-[MachreDog bark]:
+0000000100000ef4	sub	sp, sp, #0x50
+0000000100000ef8	stp	x29, x30, [sp, #0x40]
+0000000100000efc	add	x29, sp, #0x40
+0000000100000f00	mov	x8, x1
+0000000100000f04	stur	x0, [x29, #-0x8]
+0000000100000f08	stur	x8, [x29, #-0x10]
+0000000100000f0c	ldur	x0, [x29, #-0x8]
+0000000100000f10	bl	0x1000013c0 ; "_objc_msgSend$name"
+0000000100000f14	mov	x29, x29
+0000000100000f18	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000f1c	ldr	x1, [sp, #0x18]
+0000000100000f20	stur	x0, [x29, #-0x18]
+0000000100000f24	ldur	x0, [x29, #-0x8]
+0000000100000f28	bl	0x100001460 ; "_objc_msgSend$tricks"
+0000000100000f2c	mov	x29, x29
+0000000100000f30	bl	0x100001288 ; symbol stub for: _objc_retainAutoreleasedReturnValue
+0000000100000f34	ldr	x1, [sp, #0x18]
+0000000100000f38	str	x0, [sp, #0x20]
+0000000100000f3c	bl	0x100001300 ; "_objc_msgSend$count"
+0000000100000f40	ldur	x9, [x29, #-0x18]
+0000000100000f44	mov	x8, sp
+0000000100000f48	str	x9, [x8]
+0000000100000f4c	str	x0, [x8, #0x8]
+0000000100000f50	adrp	x0, 4 ; 0x100004000
+0000000100000f54	add	x0, x0, #0xb0 ; @"%@: woof (%lu tricks)"
+0000000100000f58	bl	0x100001234 ; symbol stub for: _NSLog
+0000000100000f5c	ldr	x0, [sp, #0x20]
+0000000100000f60	adrp	x8, 4 ; 0x100004000
+0000000100000f64	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+0000000100000f68	blr	x8
+0000000100000f6c	ldur	x0, [x29, #-0x18]
+0000000100000f70	adrp	x8, 4 ; 0x100004000
+0000000100000f74	ldr	x8, [x8, #0x40] ; literal pool symbol address: _objc_release
+0000000100000f78	blr	x8
+0000000100000f7c	ldp	x29, x30, [sp, #0x40]
+0000000100000f80	add	sp, sp, #0x50
+0000000100000f84	ret
+  diagnostics  none

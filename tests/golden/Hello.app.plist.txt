@@ -1,0 +1,17 @@
+{
+  "CFBundleDevelopmentRegion" => "en"
+  "CFBundleExecutable" => "Hello"
+  "CFBundleIdentifier" => "com.machre.corpus.Hello"
+  "CFBundleInfoDictionaryVersion" => "6.0"
+  "CFBundleName" => "Hello"
+  "CFBundlePackageType" => "APPL"
+  "CFBundleShortVersionString" => "1.0"
+  "CFBundleSupportedPlatforms" => [
+    0 => "MacOSX"
+  ]
+  "CFBundleVersion" => "1"
+  "LSMinimumSystemVersion" => "13.0"
+  "NSHumanReadableCopyright" => "machre test corpus"
+  "NSPrincipalClass" => "NSApplication"
+}
+  diagnostics  none

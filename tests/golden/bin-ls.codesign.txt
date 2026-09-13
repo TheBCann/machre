@@ -1,0 +1,52 @@
+Executable=/bin/ls
+Identifier=com.apple.ls
+Format=Mach-O universal (x86_64 arm64e)
+CodeDirectory v=20400 size=741 flags=0x0(none) hashes=18+2 location=embedded
+Platform identifier=26
+Hash type=sha256 size=32
+CandidateCDHash sha256=4f35b3163233a684d47f496a1e050f518de37621
+CandidateCDHashFull sha256=4f35b3163233a684d47f496a1e050f518de37621ee0579499335f813b18e9f08
+Hash choices=sha256
+CMSDigest=4f35b3163233a684d47f496a1e050f518de37621ee0579499335f813b18e9f08
+CMSDigestType=2
+CDHash=4f35b3163233a684d47f496a1e050f518de37621
+Signature size=4442
+Authority=Software Signing
+Authority=Apple Code Signing Certification Authority
+Authority=Apple Root CA
+Signed Time=2026-01-16T13:39:18Z
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements count=1 size=60
+--- machre: embedded signature (LC_CODE_SIGNATURE dataoff=70240 datasize=18848) ---
+SuperBlob magic=0xfade0cc0 length=5287 count=3
+  slot 0x0     CodeDirectory     offset 36     length 741    magic 0xfade0c02
+  slot 0x2     Requirements      offset 777    length 60     magic 0xfade0c01
+  slot 0x10000 CMS signature     offset 837    length 4450   magic 0xfade0b01
+CodeDirectory page size=4096 (2^12)  code limit=70240  code slots=18  special slots=2  platform=26
+  exec segment base=0x0 limit=0x8000 flags=0x1 (main-binary)
+  page hashes: 18/18 match the file on disk
+Designated requirement:
+  designated => identifier "com.apple.ls" and anchor apple
+Entitlements: none (no XML blob, no DER blob)
+Certificates: 3 (chain leaf -> root, offline/unverified)
+  1 Software Signing
+      issuer  Apple Code Signing Certification Authority
+      serial  64efeafec239e8a5
+      valid   2020-10-29T18:32:38Z .. 2026-10-24T17:39:41Z
+      marker  1.2.840.113635.100.6.22
+      sha256  d84db96af8c2e60ac4c851a21ec460f6f84e0235beb17d24a78712b9b021ed57
+  2 Apple Code Signing Certification Authority
+      issuer  Apple Root CA
+      serial  21
+      valid   2011-10-24T17:39:41Z .. 2026-10-24T17:39:41Z
+      sha256  5bdab1288fc16892fef50c658db54f1e2e19cf8f71cc55f77de2b95e051e2562
+  3 Apple Root CA
+      issuer  Apple Root CA
+      serial  02
+      valid   2006-04-25T21:40:36Z .. 2035-02-09T21:40:36Z
+      sha256  b0b1730ecbc7ff4505142c49f1295e6eda6bcaed7e2c68c5be91b5a11001f024
+  signing time 2026-01-16T13:39:18Z
+Security.framework: not evaluated (--no-security); offline ladder (unverified): PLATFORM (Apple)
+  diagnostics  none

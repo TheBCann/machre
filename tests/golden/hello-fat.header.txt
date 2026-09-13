@@ -1,0 +1,9 @@
+tests/corpus/hello-fat (architecture x86_64):
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64   X86_64        ALL  0x00     EXECUTE    17       1192   NOUNDEFS DYLDLINK TWOLEVEL PIE
+tests/corpus/hello-fat (architecture arm64):
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64    ARM64        ALL  0x00     EXECUTE    18       1208   NOUNDEFS DYLDLINK TWOLEVEL PIE
+  diagnostics  none

@@ -1,0 +1,24 @@
+tests/corpus/libhello.dylib: Mach-O 64-bit dynamically linked shared library arm64 (thin), 50016 bytes
+  sha256       f103de690e44fb1571225261ce28f78406a28cbb51abad9ec9dd7d02e67ba60b
+  magic        0xfeedfacf MH_MAGIC_64   cputype 0x100000c (arm64)   cpusubtype 0x0 (ALL)   caps 0x00
+  filetype     6 MH_DYLIB   ncmds 17   sizeofcmds 1168
+  flags        0x100085 (NOUNDEFS,DYLDLINK,TWOLEVEL,NO_REEXPORTED_DYLIBS)
+  uuid         B0881363-59FC-3F74-998C-5CFA3243722E
+  platform     macOS   minos 26.0   sdk 26.5   tools ld 1267.0
+  source ver   0.0
+  id dylib     @rpath/libhello.dylib (compatibility version 1.0.0, current version 1.2.3)
+  dyld data    chained fixups (format 6 DYLD_CHAINED_PTR_64_OFFSET, 1 imports, 1 fixups)   exports trie (4)   function starts (3)
+  dylibs       1
+    1  /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+  rpaths       1
+    @loader_path/../Frameworks
+  segments     4
+    __TEXT        vm 0x0+0x4000     file 0+16384      r-x/r-x  4 sects
+    __DATA_CONST  vm 0x4000+0x4000  file 16384+16384  rw-/rw-  1 sect   READ_ONLY
+    __DATA        vm 0x8000+0x4000  file 32768+16384  rw-/rw-  1 sect
+    __LINKEDIT    vm 0xc000+0x4000  file 49152+864    r--/r--  0 sects
+  symbols      5 (4 defined, 1 undefined, 0 stabs)   indirect 2
+  signature    ad hoc, linker-signed   identifier "libhello.dylib"   cdhash cca7ad289c7d46892c071b76cdd25a431df06b7d   pages 13/13 ok
+  security     valid (errSecSuccess)   trust: ad hoc   notarized: no
+  quarantine   none
+  diagnostics  none

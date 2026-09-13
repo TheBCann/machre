@@ -1,0 +1,21 @@
+tests/corpus/hello-c: 19 xrefs
+  0x100000514  data_ref    _add_numbers  _global_counter
+  0x100000534  got_load    _main         ___stack_chk_guard
+  0x100000554  data_ref    _main         _greeting
+  0x10000057c  string_ref  _main         "%s (%d args)"
+  0x100000580  call        _main         ___snprintf_chk (via stub)
+  0x100000588  call        _main         _puts (via stub)
+  0x100000594  cond_jump   _main         0x1000005c8
+  0x100000598  jump        _main         0x10000059c
+  0x1000005a8  string_ref  _main         "exit"
+  0x1000005ac  call        _main         _strcmp (via stub)
+  0x1000005b0  cond_jump   _main         0x1000005c8
+  0x1000005b4  jump        _main         0x1000005b8
+  0x1000005c0  call        _main         _add_numbers
+  0x1000005c4  call        _main         _exit (via stub)
+  0x1000005cc  call        _main         _static_helper
+  0x1000005e4  got_load    _main         ___stack_chk_guard
+  0x1000005f0  cond_jump   _main         0x1000005fc
+  0x1000005f4  jump        _main         0x1000005f8
+  0x1000005f8  call        _main         ___stack_chk_fail (via stub)
+  diagnostics  none

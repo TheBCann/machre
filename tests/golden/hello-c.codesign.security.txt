@@ -1,0 +1,36 @@
+Executable=<corpus>/hello-c
+Identifier=hello-c
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5b
+CandidateCDHashFull sha256=f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5bc2b929d3ce74736ef9fd4416
+Hash choices=sha256
+CMSDigest=f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5bc2b929d3ce74736ef9fd4416
+CMSDigestType=2
+CDHash=f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5b
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+--- machre: embedded signature (LC_CODE_SIGNATURE dataoff=49888 datasize=536) ---
+SuperBlob magic=0xfade0cc0 length=532 count=1
+  slot 0x0     CodeDirectory     offset 20     length 512    magic 0xfade0c02
+CodeDirectory page size=4096 (2^12)  code limit=49888  code slots=13  special slots=0  platform=0
+  exec segment base=0x0 limit=0x134 flags=0x1 (main-binary)
+  page hashes: 13/13 match the file on disk
+Designated requirement (synthesized, no requirements blob):
+  designated => cdhash H"f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5b"
+Entitlements: none (no XML blob, no DER blob)
+Certificates: none (no CMS blob)
+--- machre: Security.framework ---
+SecStaticCodeCheckValidity(kSecCSCheckAllArchitectures | kSecCSEnforceRevocationChecks)   = 0 errSecSuccess
+  anchor apple                                                     = -67050 errSecCSReqFailed
+  anchor apple generic                                             = -67050 errSecCSReqFailed
+  Developer ID (certificate leaf[field.1.2.840.113635.100.6.1.13]) = -67050 errSecCSReqFailed
+  Mac App Store (certificate leaf[field.1.2.840.113635.100.6.1.9]) = -67050 errSecCSReqFailed
+  notarized                                                        = -67050 errSecCSReqFailed
+kSecCodeInfoFlags=0x20002  kSecCodeInfoFormat="Mach-O thin (arm64)"  kSecCodeInfoIdentifier="hello-c"
+Trust ladder: AD HOC (linker-signed) -- signature proves integrity only, not identity
+  diagnostics  none

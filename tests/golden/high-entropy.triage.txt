@@ -1,0 +1,7 @@
+machre triage: tests/corpus/high-entropy [arm64]
+LEVEL: NOTABLE (score 28, 2 categories)               trust: AD HOC
+Packing     [MEDIUM] pack.entropy      segment __RANDOM entropy 7.997 bits/byte over 65.8% of the slice (65536 bytes)
+Signing     [LOW]    sig.adhoc         ad hoc, linker-signed; no certificate chain, not notarized
+Symbols     [INFO]   sym.stripped      no local symbols in LC_SYMTAB
+Not flagged: imports present (1), symbols present (4), no quarantine xattr, PIE, no RWX segment.
+  diagnostics  none

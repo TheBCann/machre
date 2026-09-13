@@ -1,0 +1,17 @@
+  file         6.276 bits/byte over 99536 bytes
+  segments     5
+    __PAGEZERO    0+0          0.000  0.0%
+    __TEXT        0+16384      0.394  16.5%
+    __DATA_CONST  16384+16384  0.001  16.5%
+    __RANDOM      32768+65536  7.997  65.8%
+    __LINKEDIT    98304+1232   6.685  1.2%
+  sections     6
+    __TEXT,__text         1272+132     4.861  0.1%
+    __TEXT,__stubs        1404+12      3.022  0.0%
+    __TEXT,__cstring      1416+8       2.750  0.0%
+    __TEXT,__unwind_info  1424+88      1.399  0.1%
+    __DATA_CONST,__got    16384+8      0.544  0.0%
+    __RANDOM,__blob       32768+65536  7.997  65.8%
+  tells        2
+    [30] high_entropy_segment  segment __RANDOM entropy 7.997 bits/byte over 65.8% of the slice (65536 bytes)
+    [10] nonstandard_segment_order  unexpected segment __RANDOM at index 3 before __LINKEDIT

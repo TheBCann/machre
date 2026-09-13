@@ -1,0 +1,11 @@
+hello-usedylib: 4 imports from 2 dylibs (chained)
+   1  @rpath/libhello.dylib
+   2  /usr/lib/libSystem.B.dylib
+  rpath        @executable_path
+  rpath        @executable_path/../Frameworks
+  libhello (4)
+    _hello_add
+    _hello_global
+    _hello_mul
+    _hello_print
+  diagnostics  none

@@ -1,0 +1,16 @@
+machre triage: tests/corpus/hello-fat [x86_64]
+LEVEL: NOTABLE (score 25, 1 category)                 trust: UNSIGNED
+Signing     [HIGH]   sig.unsigned      no LC_CODE_SIGNATURE: nothing attests to the contents of this file
+Not flagged: entropy (max 3.70 __LINKEDIT), imports present (6), symbols present (12), no quarantine xattr, PIE, no RWX segment.
+
+machre triage: tests/corpus/hello-fat [arm64]
+LEVEL: CLEAN (score 3, 1 category)                    trust: AD HOC
+Signing     [LOW]    sig.adhoc         ad hoc, linker-signed; no certificate chain, not notarized
+Not flagged: entropy (max 5.16 __LINKEDIT), imports present (6), symbols present (12), no quarantine xattr, PIE, no RWX segment.
+
+machre triage: tests/corpus/hello-fat [x86_64+arm64]
+LEVEL: NOTABLE (score 28, 1 category)                 trust: UNSIGNED
+Signing     [HIGH]   sig.unsigned      no LC_CODE_SIGNATURE: nothing attests to the contents of this file
+Signing     [LOW]    sig.adhoc         ad hoc, linker-signed; no certificate chain, not notarized
+Not flagged: imports present (6), symbols present (12), no quarantine xattr, PIE, no RWX segment.
+  diagnostics  none

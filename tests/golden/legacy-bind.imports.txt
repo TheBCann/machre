@@ -1,0 +1,12 @@
+legacy-bind: 9 imports from 1 dylibs (legacy)
+   1  /usr/lib/libSystem.B.dylib
+  ___stack_chk_guard  libSystem  1        1  0x100004000
+  _free               libSystem  1        1  0x100008040
+  _malloc             libSystem  1        1  0x100008038
+  _printf             libSystem  1  lazy  2  0x100008028
+  _puts               libSystem  1        1  0x100008020
+  dyld_stub_binder    libSystem  1        1  0x100004008
+  ___stack_chk_fail   libSystem  1  lazy  1  0x100008000
+  _qsort              libSystem  1  lazy  1  0x100008010
+  _strlen             libSystem  1  lazy  1  0x100008018
+  diagnostics  none

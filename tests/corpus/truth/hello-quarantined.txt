@@ -1,0 +1,722 @@
+# machre corpus ground truth for hello-quarantined
+# generated 2026-09-12T08:24:13Z on 26.3 (25D125) by gen/truth.sh
+# macho=hello-quarantined bundle=none
+
+===== /usr/bin/file hello-quarantined =====
+hello-quarantined: Mach-O 64-bit executable arm64
+--- exit=0
+
+===== /usr/bin/stat -f size=%z mode=%Mp%Lp hello-quarantined =====
+size=50424 mode=0755
+--- exit=0
+
+===== /usr/bin/shasum -a 256 hello-quarantined =====
+a448ac67a4409dabf8b4955f2ee86d9baff77d143bf1ff702faaa260379b15c5  hello-quarantined
+--- exit=0
+
+===== /usr/bin/otool -hv hello-quarantined =====
+hello-quarantined:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64    ARM64        ALL  0x00     EXECUTE    18       1208   NOUNDEFS DYLDLINK TWOLEVEL PIE
+--- exit=0
+
+===== /usr/bin/otool -h -l hello-quarantined =====
+hello-quarantined:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777228          0  0x00           2    18       1208 0x00200085
+Load command 0
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __PAGEZERO
+   vmaddr 0x0000000000000000
+   vmsize 0x0000000100000000
+  fileoff 0
+ filesize 0
+  maxprot 0x00000000
+ initprot 0x00000000
+   nsects 0
+    flags 0x0
+Load command 1
+      cmd LC_SEGMENT_64
+  cmdsize 392
+  segname __TEXT
+   vmaddr 0x0000000100000000
+   vmsize 0x0000000000004000
+  fileoff 0
+ filesize 16384
+  maxprot 0x00000005
+ initprot 0x00000005
+   nsects 4
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x00000001000004f8
+      size 0x0000000000000134
+    offset 1272
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __stubs
+   segname __TEXT
+      addr 0x000000010000062c
+      size 0x000000000000003c
+    offset 1580
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000408
+ reserved1 0 (index into indirect symbol table)
+ reserved2 12 (size of stubs)
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x0000000100000668
+      size 0x000000000000002b
+    offset 1640
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __unwind_info
+   segname __TEXT
+      addr 0x0000000100000694
+      size 0x0000000000000060
+    offset 1684
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 2
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA_CONST
+   vmaddr 0x0000000100004000
+   vmsize 0x0000000000004000
+  fileoff 16384
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x10
+Section
+  sectname __got
+   segname __DATA_CONST
+      addr 0x0000000100004000
+      size 0x0000000000000030
+    offset 16384
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000006
+ reserved1 5 (index into indirect symbol table)
+ reserved2 0
+Load command 3
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA
+   vmaddr 0x0000000100008000
+   vmsize 0x0000000000004000
+  fileoff 32768
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x0
+Section
+  sectname __data
+   segname __DATA
+      addr 0x0000000100008000
+      size 0x0000000000000010
+    offset 32768
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 4
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __LINKEDIT
+   vmaddr 0x000000010000c000
+   vmsize 0x0000000000004000
+  fileoff 49152
+ filesize 1272
+  maxprot 0x00000001
+ initprot 0x00000001
+   nsects 0
+    flags 0x0
+Load command 5
+      cmd LC_DYLD_CHAINED_FIXUPS
+  cmdsize 16
+  dataoff 49152
+ datasize 208
+Load command 6
+      cmd LC_DYLD_EXPORTS_TRIE
+  cmdsize 16
+  dataoff 49360
+ datasize 112
+Load command 7
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 49480
+   nsyms 12
+  stroff 49720
+ strsize 160
+Load command 8
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 1
+     iextdefsym 1
+     nextdefsym 5
+      iundefsym 6
+      nundefsym 6
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 49672
+  nindirectsyms 11
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 9
+          cmd LC_LOAD_DYLINKER
+      cmdsize 32
+         name /usr/lib/dyld (offset 12)
+Load command 10
+     cmd LC_UUID
+ cmdsize 24
+    uuid 21C9F585-96F5-3A4C-A516-BBBE1808D26E
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform 1
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool 3
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+Load command 13
+       cmd LC_MAIN
+   cmdsize 24
+  entryoff 1316
+ stacksize 0
+Load command 14
+          cmd LC_LOAD_DYLIB
+      cmdsize 56
+         name /usr/lib/libSystem.B.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 1356.0.0
+compatibility version 1.0.0
+Load command 15
+      cmd LC_FUNCTION_STARTS
+  cmdsize 16
+  dataoff 49472
+ datasize 8
+Load command 16
+      cmd LC_DATA_IN_CODE
+  cmdsize 16
+  dataoff 49480
+ datasize 0
+Load command 17
+      cmd LC_CODE_SIGNATURE
+  cmdsize 16
+  dataoff 49888
+ datasize 536
+--- exit=0
+
+===== /usr/bin/otool -L hello-quarantined =====
+hello-quarantined:
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+--- exit=0
+
+===== /usr/bin/otool -tV hello-quarantined =====
+hello-quarantined:
+(__TEXT,__text) section
+_add_numbers:
+00000001000004f8	sub	sp, sp, #0x10
+00000001000004fc	str	w0, [sp, #0xc]
+0000000100000500	str	w1, [sp, #0x8]
+0000000100000504	ldr	w8, [sp, #0xc]
+0000000100000508	ldr	w9, [sp, #0x8]
+000000010000050c	add	w8, w8, w9
+0000000100000510	adrp	x9, 8 ; 0x100008000
+0000000100000514	ldr	w9, [x9]
+0000000100000518	add	w0, w8, w9
+000000010000051c	add	sp, sp, #0x10
+0000000100000520	ret
+_main:
+0000000100000524	sub	sp, sp, #0x90
+0000000100000528	stp	x29, x30, [sp, #0x80]
+000000010000052c	add	x29, sp, #0x80
+0000000100000530	adrp	x8, 4 ; 0x100004000
+0000000100000534	ldr	x8, [x8, #0x10] ; literal pool symbol address: ___stack_chk_guard
+0000000100000538	ldr	x8, [x8]
+000000010000053c	stur	x8, [x29, #-0x8]
+0000000100000540	mov	w2, #0x0
+0000000100000544	str	wzr, [sp, #0x34]
+0000000100000548	str	w0, [sp, #0x30]
+000000010000054c	str	x1, [sp, #0x28]
+0000000100000550	adrp	x8, 8 ; 0x100008000
+0000000100000554	ldr	x10, [x8, #0x8]
+0000000100000558	ldr	w8, [sp, #0x30]
+000000010000055c	mov	x9, sp
+0000000100000560	str	x10, [x9]
+0000000100000564	str	x8, [x9, #0x8]
+0000000100000568	add	x0, sp, #0x38
+000000010000056c	str	x0, [sp, #0x20]
+0000000100000570	mov	x3, #0x40
+0000000100000574	mov	x1, x3
+0000000100000578	adrp	x4, 0 ; 0x100000000
+000000010000057c	add	x4, x4, #0x681 ; literal pool for: "%s (%d args)"
+0000000100000580	bl	0x10000062c ; symbol stub for: ___snprintf_chk
+0000000100000584	ldr	x0, [sp, #0x20]
+0000000100000588	bl	0x100000650 ; symbol stub for: _puts
+000000010000058c	ldr	w8, [sp, #0x30]
+0000000100000590	subs	w8, w8, #0x1
+0000000100000594	b.le	0x1000005c8
+0000000100000598	b	0x10000059c
+000000010000059c	ldr	x8, [sp, #0x28]
+00000001000005a0	ldr	x0, [x8, #0x8]
+00000001000005a4	adrp	x1, 0 ; 0x100000000
+00000001000005a8	add	x1, x1, #0x68e ; literal pool for: "exit"
+00000001000005ac	bl	0x10000065c ; symbol stub for: _strcmp
+00000001000005b0	cbnz	w0, 0x1000005c8
+00000001000005b4	b	0x1000005b8
+00000001000005b8	mov	w0, #0x1
+00000001000005bc	mov	w1, #0x2
+00000001000005c0	bl	_add_numbers
+00000001000005c4	bl	0x100000644 ; symbol stub for: _exit
+00000001000005c8	ldr	w0, [sp, #0x30]
+00000001000005cc	bl	_static_helper
+00000001000005d0	mov	w8, #0x0
+00000001000005d4	and	w8, w0, w8
+00000001000005d8	str	w8, [sp, #0x1c]
+00000001000005dc	ldur	x9, [x29, #-0x8]
+00000001000005e0	adrp	x8, 4 ; 0x100004000
+00000001000005e4	ldr	x8, [x8, #0x10] ; literal pool symbol address: ___stack_chk_guard
+00000001000005e8	ldr	x8, [x8]
+00000001000005ec	subs	x8, x8, x9
+00000001000005f0	b.eq	0x1000005fc
+00000001000005f4	b	0x1000005f8
+00000001000005f8	bl	0x100000638 ; symbol stub for: ___stack_chk_fail
+00000001000005fc	ldr	w0, [sp, #0x1c]
+0000000100000600	ldp	x29, x30, [sp, #0x80]
+0000000100000604	add	sp, sp, #0x90
+0000000100000608	ret
+_static_helper:
+000000010000060c	sub	sp, sp, #0x10
+0000000100000610	str	w0, [sp, #0xc]
+0000000100000614	ldr	w8, [sp, #0xc]
+0000000100000618	mov	w9, #0x3
+000000010000061c	mul	w8, w8, w9
+0000000100000620	add	w0, w8, #0x1
+0000000100000624	add	sp, sp, #0x10
+0000000100000628	ret
+--- exit=0
+
+===== /usr/bin/otool -Iv hello-quarantined =====
+hello-quarantined:
+Indirect symbols for (__TEXT,__stubs) 5 entries
+address            index name
+0x000000010000062c     6 ___snprintf_chk
+0x0000000100000638     7 ___stack_chk_fail
+0x0000000100000644     9 _exit
+0x0000000100000650    10 _puts
+0x000000010000065c    11 _strcmp
+Indirect symbols for (__DATA_CONST,__got) 6 entries
+address            index name
+0x0000000100004000     6 ___snprintf_chk
+0x0000000100004008     7 ___stack_chk_fail
+0x0000000100004010     8 ___stack_chk_guard
+0x0000000100004018     9 _exit
+0x0000000100004020    10 _puts
+0x0000000100004028    11 _strcmp
+--- exit=0
+
+===== /usr/bin/nm -m hello-quarantined =====
+                 (undefined) external ___snprintf_chk (from libSystem)
+                 (undefined) external ___stack_chk_fail (from libSystem)
+                 (undefined) external ___stack_chk_guard (from libSystem)
+0000000100000000 (__TEXT,__text) [referenced dynamically] external __mh_execute_header
+00000001000004f8 (__TEXT,__text) external _add_numbers
+                 (undefined) external _exit (from libSystem)
+0000000100008000 (__DATA,__data) external _global_counter
+0000000100008008 (__DATA,__data) external _greeting
+0000000100000524 (__TEXT,__text) external _main
+                 (undefined) external _puts (from libSystem)
+000000010000060c (__TEXT,__text) non-external _static_helper
+                 (undefined) external _strcmp (from libSystem)
+--- exit=0
+
+===== /usr/bin/nm -a hello-quarantined =====
+                 U ___snprintf_chk
+                 U ___stack_chk_fail
+                 U ___stack_chk_guard
+0000000100000000 T __mh_execute_header
+00000001000004f8 T _add_numbers
+                 U _exit
+0000000100008000 D _global_counter
+0000000100008008 D _greeting
+0000000100000524 T _main
+                 U _puts
+000000010000060c t _static_helper
+                 U _strcmp
+--- exit=0
+
+===== /usr/bin/dyld_info -platform -uuid -segments -linked_dylibs -load_commands hello-quarantined =====
+hello-quarantined [arm64]:
+    -platform:
+        platform     minOS      sdk
+           macOS     26.0      26.5   
+    -uuid:
+        21C9F585-96F5-3A4C-A516-BBBE1808D26E
+    -segments:
+        load-offset   segment  section       sect-size  seg-size   init/max-prot
+        0x00000000    __TEXT                                16KB    r.x/r.x
+        0x1000004F8             __text              308
+        0x10000062C             __stubs              60
+        0x100000668             __cstring            43
+        0x100000694             __unwind_info        96
+        0x00004000    __DATA_CONST                          16KB    rw./rw.
+        0x100004000             __got                48
+        0x00008000    __DATA                                16KB    rw./rw.
+        0x100008000             __data               16
+    -linked_dylibs:
+        attributes     load path
+                       /usr/lib/libSystem.B.dylib
+    -load_commands:
+Load command #0
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__PAGEZERO"
+          vmaddr: 0x0000000000000000
+          vmsize: 0x0000000100000000
+         fileoff: 0x00000000
+        filesize: 0x00000000
+         maxprot: ...
+        initprot: ...
+          nsects: 0
+Load command #1
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x188
+         segname: "__TEXT"
+          vmaddr: 0x0000000100000000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00000000
+        filesize: 0x00004000
+         maxprot: r.x
+        initprot: r.x
+          nsects: 4
+        sections[0].sectname: "__text"
+        sections[0].addr:     0x00000001000004F8
+        sections[0].size:     0x0000000000000134
+        sections[0].offset:   0x000004F8
+        sections[0].align:    2^2
+        sections[0].type:      S_ATTR_PURE_INSTRUCTIONS|S_ATTR_SOME_INSTRUCTIONS
+        sections[1].sectname: "__stubs"
+        sections[1].addr:     0x000000010000062C
+        sections[1].size:     0x000000000000003C
+        sections[1].offset:   0x0000062C
+        sections[1].align:    2^2
+        sections[1].type:      S_SYMBOL_STUBS
+        sections[1].reserved2: 12
+        sections[2].sectname: "__cstring"
+        sections[2].addr:     0x0000000100000668
+        sections[2].size:     0x000000000000002B
+        sections[2].offset:   0x00000668
+        sections[2].align:    2^0
+        sections[2].type:      S_CSTRING_LITERALS
+        sections[3].sectname: "__unwind_info"
+        sections[3].addr:     0x0000000100000694
+        sections[3].size:     0x0000000000000060
+        sections[3].offset:   0x00000694
+        sections[3].align:    2^2
+Load command #2
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA_CONST"
+          vmaddr: 0x0000000100004000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00004000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          flags: SG_READ_ONLY
+          nsects: 1
+        sections[0].sectname: "__got"
+        sections[0].addr:     0x0000000100004000
+        sections[0].size:     0x0000000000000030
+        sections[0].offset:   0x00004000
+        sections[0].align:    2^3
+        sections[0].type:      S_NON_LAZY_SYMBOL_POINTERS
+        sections[0].reserved1: 5
+Load command #3
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA"
+          vmaddr: 0x0000000100008000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00008000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          nsects: 1
+        sections[0].sectname: "__data"
+        sections[0].addr:     0x0000000100008000
+        sections[0].size:     0x0000000000000010
+        sections[0].offset:   0x00008000
+        sections[0].align:    2^3
+Load command #4
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__LINKEDIT"
+          vmaddr: 0x000000010000C000
+          vmsize: 0x0000000000004000
+         fileoff: 0x0000C000
+        filesize: 0x000004F8
+         maxprot: r..
+        initprot: r..
+          nsects: 0
+Load command #5
+             cmd: LC_DYLD_CHAINED_FIXUPS
+         cmdsize: 0x10
+         dataoff: 0xC000
+        datasize: 0xD0
+Load command #6
+             cmd: LC_DYLD_EXPORTS_TRIE
+         cmdsize: 0x10
+         dataoff: 0xC0D0
+        datasize: 0x70
+Load command #7
+             cmd: LC_SYMTAB
+         cmdsize: 0x18
+          symoff: 0xC148
+           nsyms: 12
+          stroff: 0xC238
+         strsize: 0xA0
+Load command #8
+             cmd: LC_DYSYMTAB
+         cmdsize: 0x50
+       ilocalsym: 0
+       nlocalsym: 1
+      iextdefsym: 1
+      nextdefsym: 5
+       iundefsym: 6
+       nundefsym: 6
+  indirectsymoff: 0x0000C208
+   nindirectsyms: 11
+       ilocalsym: 0
+Load command #9
+             cmd: LC_LOAD_DYLINKER
+         cmdsize: 0x20
+            name: "/usr/lib/dyld"
+Load command #10
+             cmd: LC_UUID
+         cmdsize: 0x18
+            uuid: 21C9F585-96F5-3A4C-A516-BBBE1808D26E
+Load command #11
+             cmd: LC_BUILD_VERSION
+         cmdsize: 0x20
+        platform: macOS
+          min-OS: 26.0
+             sdk: 26.5
+         tool[0].name:    ld
+         tool[0].version: 1267.0
+Load command #12
+             cmd: LC_SOURCE_VERSION
+         cmdsize: 0x10
+         version: 0.0
+Load command #13
+             cmd: LC_MAIN
+         cmdsize: 0x18
+        entryoff: 0x524
+Load command #14
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x38
+            name: "/usr/lib/libSystem.B.dylib"
+        cur-vers: 1356.0
+     compat-vers: 1.0
+Load command #15
+             cmd: LC_FUNCTION_STARTS
+         cmdsize: 0x10
+         dataoff: 0xC140
+        datasize: 0x8
+Load command #16
+             cmd: LC_DATA_IN_CODE
+         cmdsize: 0x10
+         dataoff: 0xC148
+        datasize: 0x0
+Load command #17
+             cmd: LC_CODE_SIGNATURE
+         cmdsize: 0x10
+         dataoff: 0xC2E0
+        datasize: 0x218
+--- exit=0
+
+===== /usr/bin/dyld_info -fixup_chains hello-quarantined =====
+hello-quarantined [arm64]:
+    -fixup_chains:
+      fixups_version:   0x00000000
+      starts_offset:    0x00000020
+      imports_offset:   0x00000068
+      symbols_offset:   0x00000080
+      imports_count:    6
+      imports_format:   1 (DYLD_CHAINED_IMPORT)
+      symbols_format:   0
+        seg[2]:
+          page_size:       0x4000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00004000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0000
+        seg[3]:
+          page_size:       0x4000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00008000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0008
+--- exit=0
+
+===== /usr/bin/dyld_info -fixups hello-quarantined =====
+hello-quarantined [arm64]:
+    -fixups:
+        segment         section          address             type   target
+        __DATA_CONST    __got            0x100004000           bind  libSystem/___snprintf_chk
+        __DATA_CONST    __got            0x100004008           bind  libSystem/___stack_chk_fail
+        __DATA_CONST    __got            0x100004010           bind  libSystem/___stack_chk_guard
+        __DATA_CONST    __got            0x100004018           bind  libSystem/_exit
+        __DATA_CONST    __got            0x100004020           bind  libSystem/_puts
+        __DATA_CONST    __got            0x100004028           bind  libSystem/_strcmp
+        __DATA          __data           0x100008008         rebase  0x100000668
+--- exit=0
+
+===== /usr/bin/dyld_info -exports hello-quarantined =====
+hello-quarantined [arm64]:
+    -exports:
+        offset      symbol
+        0x00000000  __mh_execute_header
+        0x000004F8  _add_numbers
+        0x00008000  _global_counter
+        0x00008008  _greeting
+        0x00000524  _main
+--- exit=0
+
+===== /usr/bin/dyld_info -imports hello-quarantined =====
+hello-quarantined [arm64]:
+    -imports:
+      0x0000  ___snprintf_chk  (from libSystem)
+      0x0001  ___stack_chk_fail  (from libSystem)
+      0x0002  ___stack_chk_guard  (from libSystem)
+      0x0003  _exit  (from libSystem)
+      0x0004  _puts  (from libSystem)
+      0x0005  _strcmp  (from libSystem)
+--- exit=0
+
+===== /usr/bin/dyld_info -objc hello-quarantined =====
+hello-quarantined [arm64]:
+    -objc:
+--- exit=0
+
+===== /usr/bin/dyld_info -inits hello-quarantined =====
+hello-quarantined [arm64]:
+    -inits:
+--- exit=0
+
+===== /usr/bin/dyld_info -function_starts hello-quarantined =====
+hello-quarantined [arm64]:
+    -function_starts:
+        0x1000004F8  _add_numbers
+        0x100000524  _main
+        0x10000060C  _static_helper
+--- exit=0
+
+===== /usr/bin/dyld_info -validate_only hello-quarantined =====
+hello-quarantined [arm64]:
+--- exit=0
+
+===== /usr/bin/vtool -show hello-quarantined =====
+hello-quarantined:
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform MACOS
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool LD
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+--- exit=0
+
+===== /usr/bin/codesign -dvvv --entitlements - hello-quarantined =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-quarantined
+Identifier=hello-c
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5b
+CandidateCDHashFull sha256=f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5bc2b929d3ce74736ef9fd4416
+Hash choices=sha256
+CMSDigest=f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5bc2b929d3ce74736ef9fd4416
+CMSDigestType=2
+CDHash=f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5b
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+--- exit=0
+
+===== /usr/bin/codesign -d --entitlements - --xml hello-quarantined =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-quarantined
+--- exit=0
+
+===== /usr/bin/codesign -d -r - hello-quarantined =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-quarantined
+# designated => cdhash H"f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5b"
+--- exit=0
+
+===== /usr/bin/codesign --verify --verbose=4 --strict hello-quarantined =====
+hello-quarantined: valid on disk
+hello-quarantined: satisfies its Designated Requirement
+--- exit=0
+
+===== /usr/sbin/spctl -a -vv -t exec hello-quarantined =====
+hello-quarantined: rejected
+--- exit=3
+
+===== /usr/bin/xattr -l hello-quarantined =====
+com.apple.quarantine: 0083;68c3a1b2;Safari;9B2E1C3A-5F4D-4E6B-8A7C-1D2E3F4A5B6C
+--- exit=0
+
+===== /usr/bin/strings -n 6 | head -200 =====
+hello from machre corpus
+%s (%d args)
+--- exit=0

@@ -1,0 +1,8 @@
+hello-usedylib: 6 symbols (2 defined, 4 undefined, 0 stabs, 6 external, 0 local)
+  0  0x100000000  T  section    (__TEXT,__text)  0x0010            __mh_execute_header
+  1  0x1000004e8  T  section    (__TEXT,__text)  0x0000            _main
+  2  0x0          U  undefined  (undefined)      0x0100  libhello  _hello_add
+  3  0x0          U  undefined  (undefined)      0x0100  libhello  _hello_global
+  4  0x0          U  undefined  (undefined)      0x0100  libhello  _hello_mul
+  5  0x0          U  undefined  (undefined)      0x0100  libhello  _hello_print
+  diagnostics  none

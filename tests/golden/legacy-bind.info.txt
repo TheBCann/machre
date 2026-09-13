@@ -1,0 +1,24 @@
+tests/corpus/legacy-bind: Mach-O 64-bit executable arm64 (thin), 50424 bytes
+  sha256       8b183d7e5f2ef87bee20980009a118a62c60f3568d8e7f53a50f74e5aefd4251
+  magic        0xfeedfacf MH_MAGIC_64   cputype 0x100000c (arm64)   cpusubtype 0x0 (ALL)   caps 0x00
+  filetype     2 MH_EXECUTE   ncmds 17   sizeofcmds 1464
+  flags        0x200085 (NOUNDEFS,DYLDLINK,TWOLEVEL,PIE)
+  uuid         3056DEAE-F707-36B5-92E8-5322AD9638BB
+  platform     macOS   minos 26.0   sdk 26.5   tools ld 1267.0
+  source ver   0.0
+  dylinker     /usr/lib/dyld
+  entry        LC_MAIN entryoff 0x630 -> 0x100000630 (_main)   stacksize 0
+  dyld data    dyld info (rebase 8, bind 120, weak 0, lazy 72, export 72 bytes)   function starts (2)
+  dylibs       1
+    1  /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+  segments     5
+    __PAGEZERO    vm 0x0+0x100000000     file 0+0          ---/---  0 sects
+    __TEXT        vm 0x100000000+0x4000  file 0+16384      r-x/r-x  6 sects
+    __DATA_CONST  vm 0x100004000+0x4000  file 16384+16384  rw-/rw-  1 sect   READ_ONLY
+    __DATA        vm 0x100008000+0x4000  file 32768+16384  rw-/rw-  2 sects
+    __LINKEDIT    vm 0x10000c000+0x4000  file 49152+1272   r--/r--  0 sects
+  symbols      15 (6 defined, 9 undefined, 0 stabs)   indirect 10
+  signature    ad hoc, linker-signed   identifier "legacy-bind"   cdhash d109c255d88cc5f8dfb822594a965de2611f36de   pages 13/13 ok
+  security     valid (errSecSuccess)   trust: ad hoc   notarized: no
+  quarantine   none
+  diagnostics  none

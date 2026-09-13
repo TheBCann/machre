@@ -1,0 +1,10 @@
+  file         0.410 bits/byte over 50424 bytes
+  segments     5
+    __PAGEZERO  0+0          0.000  0.0%
+    __TEXT      0+16384      0.535  32.5%
+    UPX_DATA    16384+16384  0.013  32.5%
+    __DATA      32768+16384  0.003  32.5%
+    __LINKEDIT  49152+1272   5.160  2.5%
+  tells        2
+    [35] packer_segment_name  segment named UPX_DATA (UPX marker) at LC index 2
+    [10] nonstandard_segment_order  unexpected segment UPX_DATA at index 2 before __LINKEDIT

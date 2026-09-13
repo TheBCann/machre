@@ -1,0 +1,7 @@
+hello-c: 5 exports (exports_trie)
+  0x100000000  regular    __mh_execute_header
+  0x1000004f8  regular    _add_numbers
+  0x100008000  regular    _global_counter
+  0x100008008  regular    _greeting
+  0x100000524  regular    _main
+  diagnostics  none

@@ -1,0 +1,5 @@
+tests/corpus/hello-c: 3 functions
+  0x1000004f8  0x2c  function_starts  _add_numbers
+  0x100000524  0xe8  function_starts  _main
+  0x10000060c  0x20  function_starts  _static_helper
+  diagnostics  none

@@ -1,0 +1,10 @@
+hello-c: dyld data (chained)
+  fixups       7 (1 rebases, 6 binds, 0 auth, 0 lazy, 0 weak)
+    0x100004000  __DATA_CONST  __got   bind    libSystem/___snprintf_chk
+    0x100004008  __DATA_CONST  __got   bind    libSystem/___stack_chk_fail
+    0x100004010  __DATA_CONST  __got   bind    libSystem/___stack_chk_guard
+    0x100004018  __DATA_CONST  __got   bind    libSystem/_exit
+    0x100004020  __DATA_CONST  __got   bind    libSystem/_puts
+    0x100004028  __DATA_CONST  __got   bind    libSystem/_strcmp
+    0x100008008  __DATA        __data  rebase  0x100000668
+  diagnostics  none

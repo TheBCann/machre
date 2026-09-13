@@ -1,0 +1,23 @@
+legacy-bind: dyld data (legacy)
+  fixups       20 (10 rebases, 10 binds, 0 auth, 4 lazy, 0 weak)
+    0x100004000  __DATA_CONST  __got            bind       libSystem/___stack_chk_guard
+    0x100004008  __DATA_CONST  __got            bind       libSystem/dyld_stub_binder
+    0x100008000  __DATA        __la_symbol_ptr  rebase     0x100000794
+    0x100008000  __DATA        __la_symbol_ptr  lazy-bind  libSystem/___stack_chk_fail
+    0x100008008  __DATA        __la_symbol_ptr  rebase     0x1000007A0
+    0x100008008  __DATA        __la_symbol_ptr  lazy-bind  libSystem/_printf
+    0x100008010  __DATA        __la_symbol_ptr  rebase     0x1000007AC
+    0x100008010  __DATA        __la_symbol_ptr  lazy-bind  libSystem/_qsort
+    0x100008018  __DATA        __la_symbol_ptr  rebase     0x1000007B8
+    0x100008018  __DATA        __la_symbol_ptr  lazy-bind  libSystem/_strlen
+    0x100008020  __DATA        __data           bind       libSystem/_puts
+    0x100008028  __DATA        __data           bind       libSystem/_printf
+    0x100008030  __DATA        __data           rebase     0x100000608
+    0x100008038  __DATA        __data           bind       libSystem/_malloc
+    0x100008040  __DATA        __data           bind       libSystem/_free
+    0x100008048  __DATA        __data           rebase     0x1000007C4
+    0x100008050  __DATA        __data           rebase     0x1000007C9
+    0x100008058  __DATA        __data           rebase     0x1000007D0
+    0x100008060  __DATA        __data           rebase     0x1000007D8
+    0x100008068  __DATA        __data           rebase     0x1000007DF
+  diagnostics  none

@@ -1,0 +1,6 @@
+hello-c: 0 extended attributes
+  xattrs       none
+  quarantine   none
+  translocated no
+  provenance   no
+  diagnostics  none

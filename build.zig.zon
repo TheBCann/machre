@@ -1,0 +1,8 @@
+.{
+    .name = .machre,
+    .version = "0.1.0",
+    .fingerprint = 0xee7caf0ceabb3411,
+    .minimum_zig_version = "0.17.0-dev.1154",
+    .dependencies = .{},
+    .paths = .{ "build.zig", "build.zig.zon", "src", "tests", "README.md", "docs" },
+}

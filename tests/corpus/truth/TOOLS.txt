@@ -1,0 +1,21 @@
+# Toolchain that produced this corpus (gen/truth.sh)
+ProductName:		macOS
+ProductVersion:		26.3
+BuildVersion:		25D125
+
+Apple clang version 21.0.0 (clang-2100.1.1.101)
+Target: arm64-apple-darwin25.3.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+@(#)PROGRAM:ld PROJECT:ld-1267
+BUILD 16:38:58 Jun  8 2026
+
+26.5
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+
+Xcode 26.6
+Build version 17F113
+
+0.17.0-dev.1154+ba5420896
+Python 3.14.7

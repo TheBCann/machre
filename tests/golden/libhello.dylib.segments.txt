@@ -1,0 +1,12 @@
+tests/corpus/libhello.dylib: 4 segments, 6 sections
+  __TEXT        vm 0x0+0x4000     file 0+16384      r-x/r-x  4 sects
+    __text         0x4d0  0x80  1232  2^2  S_REGULAR           S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  text     0/0
+    __stubs        0x550   0xc  1360  2^2  S_SYMBOL_STUBS      S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  stubs    0/12
+    __cstring      0x55c  0x13  1372  2^0  S_CSTRING_LITERALS                                                     cstring  0/0
+    __unwind_info  0x570  0x60  1392  2^2  S_REGULAR                                                              unwind   0/0
+  __DATA_CONST  vm 0x4000+0x4000  file 16384+16384  rw-/rw-  1 sect   READ_ONLY
+    __got  0x4000  0x8  16384  2^3  S_NON_LAZY_SYMBOL_POINTERS    got  1/0
+  __DATA        vm 0x8000+0x4000  file 32768+16384  rw-/rw-  1 sect
+    __data  0x8000  0x4  32768  2^2  S_REGULAR    data  0/0
+  __LINKEDIT    vm 0xc000+0x4000  file 49152+864    r--/r--  0 sects
+  diagnostics  none

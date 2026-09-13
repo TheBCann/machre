@@ -1,0 +1,5 @@
+machre triage: tests/corpus/Hello.app/Contents/MacOS/Hello [arm64]
+LEVEL: CLEAN (score 10, 1 category)                   trust: AD HOC
+Signing     [LOW]    sig.adhoc         ad hoc; no certificate chain, not notarized
+Not flagged: entropy (max 2.51 __TEXT), imports present (19), symbols present (86), no quarantine xattr, PIE, no RWX segment.
+  diagnostics  none

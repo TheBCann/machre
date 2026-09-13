@@ -1,0 +1,16 @@
+tests/corpus/legacy-bind: 5 segments, 9 sections
+  __PAGEZERO    vm 0x0+0x100000000     file 0+0          ---/---  0 sects
+  __TEXT        vm 0x100000000+0x4000  file 0+16384      r-x/r-x  6 sects
+    __text         0x100000608  0x144  1544  2^2  S_REGULAR           S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  text         0/0
+    __stubs        0x10000074c   0x30  1868  2^2  S_SYMBOL_STUBS      S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  stubs        0/12
+    __stub_helper  0x10000077c   0x48  1916  2^2  S_REGULAR           S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  stub_helper  0/0
+    __cstring      0x1000007c4   0x27  1988  2^0  S_CSTRING_LITERALS                                                     cstring      0/0
+    __const        0x1000007f0   0x10  2032  2^4  S_REGULAR                                                              const_data   0/0
+    __unwind_info  0x100000800   0x60  2048  2^2  S_REGULAR                                                              unwind       0/0
+  __DATA_CONST  vm 0x100004000+0x4000  file 16384+16384  rw-/rw-  1 sect   READ_ONLY
+    __got  0x100004000  0x10  16384  2^3  S_NON_LAZY_SYMBOL_POINTERS    got  4/0
+  __DATA        vm 0x100008000+0x4000  file 32768+16384  rw-/rw-  2 sects
+    __la_symbol_ptr  0x100008000  0x20  32768  2^3  S_LAZY_SYMBOL_POINTERS    la_symbol_ptr  6/0
+    __data           0x100008020  0x58  32800  2^3  S_REGULAR                 data           0/0
+  __LINKEDIT    vm 0x10000c000+0x4000  file 49152+1272   r--/r--  0 sects
+  diagnostics  none

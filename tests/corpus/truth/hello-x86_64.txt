@@ -1,0 +1,691 @@
+# machre corpus ground truth for hello-x86_64
+# generated 2026-09-12T08:24:03Z on 26.3 (25D125) by gen/truth.sh
+# macho=hello-x86_64 bundle=none
+
+===== /usr/bin/file hello-x86_64 =====
+hello-x86_64: Mach-O 64-bit executable x86_64
+--- exit=0
+
+===== /usr/bin/stat -f size=%z mode=%Mp%Lp hello-x86_64 =====
+size=13008 mode=0755
+--- exit=0
+
+===== /usr/bin/shasum -a 256 hello-x86_64 =====
+5c296f7c00ebce4ffcb91795bc8cbabd76dea7b1b117a642f2639bee16609cfe  hello-x86_64
+--- exit=0
+
+===== /usr/bin/otool -hv hello-x86_64 =====
+hello-x86_64:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64   X86_64        ALL  0x00     EXECUTE    17       1192   NOUNDEFS DYLDLINK TWOLEVEL PIE
+--- exit=0
+
+===== /usr/bin/otool -h -l hello-x86_64 =====
+hello-x86_64:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777223          3  0x00           2    17       1192 0x00200085
+Load command 0
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __PAGEZERO
+   vmaddr 0x0000000000000000
+   vmsize 0x0000000100000000
+  fileoff 0
+ filesize 0
+  maxprot 0x00000000
+ initprot 0x00000000
+   nsects 0
+    flags 0x0
+Load command 1
+      cmd LC_SEGMENT_64
+  cmdsize 392
+  segname __TEXT
+   vmaddr 0x0000000100000000
+   vmsize 0x0000000000001000
+  fileoff 0
+ filesize 4096
+  maxprot 0x00000005
+ initprot 0x00000005
+   nsects 4
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x0000000100000510
+      size 0x0000000000000110
+    offset 1296
+     align 2^4 (16)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __stubs
+   segname __TEXT
+      addr 0x0000000100000620
+      size 0x000000000000001e
+    offset 1568
+     align 2^1 (2)
+    reloff 0
+    nreloc 0
+     flags 0x80000408
+ reserved1 0 (index into indirect symbol table)
+ reserved2 6 (size of stubs)
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x000000010000063e
+      size 0x000000000000002b
+    offset 1598
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __unwind_info
+   segname __TEXT
+      addr 0x000000010000066c
+      size 0x0000000000000058
+    offset 1644
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 2
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA_CONST
+   vmaddr 0x0000000100001000
+   vmsize 0x0000000000001000
+  fileoff 4096
+ filesize 4096
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x10
+Section
+  sectname __got
+   segname __DATA_CONST
+      addr 0x0000000100001000
+      size 0x0000000000000030
+    offset 4096
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000006
+ reserved1 5 (index into indirect symbol table)
+ reserved2 0
+Load command 3
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA
+   vmaddr 0x0000000100002000
+   vmsize 0x0000000000001000
+  fileoff 8192
+ filesize 4096
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x0
+Section
+  sectname __data
+   segname __DATA
+      addr 0x0000000100002000
+      size 0x0000000000000010
+    offset 8192
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 4
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __LINKEDIT
+   vmaddr 0x0000000100003000
+   vmsize 0x0000000000001000
+  fileoff 12288
+ filesize 720
+  maxprot 0x00000001
+ initprot 0x00000001
+   nsects 0
+    flags 0x0
+Load command 5
+      cmd LC_DYLD_CHAINED_FIXUPS
+  cmdsize 16
+  dataoff 12288
+ datasize 208
+Load command 6
+      cmd LC_DYLD_EXPORTS_TRIE
+  cmdsize 16
+  dataoff 12496
+ datasize 104
+Load command 7
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 12608
+   nsyms 12
+  stroff 12848
+ strsize 160
+Load command 8
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 1
+     iextdefsym 1
+     nextdefsym 5
+      iundefsym 6
+      nundefsym 6
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 12800
+  nindirectsyms 11
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 9
+          cmd LC_LOAD_DYLINKER
+      cmdsize 32
+         name /usr/lib/dyld (offset 12)
+Load command 10
+     cmd LC_UUID
+ cmdsize 24
+    uuid B1A09864-F234-3065-8E25-D1A4504D4DB8
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform 1
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool 3
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+Load command 13
+       cmd LC_MAIN
+   cmdsize 24
+  entryoff 1328
+ stacksize 0
+Load command 14
+          cmd LC_LOAD_DYLIB
+      cmdsize 56
+         name /usr/lib/libSystem.B.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 1356.0.0
+compatibility version 1.0.0
+Load command 15
+      cmd LC_FUNCTION_STARTS
+  cmdsize 16
+  dataoff 12600
+ datasize 8
+Load command 16
+      cmd LC_DATA_IN_CODE
+  cmdsize 16
+  dataoff 12608
+ datasize 0
+--- exit=0
+
+===== /usr/bin/otool -L hello-x86_64 =====
+hello-x86_64:
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+--- exit=0
+
+===== /usr/bin/otool -tV hello-x86_64 =====
+hello-x86_64:
+(__TEXT,__text) section
+_add_numbers:
+0000000100000510	pushq	%rbp
+0000000100000511	movq	%rsp, %rbp
+0000000100000514	movl	%edi, -0x4(%rbp)
+0000000100000517	movl	%esi, -0x8(%rbp)
+000000010000051a	movl	-0x4(%rbp), %eax
+000000010000051d	addl	-0x8(%rbp), %eax
+0000000100000520	addl	_global_counter(%rip), %eax
+0000000100000526	popq	%rbp
+0000000100000527	retq
+0000000100000528	nopl	(%rax,%rax)
+_main:
+0000000100000530	pushq	%rbp
+0000000100000531	movq	%rsp, %rbp
+0000000100000534	subq	$0x70, %rsp
+0000000100000538	movq	0xad1(%rip), %rax               ## literal pool symbol address: ___stack_chk_guard
+000000010000053f	movq	(%rax), %rax
+0000000100000542	movq	%rax, -0x8(%rbp)
+0000000100000546	movl	$0x0, -0x54(%rbp)
+000000010000054d	movl	%edi, -0x58(%rbp)
+0000000100000550	movq	%rsi, -0x60(%rbp)
+0000000100000554	leaq	-0x50(%rbp), %rdi
+0000000100000558	movq	_greeting(%rip), %r9
+000000010000055f	movl	-0x58(%rbp), %eax
+0000000100000562	movl	$0x40, %ecx
+0000000100000567	xorl	%edx, %edx
+0000000100000569	leaq	0xe7(%rip), %r8                 ## literal pool for: "%s (%d args)"
+0000000100000570	movq	%rcx, %rsi
+0000000100000573	movl	%eax, (%rsp)
+0000000100000576	movb	$0x0, %al
+0000000100000578	callq	0x100000620                     ## symbol stub for: ___snprintf_chk
+000000010000057d	leaq	-0x50(%rbp), %rdi
+0000000100000581	callq	0x100000632                     ## symbol stub for: _puts
+0000000100000586	cmpl	$0x1, -0x58(%rbp)
+000000010000058a	jle	0x1000005d2
+000000010000058c	movq	-0x60(%rbp), %rax
+0000000100000590	movq	0x8(%rax), %rdi
+0000000100000594	leaq	0xc9(%rip), %rsi                ## literal pool for: "exit"
+000000010000059b	callq	0x100000638                     ## symbol stub for: _strcmp
+00000001000005a0	cmpl	$0x0, %eax
+00000001000005a3	jne	0x1000005d2
+00000001000005a5	movl	$0x1, %edi
+00000001000005aa	movl	$0x2, %esi
+00000001000005af	callq	_add_numbers
+00000001000005b4	movl	%eax, -0x64(%rbp)
+00000001000005b7	movq	0xa52(%rip), %rax               ## literal pool symbol address: ___stack_chk_guard
+00000001000005be	movq	(%rax), %rax
+00000001000005c1	movq	-0x8(%rbp), %rcx
+00000001000005c5	cmpq	%rcx, %rax
+00000001000005c8	jne	0x1000005fc
+00000001000005ca	movl	-0x64(%rbp), %edi
+00000001000005cd	callq	0x10000062c                     ## symbol stub for: _exit
+00000001000005d2	movl	-0x58(%rbp), %edi
+00000001000005d5	callq	_static_helper
+00000001000005da	andl	$0x0, %eax
+00000001000005dd	movl	%eax, -0x68(%rbp)
+00000001000005e0	movq	0xa29(%rip), %rax               ## literal pool symbol address: ___stack_chk_guard
+00000001000005e7	movq	(%rax), %rax
+00000001000005ea	movq	-0x8(%rbp), %rcx
+00000001000005ee	cmpq	%rcx, %rax
+00000001000005f1	jne	0x1000005fc
+00000001000005f3	movl	-0x68(%rbp), %eax
+00000001000005f6	addq	$0x70, %rsp
+00000001000005fa	popq	%rbp
+00000001000005fb	retq
+00000001000005fc	callq	0x100000626                     ## symbol stub for: ___stack_chk_fail
+0000000100000601	nopw	%cs:(%rax,%rax)
+_static_helper:
+0000000100000610	pushq	%rbp
+0000000100000611	movq	%rsp, %rbp
+0000000100000614	movl	%edi, -0x4(%rbp)
+0000000100000617	imull	$0x3, -0x4(%rbp), %eax
+000000010000061b	addl	$0x1, %eax
+000000010000061e	popq	%rbp
+000000010000061f	retq
+--- exit=0
+
+===== /usr/bin/otool -Iv hello-x86_64 =====
+hello-x86_64:
+Indirect symbols for (__TEXT,__stubs) 5 entries
+address            index name
+0x0000000100000620     6 ___snprintf_chk
+0x0000000100000626     7 ___stack_chk_fail
+0x000000010000062c     9 _exit
+0x0000000100000632    10 _puts
+0x0000000100000638    11 _strcmp
+Indirect symbols for (__DATA_CONST,__got) 6 entries
+address            index name
+0x0000000100001000     6 ___snprintf_chk
+0x0000000100001008     7 ___stack_chk_fail
+0x0000000100001010     8 ___stack_chk_guard
+0x0000000100001018     9 _exit
+0x0000000100001020    10 _puts
+0x0000000100001028    11 _strcmp
+--- exit=0
+
+===== /usr/bin/nm -m hello-x86_64 =====
+                 (undefined) external ___snprintf_chk (from libSystem)
+                 (undefined) external ___stack_chk_fail (from libSystem)
+                 (undefined) external ___stack_chk_guard (from libSystem)
+0000000100000000 (__TEXT,__text) [referenced dynamically] external __mh_execute_header
+0000000100000510 (__TEXT,__text) external _add_numbers
+                 (undefined) external _exit (from libSystem)
+0000000100002000 (__DATA,__data) external _global_counter
+0000000100002008 (__DATA,__data) external _greeting
+0000000100000530 (__TEXT,__text) external _main
+                 (undefined) external _puts (from libSystem)
+0000000100000610 (__TEXT,__text) non-external _static_helper
+                 (undefined) external _strcmp (from libSystem)
+--- exit=0
+
+===== /usr/bin/nm -a hello-x86_64 =====
+                 U ___snprintf_chk
+                 U ___stack_chk_fail
+                 U ___stack_chk_guard
+0000000100000000 T __mh_execute_header
+0000000100000510 T _add_numbers
+                 U _exit
+0000000100002000 D _global_counter
+0000000100002008 D _greeting
+0000000100000530 T _main
+                 U _puts
+0000000100000610 t _static_helper
+                 U _strcmp
+--- exit=0
+
+===== /usr/bin/dyld_info -platform -uuid -segments -linked_dylibs -load_commands hello-x86_64 =====
+hello-x86_64 [x86_64]:
+    -platform:
+        platform     minOS      sdk
+           macOS     26.0      26.5   
+    -uuid:
+        B1A09864-F234-3065-8E25-D1A4504D4DB8
+    -segments:
+        load-offset   segment  section       sect-size  seg-size   init/max-prot
+        0x00000000    __TEXT                                 4KB    r.x/r.x
+        0x100000510             __text              272
+        0x100000620             __stubs              30
+        0x10000063E             __cstring            43
+        0x10000066C             __unwind_info        88
+        0x00001000    __DATA_CONST                           4KB    rw./rw.
+        0x100001000             __got                48
+        0x00002000    __DATA                                 4KB    rw./rw.
+        0x100002000             __data               16
+    -linked_dylibs:
+        attributes     load path
+                       /usr/lib/libSystem.B.dylib
+    -load_commands:
+Load command #0
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__PAGEZERO"
+          vmaddr: 0x0000000000000000
+          vmsize: 0x0000000100000000
+         fileoff: 0x00000000
+        filesize: 0x00000000
+         maxprot: ...
+        initprot: ...
+          nsects: 0
+Load command #1
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x188
+         segname: "__TEXT"
+          vmaddr: 0x0000000100000000
+          vmsize: 0x0000000000001000
+         fileoff: 0x00000000
+        filesize: 0x00001000
+         maxprot: r.x
+        initprot: r.x
+          nsects: 4
+        sections[0].sectname: "__text"
+        sections[0].addr:     0x0000000100000510
+        sections[0].size:     0x0000000000000110
+        sections[0].offset:   0x00000510
+        sections[0].align:    2^4
+        sections[0].type:      S_ATTR_PURE_INSTRUCTIONS|S_ATTR_SOME_INSTRUCTIONS
+        sections[1].sectname: "__stubs"
+        sections[1].addr:     0x0000000100000620
+        sections[1].size:     0x000000000000001E
+        sections[1].offset:   0x00000620
+        sections[1].align:    2^1
+        sections[1].type:      S_SYMBOL_STUBS
+        sections[1].reserved2: 6
+        sections[2].sectname: "__cstring"
+        sections[2].addr:     0x000000010000063E
+        sections[2].size:     0x000000000000002B
+        sections[2].offset:   0x0000063E
+        sections[2].align:    2^0
+        sections[2].type:      S_CSTRING_LITERALS
+        sections[3].sectname: "__unwind_info"
+        sections[3].addr:     0x000000010000066C
+        sections[3].size:     0x0000000000000058
+        sections[3].offset:   0x0000066C
+        sections[3].align:    2^2
+Load command #2
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA_CONST"
+          vmaddr: 0x0000000100001000
+          vmsize: 0x0000000000001000
+         fileoff: 0x00001000
+        filesize: 0x00001000
+         maxprot: rw.
+        initprot: rw.
+          flags: SG_READ_ONLY
+          nsects: 1
+        sections[0].sectname: "__got"
+        sections[0].addr:     0x0000000100001000
+        sections[0].size:     0x0000000000000030
+        sections[0].offset:   0x00001000
+        sections[0].align:    2^3
+        sections[0].type:      S_NON_LAZY_SYMBOL_POINTERS
+        sections[0].reserved1: 5
+Load command #3
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA"
+          vmaddr: 0x0000000100002000
+          vmsize: 0x0000000000001000
+         fileoff: 0x00002000
+        filesize: 0x00001000
+         maxprot: rw.
+        initprot: rw.
+          nsects: 1
+        sections[0].sectname: "__data"
+        sections[0].addr:     0x0000000100002000
+        sections[0].size:     0x0000000000000010
+        sections[0].offset:   0x00002000
+        sections[0].align:    2^3
+Load command #4
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__LINKEDIT"
+          vmaddr: 0x0000000100003000
+          vmsize: 0x0000000000001000
+         fileoff: 0x00003000
+        filesize: 0x000002D0
+         maxprot: r..
+        initprot: r..
+          nsects: 0
+Load command #5
+             cmd: LC_DYLD_CHAINED_FIXUPS
+         cmdsize: 0x10
+         dataoff: 0x3000
+        datasize: 0xD0
+Load command #6
+             cmd: LC_DYLD_EXPORTS_TRIE
+         cmdsize: 0x10
+         dataoff: 0x30D0
+        datasize: 0x68
+Load command #7
+             cmd: LC_SYMTAB
+         cmdsize: 0x18
+          symoff: 0x3140
+           nsyms: 12
+          stroff: 0x3230
+         strsize: 0xA0
+Load command #8
+             cmd: LC_DYSYMTAB
+         cmdsize: 0x50
+       ilocalsym: 0
+       nlocalsym: 1
+      iextdefsym: 1
+      nextdefsym: 5
+       iundefsym: 6
+       nundefsym: 6
+  indirectsymoff: 0x00003200
+   nindirectsyms: 11
+       ilocalsym: 0
+Load command #9
+             cmd: LC_LOAD_DYLINKER
+         cmdsize: 0x20
+            name: "/usr/lib/dyld"
+Load command #10
+             cmd: LC_UUID
+         cmdsize: 0x18
+            uuid: B1A09864-F234-3065-8E25-D1A4504D4DB8
+Load command #11
+             cmd: LC_BUILD_VERSION
+         cmdsize: 0x20
+        platform: macOS
+          min-OS: 26.0
+             sdk: 26.5
+         tool[0].name:    ld
+         tool[0].version: 1267.0
+Load command #12
+             cmd: LC_SOURCE_VERSION
+         cmdsize: 0x10
+         version: 0.0
+Load command #13
+             cmd: LC_MAIN
+         cmdsize: 0x18
+        entryoff: 0x530
+Load command #14
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x38
+            name: "/usr/lib/libSystem.B.dylib"
+        cur-vers: 1356.0
+     compat-vers: 1.0
+Load command #15
+             cmd: LC_FUNCTION_STARTS
+         cmdsize: 0x10
+         dataoff: 0x3138
+        datasize: 0x8
+Load command #16
+             cmd: LC_DATA_IN_CODE
+         cmdsize: 0x10
+         dataoff: 0x3140
+        datasize: 0x0
+--- exit=0
+
+===== /usr/bin/dyld_info -fixup_chains hello-x86_64 =====
+hello-x86_64 [x86_64]:
+    -fixup_chains:
+      fixups_version:   0x00000000
+      starts_offset:    0x00000020
+      imports_offset:   0x00000068
+      symbols_offset:   0x00000080
+      imports_count:    6
+      imports_format:   1 (DYLD_CHAINED_IMPORT)
+      symbols_format:   0
+        seg[2]:
+          page_size:       0x1000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00001000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0000
+        seg[3]:
+          page_size:       0x1000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00002000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0008
+--- exit=0
+
+===== /usr/bin/dyld_info -fixups hello-x86_64 =====
+hello-x86_64 [x86_64]:
+    -fixups:
+        segment         section          address             type   target
+        __DATA_CONST    __got            0x100001000           bind  libSystem/___snprintf_chk
+        __DATA_CONST    __got            0x100001008           bind  libSystem/___stack_chk_fail
+        __DATA_CONST    __got            0x100001010           bind  libSystem/___stack_chk_guard
+        __DATA_CONST    __got            0x100001018           bind  libSystem/_exit
+        __DATA_CONST    __got            0x100001020           bind  libSystem/_puts
+        __DATA_CONST    __got            0x100001028           bind  libSystem/_strcmp
+        __DATA          __data           0x100002008         rebase  0x10000063E
+--- exit=0
+
+===== /usr/bin/dyld_info -exports hello-x86_64 =====
+hello-x86_64 [x86_64]:
+    -exports:
+        offset      symbol
+        0x00000000  __mh_execute_header
+        0x00000510  _add_numbers
+        0x00002000  _global_counter
+        0x00002008  _greeting
+        0x00000530  _main
+--- exit=0
+
+===== /usr/bin/dyld_info -imports hello-x86_64 =====
+hello-x86_64 [x86_64]:
+    -imports:
+      0x0000  ___snprintf_chk  (from libSystem)
+      0x0001  ___stack_chk_fail  (from libSystem)
+      0x0002  ___stack_chk_guard  (from libSystem)
+      0x0003  _exit  (from libSystem)
+      0x0004  _puts  (from libSystem)
+      0x0005  _strcmp  (from libSystem)
+--- exit=0
+
+===== /usr/bin/dyld_info -objc hello-x86_64 =====
+hello-x86_64 [x86_64]:
+    -objc:
+--- exit=0
+
+===== /usr/bin/dyld_info -inits hello-x86_64 =====
+hello-x86_64 [x86_64]:
+    -inits:
+--- exit=0
+
+===== /usr/bin/dyld_info -function_starts hello-x86_64 =====
+hello-x86_64 [x86_64]:
+    -function_starts:
+        0x100000510  _add_numbers
+        0x100000530  _main
+        0x100000610  _static_helper
+--- exit=0
+
+===== /usr/bin/dyld_info -validate_only hello-x86_64 =====
+hello-x86_64 [x86_64]:
+--- exit=0
+
+===== /usr/bin/vtool -show hello-x86_64 =====
+hello-x86_64:
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform MACOS
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool LD
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+--- exit=0
+
+===== /usr/bin/codesign -dvvv --entitlements - hello-x86_64 =====
+hello-x86_64: code object is not signed at all
+--- exit=1
+
+===== /usr/bin/codesign -d --entitlements - --xml hello-x86_64 =====
+hello-x86_64: code object is not signed at all
+--- exit=1
+
+===== /usr/bin/codesign -d -r - hello-x86_64 =====
+hello-x86_64: code object is not signed at all
+--- exit=1
+
+===== /usr/bin/codesign --verify --verbose=4 --strict hello-x86_64 =====
+hello-x86_64: code object is not signed at all
+In architecture: x86_64
+--- exit=1
+
+===== /usr/sbin/spctl -a -vv -t exec hello-x86_64 =====
+hello-x86_64: rejected
+source=no usable signature
+--- exit=3
+
+===== /usr/bin/xattr -l hello-x86_64 =====
+--- exit=0
+
+===== /usr/bin/strings -n 6 | head -200 =====
+hello from machre corpus
+%s (%d args)
+--- exit=0

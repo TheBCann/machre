@@ -1,0 +1,27 @@
+tests/corpus/hello-fat (architecture x86_64):
+tests/corpus/hello-fat: 5 segments, 6 sections
+  __PAGEZERO    vm 0x0+0x100000000     file 0+0        ---/---  0 sects
+  __TEXT        vm 0x100000000+0x1000  file 0+4096     r-x/r-x  4 sects
+    __text         0x100000510  0x110  1296  2^4  S_REGULAR           S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  text     0/0
+    __stubs        0x100000620   0x1e  1568  2^1  S_SYMBOL_STUBS      S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  stubs    0/6
+    __cstring      0x10000063e   0x2b  1598  2^0  S_CSTRING_LITERALS                                                     cstring  0/0
+    __unwind_info  0x10000066c   0x58  1644  2^2  S_REGULAR                                                              unwind   0/0
+  __DATA_CONST  vm 0x100001000+0x1000  file 4096+4096  rw-/rw-  1 sect   READ_ONLY
+    __got  0x100001000  0x30  4096  2^3  S_NON_LAZY_SYMBOL_POINTERS    got  5/0
+  __DATA        vm 0x100002000+0x1000  file 8192+4096  rw-/rw-  1 sect
+    __data  0x100002000  0x10  8192  2^3  S_REGULAR    data  0/0
+  __LINKEDIT    vm 0x100003000+0x1000  file 12288+720  r--/r--  0 sects
+tests/corpus/hello-fat (architecture arm64):
+tests/corpus/hello-fat: 5 segments, 6 sections
+  __PAGEZERO    vm 0x0+0x100000000     file 0+0          ---/---  0 sects
+  __TEXT        vm 0x100000000+0x4000  file 0+16384      r-x/r-x  4 sects
+    __text         0x1000004f8  0x134  1272  2^2  S_REGULAR           S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  text     0/0
+    __stubs        0x10000062c   0x3c  1580  2^2  S_SYMBOL_STUBS      S_ATTR_PURE_INSTRUCTIONS,S_ATTR_SOME_INSTRUCTIONS  stubs    0/12
+    __cstring      0x100000668   0x2b  1640  2^0  S_CSTRING_LITERALS                                                     cstring  0/0
+    __unwind_info  0x100000694   0x60  1684  2^2  S_REGULAR                                                              unwind   0/0
+  __DATA_CONST  vm 0x100004000+0x4000  file 16384+16384  rw-/rw-  1 sect   READ_ONLY
+    __got  0x100004000  0x30  16384  2^3  S_NON_LAZY_SYMBOL_POINTERS    got  5/0
+  __DATA        vm 0x100008000+0x4000  file 32768+16384  rw-/rw-  1 sect
+    __data  0x100008000  0x10  32768  2^3  S_REGULAR    data  0/0
+  __LINKEDIT    vm 0x10000c000+0x4000  file 49152+1272   r--/r--  0 sects
+  diagnostics  none

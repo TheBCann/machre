@@ -1,0 +1,626 @@
+# machre corpus ground truth for hello-usedylib
+# generated 2026-09-12T08:24:06Z on 26.3 (25D125) by gen/truth.sh
+# macho=hello-usedylib bundle=none
+
+===== /usr/bin/file hello-usedylib =====
+hello-usedylib: Mach-O 64-bit executable arm64
+--- exit=0
+
+===== /usr/bin/stat -f size=%z mode=%Mp%Lp hello-usedylib =====
+size=33600 mode=0755
+--- exit=0
+
+===== /usr/bin/shasum -a 256 hello-usedylib =====
+7873f20d0a6c4c8b16b532a89e5a5a27c954a20e7594a3396a2856f6fa57f6dd  hello-usedylib
+--- exit=0
+
+===== /usr/bin/otool -hv hello-usedylib =====
+hello-usedylib:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64    ARM64        ALL  0x00     EXECUTE    20       1184   NOUNDEFS DYLDLINK TWOLEVEL PIE
+--- exit=0
+
+===== /usr/bin/otool -h -l hello-usedylib =====
+hello-usedylib:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777228          0  0x00           2    20       1184 0x00200085
+Load command 0
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __PAGEZERO
+   vmaddr 0x0000000000000000
+   vmsize 0x0000000100000000
+  fileoff 0
+ filesize 0
+  maxprot 0x00000000
+ initprot 0x00000000
+   nsects 0
+    flags 0x0
+Load command 1
+      cmd LC_SEGMENT_64
+  cmdsize 392
+  segname __TEXT
+   vmaddr 0x0000000100000000
+   vmsize 0x0000000000004000
+  fileoff 0
+ filesize 16384
+  maxprot 0x00000005
+ initprot 0x00000005
+   nsects 4
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x00000001000004e8
+      size 0x0000000000000068
+    offset 1256
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __stubs
+   segname __TEXT
+      addr 0x0000000100000550
+      size 0x0000000000000024
+    offset 1360
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000408
+ reserved1 0 (index into indirect symbol table)
+ reserved2 12 (size of stubs)
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x0000000100000574
+      size 0x000000000000000f
+    offset 1396
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __unwind_info
+   segname __TEXT
+      addr 0x0000000100000584
+      size 0x0000000000000058
+    offset 1412
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 2
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA_CONST
+   vmaddr 0x0000000100004000
+   vmsize 0x0000000000004000
+  fileoff 16384
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x10
+Section
+  sectname __got
+   segname __DATA_CONST
+      addr 0x0000000100004000
+      size 0x0000000000000020
+    offset 16384
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000006
+ reserved1 3 (index into indirect symbol table)
+ reserved2 0
+Load command 3
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __LINKEDIT
+   vmaddr 0x0000000100008000
+   vmsize 0x0000000000004000
+  fileoff 32768
+ filesize 832
+  maxprot 0x00000001
+ initprot 0x00000001
+   nsects 0
+    flags 0x0
+Load command 4
+      cmd LC_DYLD_CHAINED_FIXUPS
+  cmdsize 16
+  dataoff 32768
+ datasize 152
+Load command 5
+      cmd LC_DYLD_EXPORTS_TRIE
+  cmdsize 16
+  dataoff 32920
+ datasize 48
+Load command 6
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 32976
+   nsyms 6
+  stroff 33104
+ strsize 80
+Load command 7
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 0
+     iextdefsym 0
+     nextdefsym 2
+      iundefsym 2
+      nundefsym 4
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 33072
+  nindirectsyms 7
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 8
+          cmd LC_LOAD_DYLINKER
+      cmdsize 32
+         name /usr/lib/dyld (offset 12)
+Load command 9
+     cmd LC_UUID
+ cmdsize 24
+    uuid 190B2FB1-A780-3A36-ACF9-D08B2AC76DF4
+Load command 10
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform 1
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool 3
+  version 1267.0
+Load command 11
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+Load command 12
+       cmd LC_MAIN
+   cmdsize 24
+  entryoff 1256
+ stacksize 0
+Load command 13
+          cmd LC_LOAD_DYLIB
+      cmdsize 48
+         name @rpath/libhello.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 1.2.3
+compatibility version 1.0.0
+Load command 14
+          cmd LC_LOAD_DYLIB
+      cmdsize 56
+         name /usr/lib/libSystem.B.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 1356.0.0
+compatibility version 1.0.0
+Load command 15
+          cmd LC_RPATH
+      cmdsize 32
+         path @executable_path (offset 12)
+Load command 16
+          cmd LC_RPATH
+      cmdsize 48
+         path @executable_path/../Frameworks (offset 12)
+Load command 17
+      cmd LC_FUNCTION_STARTS
+  cmdsize 16
+  dataoff 32968
+ datasize 8
+Load command 18
+      cmd LC_DATA_IN_CODE
+  cmdsize 16
+  dataoff 32976
+ datasize 0
+Load command 19
+      cmd LC_CODE_SIGNATURE
+  cmdsize 16
+  dataoff 33184
+ datasize 416
+--- exit=0
+
+===== /usr/bin/otool -L hello-usedylib =====
+hello-usedylib:
+	@rpath/libhello.dylib (compatibility version 1.0.0, current version 1.2.3)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+--- exit=0
+
+===== /usr/bin/otool -tV hello-usedylib =====
+hello-usedylib:
+(__TEXT,__text) section
+_main:
+00000001000004e8	sub	sp, sp, #0x20
+00000001000004ec	stp	x29, x30, [sp, #0x10]
+00000001000004f0	add	x29, sp, #0x10
+00000001000004f4	mov	w8, #0x0
+00000001000004f8	str	w8, [sp, #0x8]
+00000001000004fc	stur	wzr, [x29, #-0x4]
+0000000100000500	mov	w0, #0x1
+0000000100000504	mov	w1, #0x2
+0000000100000508	bl	0x100000550 ; symbol stub for: _hello_add
+000000010000050c	str	w0, [sp, #0x4]
+0000000100000510	mov	w0, #0x3
+0000000100000514	mov	w1, #0x4
+0000000100000518	bl	0x10000055c ; symbol stub for: _hello_mul
+000000010000051c	mov	x8, x0
+0000000100000520	ldr	w0, [sp, #0x4]
+0000000100000524	add	w8, w0, w8
+0000000100000528	adrp	x9, 4 ; 0x100004000
+000000010000052c	ldr	x9, [x9, #0x8] ; literal pool symbol address: _hello_global
+0000000100000530	str	w8, [x9]
+0000000100000534	adrp	x0, 0 ; 0x100000000
+0000000100000538	add	x0, x0, #0x574 ; literal pool for: "from use_dylib"
+000000010000053c	bl	0x100000568 ; symbol stub for: _hello_print
+0000000100000540	ldr	w0, [sp, #0x8]
+0000000100000544	ldp	x29, x30, [sp, #0x10]
+0000000100000548	add	sp, sp, #0x20
+000000010000054c	ret
+--- exit=0
+
+===== /usr/bin/otool -Iv hello-usedylib =====
+hello-usedylib:
+Indirect symbols for (__TEXT,__stubs) 3 entries
+address            index name
+0x0000000100000550     2 _hello_add
+0x000000010000055c     4 _hello_mul
+0x0000000100000568     5 _hello_print
+Indirect symbols for (__DATA_CONST,__got) 4 entries
+address            index name
+0x0000000100004000     2 _hello_add
+0x0000000100004008     3 _hello_global
+0x0000000100004010     4 _hello_mul
+0x0000000100004018     5 _hello_print
+--- exit=0
+
+===== /usr/bin/nm -m hello-usedylib =====
+0000000100000000 (__TEXT,__text) [referenced dynamically] external __mh_execute_header
+                 (undefined) external _hello_add (from libhello)
+                 (undefined) external _hello_global (from libhello)
+                 (undefined) external _hello_mul (from libhello)
+                 (undefined) external _hello_print (from libhello)
+00000001000004e8 (__TEXT,__text) external _main
+--- exit=0
+
+===== /usr/bin/nm -a hello-usedylib =====
+0000000100000000 T __mh_execute_header
+                 U _hello_add
+                 U _hello_global
+                 U _hello_mul
+                 U _hello_print
+00000001000004e8 T _main
+--- exit=0
+
+===== /usr/bin/dyld_info -platform -uuid -segments -linked_dylibs -load_commands hello-usedylib =====
+hello-usedylib [arm64]:
+    -platform:
+        platform     minOS      sdk
+           macOS     26.0      26.5   
+    -uuid:
+        190B2FB1-A780-3A36-ACF9-D08B2AC76DF4
+    -segments:
+        load-offset   segment  section       sect-size  seg-size   init/max-prot
+        0x00000000    __TEXT                                16KB    r.x/r.x
+        0x1000004E8             __text              104
+        0x100000550             __stubs              36
+        0x100000574             __cstring            15
+        0x100000584             __unwind_info        88
+        0x00004000    __DATA_CONST                          16KB    rw./rw.
+        0x100004000             __got                32
+    -linked_dylibs:
+        attributes     load path
+                       @rpath/libhello.dylib
+                       /usr/lib/libSystem.B.dylib
+    -rpaths:
+        @executable_path
+        @executable_path/../Frameworks
+    -load_commands:
+Load command #0
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__PAGEZERO"
+          vmaddr: 0x0000000000000000
+          vmsize: 0x0000000100000000
+         fileoff: 0x00000000
+        filesize: 0x00000000
+         maxprot: ...
+        initprot: ...
+          nsects: 0
+Load command #1
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x188
+         segname: "__TEXT"
+          vmaddr: 0x0000000100000000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00000000
+        filesize: 0x00004000
+         maxprot: r.x
+        initprot: r.x
+          nsects: 4
+        sections[0].sectname: "__text"
+        sections[0].addr:     0x00000001000004E8
+        sections[0].size:     0x0000000000000068
+        sections[0].offset:   0x000004E8
+        sections[0].align:    2^2
+        sections[0].type:      S_ATTR_PURE_INSTRUCTIONS|S_ATTR_SOME_INSTRUCTIONS
+        sections[1].sectname: "__stubs"
+        sections[1].addr:     0x0000000100000550
+        sections[1].size:     0x0000000000000024
+        sections[1].offset:   0x00000550
+        sections[1].align:    2^2
+        sections[1].type:      S_SYMBOL_STUBS
+        sections[1].reserved2: 12
+        sections[2].sectname: "__cstring"
+        sections[2].addr:     0x0000000100000574
+        sections[2].size:     0x000000000000000F
+        sections[2].offset:   0x00000574
+        sections[2].align:    2^0
+        sections[2].type:      S_CSTRING_LITERALS
+        sections[3].sectname: "__unwind_info"
+        sections[3].addr:     0x0000000100000584
+        sections[3].size:     0x0000000000000058
+        sections[3].offset:   0x00000584
+        sections[3].align:    2^2
+Load command #2
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA_CONST"
+          vmaddr: 0x0000000100004000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00004000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          flags: SG_READ_ONLY
+          nsects: 1
+        sections[0].sectname: "__got"
+        sections[0].addr:     0x0000000100004000
+        sections[0].size:     0x0000000000000020
+        sections[0].offset:   0x00004000
+        sections[0].align:    2^3
+        sections[0].type:      S_NON_LAZY_SYMBOL_POINTERS
+        sections[0].reserved1: 3
+Load command #3
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__LINKEDIT"
+          vmaddr: 0x0000000100008000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00008000
+        filesize: 0x00000340
+         maxprot: r..
+        initprot: r..
+          nsects: 0
+Load command #4
+             cmd: LC_DYLD_CHAINED_FIXUPS
+         cmdsize: 0x10
+         dataoff: 0x8000
+        datasize: 0x98
+Load command #5
+             cmd: LC_DYLD_EXPORTS_TRIE
+         cmdsize: 0x10
+         dataoff: 0x8098
+        datasize: 0x30
+Load command #6
+             cmd: LC_SYMTAB
+         cmdsize: 0x18
+          symoff: 0x80D0
+           nsyms: 6
+          stroff: 0x8150
+         strsize: 0x50
+Load command #7
+             cmd: LC_DYSYMTAB
+         cmdsize: 0x50
+       ilocalsym: 0
+       nlocalsym: 0
+      iextdefsym: 0
+      nextdefsym: 2
+       iundefsym: 2
+       nundefsym: 4
+  indirectsymoff: 0x00008130
+   nindirectsyms: 7
+       ilocalsym: 0
+Load command #8
+             cmd: LC_LOAD_DYLINKER
+         cmdsize: 0x20
+            name: "/usr/lib/dyld"
+Load command #9
+             cmd: LC_UUID
+         cmdsize: 0x18
+            uuid: 190B2FB1-A780-3A36-ACF9-D08B2AC76DF4
+Load command #10
+             cmd: LC_BUILD_VERSION
+         cmdsize: 0x20
+        platform: macOS
+          min-OS: 26.0
+             sdk: 26.5
+         tool[0].name:    ld
+         tool[0].version: 1267.0
+Load command #11
+             cmd: LC_SOURCE_VERSION
+         cmdsize: 0x10
+         version: 0.0
+Load command #12
+             cmd: LC_MAIN
+         cmdsize: 0x18
+        entryoff: 0x4E8
+Load command #13
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x30
+            name: "@rpath/libhello.dylib"
+        cur-vers: 1.2.3
+     compat-vers: 1.0
+Load command #14
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x38
+            name: "/usr/lib/libSystem.B.dylib"
+        cur-vers: 1356.0
+     compat-vers: 1.0
+Load command #15
+             cmd: LC_RPATH
+         cmdsize: 0x20
+           rpath:"@executable_path"
+Load command #16
+             cmd: LC_RPATH
+         cmdsize: 0x30
+           rpath:"@executable_path/../Frameworks"
+Load command #17
+             cmd: LC_FUNCTION_STARTS
+         cmdsize: 0x10
+         dataoff: 0x80C8
+        datasize: 0x8
+Load command #18
+             cmd: LC_DATA_IN_CODE
+         cmdsize: 0x10
+         dataoff: 0x80D0
+        datasize: 0x0
+Load command #19
+             cmd: LC_CODE_SIGNATURE
+         cmdsize: 0x10
+         dataoff: 0x81A0
+        datasize: 0x1A0
+--- exit=0
+
+===== /usr/bin/dyld_info -fixup_chains hello-usedylib =====
+hello-usedylib [arm64]:
+    -fixup_chains:
+      fixups_version:   0x00000000
+      starts_offset:    0x00000020
+      imports_offset:   0x00000050
+      symbols_offset:   0x00000060
+      imports_count:    4
+      imports_format:   1 (DYLD_CHAINED_IMPORT)
+      symbols_format:   0
+        seg[2]:
+          page_size:       0x4000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00004000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0000
+--- exit=0
+
+===== /usr/bin/dyld_info -fixups hello-usedylib =====
+hello-usedylib [arm64]:
+    -fixups:
+        segment         section          address             type   target
+        __DATA_CONST    __got            0x100004000           bind  libhello/_hello_add
+        __DATA_CONST    __got            0x100004008           bind  libhello/_hello_global
+        __DATA_CONST    __got            0x100004010           bind  libhello/_hello_mul
+        __DATA_CONST    __got            0x100004018           bind  libhello/_hello_print
+--- exit=0
+
+===== /usr/bin/dyld_info -exports hello-usedylib =====
+hello-usedylib [arm64]:
+    -exports:
+        offset      symbol
+        0x00000000  __mh_execute_header
+        0x000004E8  _main
+--- exit=0
+
+===== /usr/bin/dyld_info -imports hello-usedylib =====
+hello-usedylib [arm64]:
+    -imports:
+      0x0000  _hello_add  (from libhello)
+      0x0001  _hello_global  (from libhello)
+      0x0002  _hello_mul  (from libhello)
+      0x0003  _hello_print  (from libhello)
+--- exit=0
+
+===== /usr/bin/dyld_info -objc hello-usedylib =====
+hello-usedylib [arm64]:
+    -objc:
+--- exit=0
+
+===== /usr/bin/dyld_info -inits hello-usedylib =====
+hello-usedylib [arm64]:
+    -inits:
+--- exit=0
+
+===== /usr/bin/dyld_info -function_starts hello-usedylib =====
+hello-usedylib [arm64]:
+    -function_starts:
+        0x1000004E8  _main
+--- exit=0
+
+===== /usr/bin/dyld_info -validate_only hello-usedylib =====
+hello-usedylib [arm64]:
+--- exit=0
+
+===== /usr/bin/vtool -show hello-usedylib =====
+hello-usedylib:
+Load command 10
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform MACOS
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool LD
+  version 1267.0
+Load command 11
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+--- exit=0
+
+===== /usr/bin/codesign -dvvv --entitlements - hello-usedylib =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib
+Identifier=hello-usedylib
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=391 flags=0x20002(adhoc,linker-signed) hashes=9+0 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=2385051fdeb552a081236b0fa5f77ef55010187e
+CandidateCDHashFull sha256=2385051fdeb552a081236b0fa5f77ef55010187ebad09d9feea4662fc6f6a71c
+Hash choices=sha256
+CMSDigest=2385051fdeb552a081236b0fa5f77ef55010187ebad09d9feea4662fc6f6a71c
+CMSDigestType=2
+CDHash=2385051fdeb552a081236b0fa5f77ef55010187e
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+--- exit=0
+
+===== /usr/bin/codesign -d --entitlements - --xml hello-usedylib =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib
+--- exit=0
+
+===== /usr/bin/codesign -d -r - hello-usedylib =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib
+# designated => cdhash H"2385051fdeb552a081236b0fa5f77ef55010187e"
+--- exit=0
+
+===== /usr/bin/codesign --verify --verbose=4 --strict hello-usedylib =====
+hello-usedylib: valid on disk
+hello-usedylib: satisfies its Designated Requirement
+--- exit=0
+
+===== /usr/sbin/spctl -a -vv -t exec hello-usedylib =====
+hello-usedylib: rejected
+--- exit=3
+
+===== /usr/bin/xattr -l hello-usedylib =====
+--- exit=0
+
+===== /usr/bin/strings -n 6 | head -200 =====
+from use_dylib
+--- exit=0

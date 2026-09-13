@@ -1,0 +1,60 @@
+  objc         classes 2  categories 1  protocols 2  selectors 40  classrefs 1  stubs 15
+  image info   version 0  flags 0x40 (HAS_CATEGORY_CLASS_PROPERTIES)
+    @interface MachreAnimal : NSObject <MachreGreeter>
+      0x100001064  -[MachreAnimal sound]
+      0x100000ba8  -[MachreAnimal initWithName:legs:]
+      0x100000cbc  -[MachreAnimal describe]
+      0x100000d74  -[MachreAnimal greet:]
+      0x100000e30  -[MachreAnimal name]
+      0x100000e4c  -[MachreAnimal setName:]
+      0x100000e84  -[MachreAnimal legs]
+      0x100000ea0  -[MachreAnimal setLegs:]
+      0x100000ec4  -[MachreAnimal .cxx_destruct]
+      0x100000d58  +[MachreAnimal population]
+      ivar _name @"NSString" @8 size 8
+      ivar _legs q @16 size 8
+      property name T@"NSString",C,N,V_name
+      property legs Tq,N,V_legs
+      property hash TQ,R
+      property superclass T#,R
+      property description T@"NSString",R,C
+      property debugDescription T@"NSString",?,R,C
+    @end
+    @interface MachreDog : MachreAnimal
+      0x100000ef4  -[MachreDog bark]
+      0x100000f88  -[MachreDog wave]
+      0x100000fe4  -[MachreDog tricks]
+      0x100001000  -[MachreDog setTricks:]
+      0x100001034  -[MachreDog .cxx_destruct]
+      ivar _tricks @"NSArray" @24 size 8
+      property tricks T@"NSArray",&,N,V_tricks
+    @end
+    @interface NSString(MachreExtras)
+      0x100001080  -[NSString machreShout]
+    @end
+    @protocol NSObject
+                   -[NSObject isEqual:]
+                   -[NSObject class]
+                   -[NSObject self]
+                   -[NSObject performSelector:]
+                   -[NSObject performSelector:withObject:]
+                   -[NSObject performSelector:withObject:withObject:]
+                   -[NSObject isProxy]
+                   -[NSObject isKindOfClass:]
+                   -[NSObject isMemberOfClass:]
+                   -[NSObject conformsToProtocol:]
+                   -[NSObject respondsToSelector:]
+                   -[NSObject retain]
+                   -[NSObject release]
+                   -[NSObject autorelease]
+                   -[NSObject retainCount]
+                   -[NSObject zone]
+                   -[NSObject hash]
+                   -[NSObject superclass]
+                   -[NSObject description]
+                   -[NSObject debugDescription]
+    @end
+    @protocol MachreGreeter <NSObject>
+                   -[MachreGreeter greet:]
+                   -[MachreGreeter wave]
+    @end

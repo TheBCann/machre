@@ -1,0 +1,34 @@
+tests/corpus/hello-objc: 32 functions
+  0x100000ba8  0x114  function_starts  -[MachreAnimal initWithName:legs:]
+  0x100000cbc   0x9c  function_starts  -[MachreAnimal describe]
+  0x100000d58   0x1c  function_starts  +[MachreAnimal population]
+  0x100000d74   0xbc  function_starts  -[MachreAnimal greet:]
+  0x100000e30   0x1c  function_starts  -[MachreAnimal name]
+  0x100000e4c   0x38  function_starts  -[MachreAnimal setName:]
+  0x100000e84   0x1c  function_starts  -[MachreAnimal legs]
+  0x100000ea0   0x24  function_starts  -[MachreAnimal setLegs:]
+  0x100000ec4   0x30  function_starts  -[MachreAnimal .cxx_destruct]
+  0x100000ef4   0x94  function_starts  -[MachreDog bark]
+  0x100000f88   0x5c  function_starts  -[MachreDog wave]
+  0x100000fe4   0x1c  function_starts  -[MachreDog tricks]
+  0x100001000   0x34  function_starts  -[MachreDog setTricks:]
+  0x100001034   0x30  function_starts  -[MachreDog .cxx_destruct]
+  0x100001064   0x1c  function_starts  -[MachreAnimal(Sounds) sound]
+  0x100001080   0x2c  function_starts  -[NSString(MachreExtras) machreShout]
+  0x1000010ac  0x188  function_starts  _main
+  0x1000012c0   0x20  symbol           _objc_msgSend$bark
+  0x1000012e0   0x20  symbol           _objc_msgSend$copy
+  0x100001300   0x20  symbol           _objc_msgSend$count
+  0x100001320   0x20  symbol           _objc_msgSend$describe
+  0x100001340   0x20  symbol           _objc_msgSend$greet:
+  0x100001360   0x20  symbol           _objc_msgSend$initWithName:legs:
+  0x100001380   0x20  symbol           _objc_msgSend$legs
+  0x1000013a0   0x20  symbol           _objc_msgSend$machreShout
+  0x1000013c0   0x20  symbol           _objc_msgSend$name
+  0x1000013e0   0x20  symbol           _objc_msgSend$population
+  0x100001400   0x20  symbol           _objc_msgSend$setTricks:
+  0x100001420   0x20  symbol           _objc_msgSend$sound
+  0x100001440   0x20  symbol           _objc_msgSend$stringWithFormat:
+  0x100001460   0x20  symbol           _objc_msgSend$tricks
+  0x100001480   0x20  symbol           _objc_msgSend$uppercaseString
+  diagnostics  none

@@ -1,0 +1,4 @@
+hello-usedylib: 2 exports (exports_trie)
+  0x100000000  regular    __mh_execute_header
+  0x1000004e8  regular    _main
+  diagnostics  none

@@ -1,0 +1,14 @@
+hello-c: 12 symbols (6 defined, 6 undefined, 0 stabs, 11 external, 1 local)
+   0  0x10000060c  t  section    (__TEXT,__text)  0x0000             _static_helper
+   1  0x100000000  T  section    (__TEXT,__text)  0x0010             __mh_execute_header
+   2  0x1000004f8  T  section    (__TEXT,__text)  0x0000             _add_numbers
+   3  0x100008000  D  section    (__DATA,__data)  0x0000             _global_counter
+   4  0x100008008  D  section    (__DATA,__data)  0x0000             _greeting
+   5  0x100000524  T  section    (__TEXT,__text)  0x0000             _main
+   6  0x0          U  undefined  (undefined)      0x0100  libSystem  ___snprintf_chk
+   7  0x0          U  undefined  (undefined)      0x0100  libSystem  ___stack_chk_fail
+   8  0x0          U  undefined  (undefined)      0x0100  libSystem  ___stack_chk_guard
+   9  0x0          U  undefined  (undefined)      0x0100  libSystem  _exit
+  10  0x0          U  undefined  (undefined)      0x0100  libSystem  _puts
+  11  0x0          U  undefined  (undefined)      0x0100  libSystem  _strcmp
+  diagnostics  none

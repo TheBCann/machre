@@ -1,0 +1,12 @@
+machre triage: tests/corpus/fake-upx [arm64]
+LEVEL: SUSPICIOUS (score 60, 2 categories)            trust: INVALID SIGNATURE
+Signing     [HIGH]   sig.invalid       embedded CodeDirectory does not match the file: 1/13 page hashes mismatch (first page 0 @ 0x0); Security: errSecCSSignatureFailed (-67061)
+                                       why: A recomputed page hash or a Security.framework validation disagrees with the embedded CodeDirectory: the file was modified after it was signed.
+Packing     [MEDIUM] pack.names        segment named UPX_DATA (UPX marker) at LC index 2
+                                       why: A segment or section name used by a known packer (__XHDR, UPX_DATA, upxTEXT, __MPRESS__).
+Signing     [LOW]    sig.adhoc         ad hoc, linker-signed; no certificate chain, not notarized
+                                       why: An ad hoc signature has no certificate chain: it proves the file has not changed since it was signed, but says nothing about who produced it. Linker-signed ad hoc (the default for a locally built binary) is weaker evidence still, so it scores 3 instead of 10, and 0 when the signature is already known to be broken.
+Corroboration: packing tell (UPX_DATA) is corroborated by a broken signature -> file was modified after linking.
+Not flagged: entropy (max 5.16 __LINKEDIT), imports present (6), symbols present (12), no quarantine xattr, PIE, no RWX segment.
+  diagnostics  1 (1 errors, 0 warnings, 0 info)
+    [error] codesign.hash_mismatch @0x0: code page 0 hash does not match the file (offset 0x0)

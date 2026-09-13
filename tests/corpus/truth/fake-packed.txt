@@ -1,0 +1,637 @@
+# machre corpus ground truth for fake-packed
+# generated 2026-09-12T08:24:10Z on 26.3 (25D125) by gen/truth.sh
+# macho=fake-packed bundle=none
+
+===== /usr/bin/file fake-packed =====
+fake-packed: Mach-O 64-bit executable arm64
+--- exit=0
+
+===== /usr/bin/stat -f size=%z mode=%Mp%Lp fake-packed =====
+size=50024 mode=0755
+--- exit=0
+
+===== /usr/bin/shasum -a 256 fake-packed =====
+6f9922b2be5988af4bf3b6bd4eb3ec9a5e57066091ace549e8d88e069f7bd4fb  fake-packed
+--- exit=0
+
+===== /usr/bin/otool -hv fake-packed =====
+fake-packed:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+MH_MAGIC_64    ARM64        ALL  0x00     EXECUTE    18       1288   NOUNDEFS DYLDLINK TWOLEVEL PIE
+--- exit=0
+
+===== /usr/bin/otool -h -l fake-packed =====
+fake-packed:
+Mach header
+      magic  cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+ 0xfeedfacf 16777228          0  0x00           2    18       1288 0x00200085
+Load command 0
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __PAGEZERO
+   vmaddr 0x0000000000000000
+   vmsize 0x0000000100000000
+  fileoff 0
+ filesize 0
+  maxprot 0x00000000
+ initprot 0x00000000
+   nsects 0
+    flags 0x0
+Load command 1
+      cmd LC_SEGMENT_64
+  cmdsize 392
+  segname __TEXT
+   vmaddr 0x0000000100000000
+   vmsize 0x0000000000004000
+  fileoff 0
+ filesize 16384
+  maxprot 0x00000005
+ initprot 0x00000005
+   nsects 4
+    flags 0x0
+Section
+  sectname __text
+   segname __TEXT
+      addr 0x0000000100000548
+      size 0x0000000000000054
+    offset 1352
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000400
+ reserved1 0
+ reserved2 0
+Section
+  sectname __stubs
+   segname __TEXT
+      addr 0x000000010000059c
+      size 0x000000000000000c
+    offset 1436
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x80000408
+ reserved1 0 (index into indirect symbol table)
+ reserved2 12 (size of stubs)
+Section
+  sectname __cstring
+   segname __TEXT
+      addr 0x00000001000005a8
+      size 0x000000000000000f
+    offset 1448
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000002
+ reserved1 0
+ reserved2 0
+Section
+  sectname __unwind_info
+   segname __TEXT
+      addr 0x00000001000005b8
+      size 0x0000000000000058
+    offset 1464
+     align 2^2 (4)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 2
+      cmd LC_SEGMENT_64
+  cmdsize 152
+  segname __DATA_CONST
+   vmaddr 0x0000000100004000
+   vmsize 0x0000000000004000
+  fileoff 16384
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 1
+    flags 0x10
+Section
+  sectname __got
+   segname __DATA_CONST
+      addr 0x0000000100004000
+      size 0x0000000000000008
+    offset 16384
+     align 2^3 (8)
+    reloff 0
+    nreloc 0
+     flags 0x00000006
+ reserved1 1 (index into indirect symbol table)
+ reserved2 0
+Load command 3
+      cmd LC_SEGMENT_64
+  cmdsize 232
+  segname __XHDR
+   vmaddr 0x0000000100008000
+   vmsize 0x0000000000004000
+  fileoff 32768
+ filesize 16384
+  maxprot 0x00000003
+ initprot 0x00000003
+   nsects 2
+    flags 0x0
+Section
+  sectname __xhdr
+   segname __XHDR
+      addr 0x0000000100008000
+      size 0x0000000000000100
+    offset 32768
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Section
+  sectname __text2
+   segname __XHDR
+      addr 0x0000000100008100
+      size 0x0000000000000012
+    offset 33024
+     align 2^0 (1)
+    reloff 0
+    nreloc 0
+     flags 0x00000000
+ reserved1 0
+ reserved2 0
+Load command 4
+      cmd LC_SEGMENT_64
+  cmdsize 72
+  segname __LINKEDIT
+   vmaddr 0x000000010000c000
+   vmsize 0x0000000000004000
+  fileoff 49152
+ filesize 872
+  maxprot 0x00000001
+ initprot 0x00000001
+   nsects 0
+    flags 0x0
+Load command 5
+      cmd LC_DYLD_CHAINED_FIXUPS
+  cmdsize 16
+  dataoff 49152
+ datasize 96
+Load command 6
+      cmd LC_DYLD_EXPORTS_TRIE
+  cmdsize 16
+  dataoff 49248
+ datasize 80
+Load command 7
+     cmd LC_SYMTAB
+ cmdsize 24
+  symoff 49336
+   nsyms 5
+  stroff 49424
+ strsize 64
+Load command 8
+            cmd LC_DYSYMTAB
+        cmdsize 80
+      ilocalsym 0
+      nlocalsym 0
+     iextdefsym 0
+     nextdefsym 4
+      iundefsym 4
+      nundefsym 1
+         tocoff 0
+           ntoc 0
+      modtaboff 0
+        nmodtab 0
+   extrefsymoff 0
+    nextrefsyms 0
+ indirectsymoff 49416
+  nindirectsyms 2
+      extreloff 0
+        nextrel 0
+      locreloff 0
+        nlocrel 0
+Load command 9
+          cmd LC_LOAD_DYLINKER
+      cmdsize 32
+         name /usr/lib/dyld (offset 12)
+Load command 10
+     cmd LC_UUID
+ cmdsize 24
+    uuid 12D9FF53-3B15-3176-AEDE-B9C4B6AB47A6
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform 1
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool 3
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+Load command 13
+       cmd LC_MAIN
+   cmdsize 24
+  entryoff 1352
+ stacksize 0
+Load command 14
+          cmd LC_LOAD_DYLIB
+      cmdsize 56
+         name /usr/lib/libSystem.B.dylib (offset 24)
+   time stamp 2 Wed Dec 31 19:00:02 1969
+      current version 1356.0.0
+compatibility version 1.0.0
+Load command 15
+      cmd LC_FUNCTION_STARTS
+  cmdsize 16
+  dataoff 49328
+ datasize 8
+Load command 16
+      cmd LC_DATA_IN_CODE
+  cmdsize 16
+  dataoff 49336
+ datasize 0
+Load command 17
+      cmd LC_CODE_SIGNATURE
+  cmdsize 16
+  dataoff 49488
+ datasize 536
+--- exit=0
+
+===== /usr/bin/otool -L fake-packed =====
+fake-packed:
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+--- exit=0
+
+===== /usr/bin/otool -tV fake-packed =====
+fake-packed:
+(__TEXT,__text) section
+_main:
+0000000100000548	sub	sp, sp, #0x30
+000000010000054c	stp	x29, x30, [sp, #0x20]
+0000000100000550	add	x29, sp, #0x20
+0000000100000554	mov	w8, #0x0
+0000000100000558	stur	w8, [x29, #-0x8]
+000000010000055c	stur	wzr, [x29, #-0x4]
+0000000100000560	adrp	x8, 8 ; 0x100008000
+0000000100000564	ldrb	w10, [x8]
+0000000100000568	mov	x9, sp
+000000010000056c	mov	x8, x10
+0000000100000570	str	x8, [x9]
+0000000100000574	adrp	x8, 8 ; 0x100008000
+0000000100000578	add	x8, x8, #0x100
+000000010000057c	str	x8, [x9, #0x8]
+0000000100000580	adrp	x0, 0 ; 0x100000000
+0000000100000584	add	x0, x0, #0x5a8 ; literal pool for: "xhdr[0]=%d %s\n"
+0000000100000588	bl	0x10000059c ; symbol stub for: _printf
+000000010000058c	ldur	w0, [x29, #-0x8]
+0000000100000590	ldp	x29, x30, [sp, #0x20]
+0000000100000594	add	sp, sp, #0x30
+0000000100000598	ret
+--- exit=0
+
+===== /usr/bin/otool -Iv fake-packed =====
+fake-packed:
+Indirect symbols for (__TEXT,__stubs) 1 entries
+address            index name
+0x000000010000059c     4 _printf
+Indirect symbols for (__DATA_CONST,__got) 1 entries
+address            index name
+0x0000000100004000     4 _printf
+--- exit=0
+
+===== /usr/bin/nm -m fake-packed =====
+0000000100000000 (__TEXT,__text) [referenced dynamically] external __mh_execute_header
+0000000100000548 (__TEXT,__text) external _main
+                 (undefined) external _printf (from libSystem)
+0000000100008000 (__XHDR,__xhdr) external _xhdr_blob
+0000000100008100 (__XHDR,__text2) external _xhdr_note
+--- exit=0
+
+===== /usr/bin/nm -a fake-packed =====
+0000000100000000 T __mh_execute_header
+0000000100000548 T _main
+                 U _printf
+0000000100008000 S _xhdr_blob
+0000000100008100 S _xhdr_note
+--- exit=0
+
+===== /usr/bin/dyld_info -platform -uuid -segments -linked_dylibs -load_commands fake-packed =====
+fake-packed [arm64]:
+    -platform:
+        platform     minOS      sdk
+           macOS     26.0      26.5   
+    -uuid:
+        12D9FF53-3B15-3176-AEDE-B9C4B6AB47A6
+    -segments:
+        load-offset   segment  section       sect-size  seg-size   init/max-prot
+        0x00000000    __TEXT                                16KB    r.x/r.x
+        0x100000548             __text               84
+        0x10000059C             __stubs              12
+        0x1000005A8             __cstring            15
+        0x1000005B8             __unwind_info        88
+        0x00004000    __DATA_CONST                          16KB    rw./rw.
+        0x100004000             __got                 8
+        0x00008000    __XHDR                                16KB    rw./rw.
+        0x100008000             __xhdr              256
+        0x100008100             __text2              18
+    -linked_dylibs:
+        attributes     load path
+                       /usr/lib/libSystem.B.dylib
+    -load_commands:
+Load command #0
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__PAGEZERO"
+          vmaddr: 0x0000000000000000
+          vmsize: 0x0000000100000000
+         fileoff: 0x00000000
+        filesize: 0x00000000
+         maxprot: ...
+        initprot: ...
+          nsects: 0
+Load command #1
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x188
+         segname: "__TEXT"
+          vmaddr: 0x0000000100000000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00000000
+        filesize: 0x00004000
+         maxprot: r.x
+        initprot: r.x
+          nsects: 4
+        sections[0].sectname: "__text"
+        sections[0].addr:     0x0000000100000548
+        sections[0].size:     0x0000000000000054
+        sections[0].offset:   0x00000548
+        sections[0].align:    2^2
+        sections[0].type:      S_ATTR_PURE_INSTRUCTIONS|S_ATTR_SOME_INSTRUCTIONS
+        sections[1].sectname: "__stubs"
+        sections[1].addr:     0x000000010000059C
+        sections[1].size:     0x000000000000000C
+        sections[1].offset:   0x0000059C
+        sections[1].align:    2^2
+        sections[1].type:      S_SYMBOL_STUBS
+        sections[1].reserved2: 12
+        sections[2].sectname: "__cstring"
+        sections[2].addr:     0x00000001000005A8
+        sections[2].size:     0x000000000000000F
+        sections[2].offset:   0x000005A8
+        sections[2].align:    2^0
+        sections[2].type:      S_CSTRING_LITERALS
+        sections[3].sectname: "__unwind_info"
+        sections[3].addr:     0x00000001000005B8
+        sections[3].size:     0x0000000000000058
+        sections[3].offset:   0x000005B8
+        sections[3].align:    2^2
+Load command #2
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x98
+         segname: "__DATA_CONST"
+          vmaddr: 0x0000000100004000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00004000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          flags: SG_READ_ONLY
+          nsects: 1
+        sections[0].sectname: "__got"
+        sections[0].addr:     0x0000000100004000
+        sections[0].size:     0x0000000000000008
+        sections[0].offset:   0x00004000
+        sections[0].align:    2^3
+        sections[0].type:      S_NON_LAZY_SYMBOL_POINTERS
+        sections[0].reserved1: 1
+Load command #3
+             cmd: LC_SEGMENT_64
+         cmdsize: 0xE8
+         segname: "__XHDR"
+          vmaddr: 0x0000000100008000
+          vmsize: 0x0000000000004000
+         fileoff: 0x00008000
+        filesize: 0x00004000
+         maxprot: rw.
+        initprot: rw.
+          nsects: 2
+        sections[0].sectname: "__xhdr"
+        sections[0].addr:     0x0000000100008000
+        sections[0].size:     0x0000000000000100
+        sections[0].offset:   0x00008000
+        sections[0].align:    2^0
+        sections[1].sectname: "__text2"
+        sections[1].addr:     0x0000000100008100
+        sections[1].size:     0x0000000000000012
+        sections[1].offset:   0x00008100
+        sections[1].align:    2^0
+Load command #4
+             cmd: LC_SEGMENT_64
+         cmdsize: 0x48
+         segname: "__LINKEDIT"
+          vmaddr: 0x000000010000C000
+          vmsize: 0x0000000000004000
+         fileoff: 0x0000C000
+        filesize: 0x00000368
+         maxprot: r..
+        initprot: r..
+          nsects: 0
+Load command #5
+             cmd: LC_DYLD_CHAINED_FIXUPS
+         cmdsize: 0x10
+         dataoff: 0xC000
+        datasize: 0x60
+Load command #6
+             cmd: LC_DYLD_EXPORTS_TRIE
+         cmdsize: 0x10
+         dataoff: 0xC060
+        datasize: 0x50
+Load command #7
+             cmd: LC_SYMTAB
+         cmdsize: 0x18
+          symoff: 0xC0B8
+           nsyms: 5
+          stroff: 0xC110
+         strsize: 0x40
+Load command #8
+             cmd: LC_DYSYMTAB
+         cmdsize: 0x50
+       ilocalsym: 0
+       nlocalsym: 0
+      iextdefsym: 0
+      nextdefsym: 4
+       iundefsym: 4
+       nundefsym: 1
+  indirectsymoff: 0x0000C108
+   nindirectsyms: 2
+       ilocalsym: 0
+Load command #9
+             cmd: LC_LOAD_DYLINKER
+         cmdsize: 0x20
+            name: "/usr/lib/dyld"
+Load command #10
+             cmd: LC_UUID
+         cmdsize: 0x18
+            uuid: 12D9FF53-3B15-3176-AEDE-B9C4B6AB47A6
+Load command #11
+             cmd: LC_BUILD_VERSION
+         cmdsize: 0x20
+        platform: macOS
+          min-OS: 26.0
+             sdk: 26.5
+         tool[0].name:    ld
+         tool[0].version: 1267.0
+Load command #12
+             cmd: LC_SOURCE_VERSION
+         cmdsize: 0x10
+         version: 0.0
+Load command #13
+             cmd: LC_MAIN
+         cmdsize: 0x18
+        entryoff: 0x548
+Load command #14
+             cmd: LC_LOAD_DYLIB
+         cmdsize: 0x38
+            name: "/usr/lib/libSystem.B.dylib"
+        cur-vers: 1356.0
+     compat-vers: 1.0
+Load command #15
+             cmd: LC_FUNCTION_STARTS
+         cmdsize: 0x10
+         dataoff: 0xC0B0
+        datasize: 0x8
+Load command #16
+             cmd: LC_DATA_IN_CODE
+         cmdsize: 0x10
+         dataoff: 0xC0B8
+        datasize: 0x0
+Load command #17
+             cmd: LC_CODE_SIGNATURE
+         cmdsize: 0x10
+         dataoff: 0xC150
+        datasize: 0x218
+--- exit=0
+
+===== /usr/bin/dyld_info -fixup_chains fake-packed =====
+fake-packed [arm64]:
+    -fixup_chains:
+      fixups_version:   0x00000000
+      starts_offset:    0x00000020
+      imports_offset:   0x00000050
+      symbols_offset:   0x00000054
+      imports_count:    1
+      imports_format:   1 (DYLD_CHAINED_IMPORT)
+      symbols_format:   0
+        seg[2]:
+          page_size:       0x4000
+          pointer_format:  6 (DYLD_CHAINED_PTR_64_OFFSET)(generic 64-bit, 4-byte stride, target vmoffset)
+          segment_offset:  0x00004000
+          max_pointer:     0x00000000
+          pages:         1
+             start[ 0]:  0x0000
+--- exit=0
+
+===== /usr/bin/dyld_info -fixups fake-packed =====
+fake-packed [arm64]:
+    -fixups:
+        segment         section          address             type   target
+        __DATA_CONST    __got            0x100004000           bind  libSystem/_printf
+--- exit=0
+
+===== /usr/bin/dyld_info -exports fake-packed =====
+fake-packed [arm64]:
+    -exports:
+        offset      symbol
+        0x00000000  __mh_execute_header
+        0x00000548  _main
+        0x00008000  _xhdr_blob
+        0x00008100  _xhdr_note
+--- exit=0
+
+===== /usr/bin/dyld_info -imports fake-packed =====
+fake-packed [arm64]:
+    -imports:
+      0x0000  _printf  (from libSystem)
+--- exit=0
+
+===== /usr/bin/dyld_info -objc fake-packed =====
+fake-packed [arm64]:
+    -objc:
+--- exit=0
+
+===== /usr/bin/dyld_info -inits fake-packed =====
+fake-packed [arm64]:
+    -inits:
+--- exit=0
+
+===== /usr/bin/dyld_info -function_starts fake-packed =====
+fake-packed [arm64]:
+    -function_starts:
+        0x100000548  _main
+--- exit=0
+
+===== /usr/bin/dyld_info -validate_only fake-packed =====
+fake-packed [arm64]:
+--- exit=0
+
+===== /usr/bin/vtool -show fake-packed =====
+fake-packed:
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform MACOS
+    minos 26.0
+      sdk 26.5
+   ntools 1
+     tool LD
+  version 1267.0
+Load command 12
+      cmd LC_SOURCE_VERSION
+  cmdsize 16
+  version 0.0
+--- exit=0
+
+===== /usr/bin/codesign -dvvv --entitlements - fake-packed =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed
+Identifier=fake-packed
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=516 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=1d3a8ef42a641b1e2db1f7edf9d3c11fcacef551
+CandidateCDHashFull sha256=1d3a8ef42a641b1e2db1f7edf9d3c11fcacef5516c50e6ecb677770ab89ea250
+Hash choices=sha256
+CMSDigest=1d3a8ef42a641b1e2db1f7edf9d3c11fcacef5516c50e6ecb677770ab89ea250
+CMSDigestType=2
+CDHash=1d3a8ef42a641b1e2db1f7edf9d3c11fcacef551
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements=none
+--- exit=0
+
+===== /usr/bin/codesign -d --entitlements - --xml fake-packed =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed
+--- exit=0
+
+===== /usr/bin/codesign -d -r - fake-packed =====
+Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed
+# designated => cdhash H"1d3a8ef42a641b1e2db1f7edf9d3c11fcacef551"
+--- exit=0
+
+===== /usr/bin/codesign --verify --verbose=4 --strict fake-packed =====
+fake-packed: valid on disk
+fake-packed: satisfies its Designated Requirement
+--- exit=0
+
+===== /usr/sbin/spctl -a -vv -t exec fake-packed =====
+fake-packed: rejected
+--- exit=3
+
+===== /usr/bin/xattr -l fake-packed =====
+--- exit=0
+
+===== /usr/bin/strings -n 6 | head -200 =====
+xhdr[0]=%d %s
+not really packed
+--- exit=0
