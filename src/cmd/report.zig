@@ -180,7 +180,9 @@ fn capture(ctx: *Context, c: *const Command) !Captured {
         error.OutOfMemory => return e,
         else => ctx.diags.err(.cli, .os_error, null, "report section {s}: {t}", .{ c.name, e }),
     }
-    try json.closeAll(js, 1); // closes "arches" (and anything a failed section left open)
+    // Unwind to "arches", then close it as an array: `closeAll` assumes object in a release build.
+    try json.closeAll(js, 2);
+    try json.endArches(js); // closes "arches" (anything a failed section left open went above)
     try js.endObject();
     try sub_sink.flush();
     const doc = std.json.parseFromSliceLeaky(std.json.Value, ctx.arena, buf.written(), .{}) catch |e| switch (e) {

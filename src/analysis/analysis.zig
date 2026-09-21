@@ -20,6 +20,7 @@ const fixups_mod = @import("../macho/fixups.zig");
 const imports_mod = @import("../macho/imports.zig");
 const blobs_mod = @import("../codesign/blobs.zig");
 const hashes_mod = @import("../codesign/hashes.zig");
+const bundle_mod = @import("../bundle/bundle.zig");
 const requirements_mod = @import("../codesign/requirements.zig");
 const entitlements_mod = @import("../codesign/entitlements.zig");
 const cms_mod = @import("../codesign/cms.zig");
@@ -36,6 +37,9 @@ const engine_mod = @import("../disasm/engine.zig");
 pub const Options = struct {
     security: bool = true, // --no-security
     network: bool = true, // --no-network
+    /// Set when the command was handed a bundle directory (`Context.bundle_path`). Special slots
+    /// -1/-3 are sealed by path, so verifying them needs the bundle, not the Mach-O.
+    bundle_path: ?[]const u8 = null,
     resolve_deps: bool = true,
     engine: engine_mod.Options = .{},
 };
@@ -156,6 +160,10 @@ pub const Analysis = struct {
             var v: ?hashes_mod.Verification = null;
             if (try a.signature()) |sig| if (sig.cd()) |cd| {
                 v = hashes_mod.verify(a.img, sig, cd, a.limits, a.diags);
+                if (a.options.bundle_path) |bp| {
+                    const files = try bundle_mod.sealedFiles(a.arena, a.io, bp, a.limits);
+                    hashes_mod.verifyBundleSlots(&v.?, cd, files, a.diags);
+                }
             };
             a.verification_ = .{ .v = v };
         }

@@ -231,7 +231,11 @@ pub const Image = struct {
                     var nb: [32]u8 = undefined;
                     diags.warn(.loadcmds, .offset_past_eof, c.offset, "{s}: {s} at offset {d} size {d} exceeds the {d}-byte slice", .{ c.name(&nb), rg.what, rg.off, rg.size, img.r.len() });
                 }
-                return;
+                // `continue`, not `return`: an LC_DYSYMTAB carries six ranges, and returning on the
+                // first bad one left the other five unchecked -- the analyst saw a single diagnostic
+                // with no sign that the rest were also out of bounds. The `diags.has` guard above
+                // still prevents a flood.
+                continue;
             }
         }
     }

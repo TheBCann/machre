@@ -18,6 +18,8 @@ pub const CSMAGIC_DETACHED_SIGNATURE: u32 = 0xfade0cc1;
 pub const CSMAGIC_EMBEDDED_ENTITLEMENTS: u32 = 0xfade7171;
 pub const CSMAGIC_EMBEDDED_DER_ENTITLEMENTS: u32 = 0xfade7172;
 pub const CSMAGIC_BLOBWRAPPER: u32 = 0xfade0b01;
+/// "s8ch" big-endian -- the stapled-ticket magic, as used for the on-disk ticket in bundle/bundle.zig.
+pub const CSMAGIC_EMBEDDED_TICKET: u32 = 0x73386368;
 
 pub const BlobRef = struct { slot: u32, offset: u32, magic: u32, length: u32, bytes: []const u8, truncated: bool };
 pub const HashType = enum(u8) {
@@ -282,7 +284,16 @@ pub fn parseSuperBlob(arena: Allocator, r: Reader, dataoff: u32, datasize: u32, 
             extra.CSSLOT_SIGNATURESLOT => if (magic == CSMAGIC_BLOBWRAPPER and payload.len != 0) {
                 sig.cms = payload;
             },
-            extra.CSSLOT_TICKETSLOT => sig.ticket = payload,
+            // Gated like every sibling above. Without a magic check, any 8+ byte blob parked in slot
+            // 0x10002 was reported as a stapled notarization ticket; `bundle/bundle.zig` demands the
+            // `s8ch` magic for the on-disk ticket, so the same constant is required here. No binary
+            // with an embedded ticket slot was available to confirm the encoding (0 of 241 signed
+            // binaries scanned carry one), so a mismatch is reported rather than silently dropped.
+            extra.CSSLOT_TICKETSLOT => if (magic == CSMAGIC_EMBEDDED_TICKET) {
+                sig.ticket = payload;
+            } else {
+                diags.warn(.codesign, .unknown_value, dataoff + off, "slot 0x10002 holds magic 0x{x}, not the 's8ch' ticket magic; not reported as a stapled ticket", .{magic});
+            },
             extra.CSSLOT_LAUNCH_CONSTRAINT_SELF...extra.CSSLOT_LIBRARY_CONSTRAINT => {
                 sig.launch_constraints[slot - extra.CSSLOT_LAUNCH_CONSTRAINT_SELF] = payload;
             },

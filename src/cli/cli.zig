@@ -206,25 +206,7 @@ fn dispatch(ctx: *Context, command: *const Command, budget: *limits_mod.BudgetAl
     var runnable = true;
     if (needs_path) {
         file_storage = LoadedFile.load(ctx.gpa, ctx.arena, ctx.io, ctx.path, ctx.limits, ctx.diags) catch |e| blk: {
-            switch (e) {
-                error.OutOfMemory => return e,
-                error.TooLarge => {
-                    ctx.diags.err(.file, .limit_reached, null, "file exceeds --max-file-size {d} bytes", .{ctx.limits.max_file_size});
-                    ctx.exit_code = .limits;
-                },
-                error.FileNotFound => {
-                    ctx.diags.err(.file, .os_error, null, "file not found", .{});
-                    ctx.exit_code = .io;
-                },
-                error.AccessDenied => {
-                    ctx.diags.err(.file, .os_error, null, "permission denied", .{});
-                    ctx.exit_code = .io;
-                },
-                error.Unexpected => {
-                    ctx.diags.err(.file, .os_error, null, "unexpected I/O error", .{});
-                    ctx.exit_code = .io;
-                },
-            }
+            try noteLoadError(ctx, e);
             runnable = false;
             break :blk try LoadedFile.fromBytes(ctx.arena, ctx.path, &.{}, ctx.limits, ctx.diags);
         };
@@ -291,6 +273,32 @@ var empty_file: LoadedFile = .{ .path = "", .path_z = "", .bytes = &.{}, .size =
 
 /// Shared prologue: load the file (bundle -> its main executable), select arches, parse one Image per arch.
 /// Returns null after emitting the not-Mach-O envelope/exit code when the command needs an image.
+/// Records a `LoadedFile.LoadError` as a diagnostic and picks the matching exit code. Shared by the
+/// top-level load and by the bundle's main-executable load in `loadImages`, which used to let these
+/// escape: a bundle whose executable was too large or unreadable exited 70 "internal error" and
+/// emitted no JSON envelope at all, while the identical thin-file case exited 5 with one.
+fn noteLoadError(ctx: *Context, e: LoadedFile.LoadError) error{OutOfMemory}!void {
+    switch (e) {
+        error.OutOfMemory => return error.OutOfMemory,
+        error.TooLarge => {
+            ctx.diags.err(.file, .limit_reached, null, "file exceeds --max-file-size {d} bytes", .{ctx.limits.max_file_size});
+            ctx.exit_code = .limits;
+        },
+        error.FileNotFound => {
+            ctx.diags.err(.file, .os_error, null, "file not found", .{});
+            ctx.exit_code = .io;
+        },
+        error.AccessDenied => {
+            ctx.diags.err(.file, .os_error, null, "permission denied", .{});
+            ctx.exit_code = .io;
+        },
+        error.Unexpected => {
+            ctx.diags.err(.file, .os_error, null, "unexpected I/O error", .{});
+            ctx.exit_code = .io;
+        },
+    }
+}
+
 pub fn loadImages(ctx: *Context) anyerror!?[]const Image {
     const file = ctx.file orelse return null;
     const needs = findCommand(ctx.command).?.needs_macho;
@@ -300,7 +308,10 @@ pub fn loadImages(ctx: *Context) anyerror!?[]const Image {
         if (exe) |p| {
             // Analyse the bundle's main executable in place of the directory, but remember that the
             // command was handed a bundle (ctx.path alone cannot say so once `file` is replaced).
-            var inner = try LoadedFile.load(ctx.gpa, ctx.arena, ctx.io, p, ctx.limits, ctx.diags);
+            var inner = LoadedFile.load(ctx.gpa, ctx.arena, ctx.io, p, ctx.limits, ctx.diags) catch |e| {
+                try noteLoadError(ctx, e);
+                return null;
+            };
             ctx.bundle_path = dir_path;
             file.deinit(ctx.gpa);
             file.* = inner;

@@ -226,6 +226,27 @@ fn layoutOf(io: Io, path: []const u8, buf: *[512]u8) ?Layout {
     return null;
 }
 
+/// Raw bytes of the two files the CodeDirectory seals by PATH rather than by an embedded blob:
+/// Info.plist (special slot -1) and _CodeSignature/CodeResources (slot -3). `codesign` hashes them
+/// off disk, so verifying those slots needs the bundle directory, not the Mach-O.
+pub const SealedFiles = struct { info_plist: ?[]const u8 = null, code_resources: ?[]const u8 = null };
+
+pub fn sealedFiles(arena: Allocator, io: Io, path: []const u8, limits: *const Limits) Allocator.Error!SealedFiles {
+    var buf: [512]u8 = undefined;
+    const l = layoutOf(io, path, &buf) orelse return .{};
+    var dir = Io.Dir.cwd().openDir(io, path, .{}) catch return .{};
+    defer dir.close(io);
+    var out: SealedFiles = .{};
+    if (dir.readFileAlloc(io, l.info_plist_rel, arena, .limited64(limits.max_plist_bytes))) |b| {
+        out.info_plist = b;
+    } else |e| if (e == error.OutOfMemory) return error.OutOfMemory;
+    const cs_rel = try joinRel(arena, l.contents_rel, "_CodeSignature/CodeResources");
+    if (dir.readFileAlloc(io, cs_rel, arena, .limited64(limits.max_xml_bytes))) |b| {
+        out.code_resources = b;
+    } else |e| if (e == error.OutOfMemory) return error.OutOfMemory;
+    return out;
+}
+
 fn joinRel(arena: Allocator, a: []const u8, b: []const u8) Allocator.Error![]const u8 {
     if (a.len == 0) return arena.dupe(u8, b);
     if (b.len == 0) return arena.dupe(u8, a);

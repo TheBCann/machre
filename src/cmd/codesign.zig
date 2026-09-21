@@ -51,7 +51,7 @@ pub fn run(ctx: *Context) anyerror!u8 {
     const multi = ctx.images.len > 1;
     const verify_pages = !ctx.args.flag("--no-verify-pages");
     for (ctx.images) |*img| {
-        var an = Analysis.init(ctx.gpa, ctx.arena, ctx.io, ctx.file.?, img, ctx.limits, ctx.diags, .{ .security = !ctx.no_security, .network = !ctx.no_network });
+        var an = Analysis.init(ctx.gpa, ctx.arena, ctx.io, ctx.file.?, img, ctx.limits, ctx.diags, .{ .security = !ctx.no_security, .network = !ctx.no_network, .bundle_path = ctx.bundle_path });
         defer an.deinit();
         const sig = try an.signature();
         const v: View = .{
@@ -366,6 +366,10 @@ fn writeHashTable(ctx: *Context, out: *Io.Writer, cd: *const blobs.CodeDirectory
             2 => stateOf(if (v.ver) |ver| ver.special.requirements else null),
             5 => stateOf(if (v.ver) |ver| ver.special.entitlements_xml else null),
             7 => stateOf(if (v.ver) |ver| ver.special.entitlements_der else null),
+            // -1/-3 are sealed by path; they are verified against the bundle's files on disk when
+            // the command was handed a bundle, and are genuinely uncheckable from a bare Mach-O.
+            1 => stateOf(if (v.ver) |ver| ver.special.info_plist else null),
+            3 => stateOf(if (v.ver) |ver| ver.special.resources else null),
             else => "sealed (blob not in this file)",
         };
         try t.rowFmt(&.{ "-{d}", "{s}", "{x}", "{s}" }, .{ n, version.csSpecialSlotName(n) orelse "?", cd.special_hashes[n - 1], state });

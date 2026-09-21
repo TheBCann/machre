@@ -44,7 +44,9 @@ pub const Verification = struct {
 
 /// Recomputes every code slot over `img.r.bytes[0..code_limit]` with the CD's hash type and compares; also hashes the
 /// requirements/entitlements(XML,DER)/launch-constraint blobs against special slots -2/-5/-7/-8..; Info.plist/CodeResources
-/// (slots -1/-3) are filled in by bundle.zig via `verifySpecialSlot`.
+/// (slots -1/-3) are sealed by path, not by a blob in this file, so `verifyBundleSlots` fills them
+/// from the bundle's files on disk -- call it whenever a bundle path is known, or `ok()` cannot
+/// see a tampered Info.plist or CodeResources.
 pub fn verify(img: *const Image, sig: *const blobs.Signature, cd: *const blobs.CodeDirectory, limits: *const Limits, diags: *Diagnostics) Verification {
     var v: Verification = .none;
     v.hash_type_supported = cd.hash_type.digestLen() != 0 and cd.hash_size == cd.hash_type.digestLen();
@@ -104,6 +106,33 @@ pub fn verify(img: *const Image, sig: *const blobs.Signature, cd: *const blobs.C
     if (v.special_mismatches != 0 and !diags.has(.codesign, .hash_mismatch))
         diags.err(.codesign, .hash_mismatch, null, "{d} special slot hashes do not match their blobs", .{v.special_mismatches});
     return v;
+}
+
+/// Fills special slots -1 (Info.plist) and -3 (CodeResources) from the bundle's files on disk and
+/// folds any mismatch into `special_mismatches`, so `ok()` -- and the `verdict.valid` it backs --
+/// finally accounts for them. `verify` cannot: those two are sealed by path, and nothing in the
+/// Mach-O carries their contents. Until this ran, their `null` read as "no mismatch" and a signed
+/// bundle with a tampered Info.plist or CodeResources was still reported valid.
+pub fn verifyBundleSlots(v: *Verification, cd: *const blobs.CodeDirectory, files: anytype, diags: *Diagnostics) void {
+    v.special.info_plist = checkPathSlot(cd, slot_info_plist, files.info_plist);
+    v.special.resources = checkPathSlot(cd, slot_resources, files.code_resources);
+    var added: u32 = 0;
+    inline for (.{ v.special.info_plist, v.special.resources }) |r| {
+        if (r) |b| if (!b) {
+            added += 1;
+        };
+    }
+    v.special_mismatches += added;
+    if (added != 0 and !diags.has(.codesign, .hash_mismatch))
+        diags.err(.codesign, .hash_mismatch, null, "{d} bundle special slot hashes do not match the files on disk", .{added});
+}
+
+/// `checkSlot` for a slot sealed by path: `bytes` is the file's contents, or null when absent.
+fn checkPathSlot(cd: *const blobs.CodeDirectory, n: u32, bytes: ?[]const u8) ?bool {
+    const bound = cd.isSpecialSlotBound(n);
+    if (bytes == null) return if (bound) false else null; // sealed but the file is gone
+    if (!bound) return null; // present but not sealed (codesign tolerates this)
+    return verifySpecialSlot(cd, n, bytes.?);
 }
 
 /// null when the slot is unbound and the blob absent; false when one of the two is missing.
@@ -230,4 +259,77 @@ test "hashes: page hashes match, then one flipped byte is caught" {
     const v3 = verify(&img3, &sig, &cd, &Limits.default, &d);
     try std.testing.expect(!v3.code_limit_within_slice);
     try std.testing.expectEqual(@as(u32, 1), v3.pages_checked);
+}
+
+test "hashes: a tampered Info.plist or CodeResources is no longer reported as valid" {
+    // Regression: slots -1/-3 are sealed by path, so `verify` never filled them, and `ok()` read
+    // their `null` as "no mismatch" -- a signed bundle whose Info.plist had been edited still
+    // reported verdict.valid = true. `verifyBundleSlots` supplies them from the files on disk.
+    var arena_state = std.heap.ArenaAllocator.init(std.testing.allocator);
+    defer arena_state.deinit();
+    const arena = arena_state.allocator();
+    var d = @import("../core/diag.zig").Diagnostics.init(arena, 64);
+
+    const info_plist = "<plist><dict><key>CFBundleIdentifier</key><string>x</string></dict></plist>";
+    const code_resources = "<plist><dict><key>files</key><dict/></dict></plist>";
+
+    var file: [1000]u8 = undefined;
+    for (&file, 0..) |*b, i| b.* = @truncate(i *% 13);
+    const hs: usize = 32;
+    const code_limit: usize = file.len;
+    var cdbuf: [512]u8 = @splat(0);
+    const ident = "bundleslots";
+    const ident_off: usize = 88;
+    const n_special: usize = 3; // slots -1, -2, -3
+    const hash_off = ident_off + ident.len + 1 + n_special * hs;
+    const total = hash_off + 1 * hs;
+    std.mem.writeInt(u32, cdbuf[0..4], blobs.CSMAGIC_CODEDIRECTORY, .big);
+    std.mem.writeInt(u32, cdbuf[4..8], @intCast(total), .big);
+    std.mem.writeInt(u32, cdbuf[8..12], 0x20400, .big);
+    std.mem.writeInt(u32, cdbuf[16..20], @intCast(hash_off), .big);
+    std.mem.writeInt(u32, cdbuf[20..24], @intCast(ident_off), .big);
+    std.mem.writeInt(u32, cdbuf[24..28], @intCast(n_special), .big);
+    std.mem.writeInt(u32, cdbuf[28..32], 1, .big);
+    std.mem.writeInt(u32, cdbuf[32..36], @intCast(code_limit), .big);
+    cdbuf[36] = @intCast(hs);
+    cdbuf[37] = 2;
+    cdbuf[39] = 12;
+    @memcpy(cdbuf[ident_off..][0..ident.len], ident);
+    var dg: [48]u8 = undefined;
+    _ = blobs.cdhashOf(.sha256, file[0..code_limit], &dg).?;
+    @memcpy(cdbuf[hash_off..][0..hs], dg[0..hs]);
+    _ = blobs.cdhashOf(.sha256, info_plist, &dg).?;
+    @memcpy(cdbuf[hash_off - 1 * hs ..][0..hs], dg[0..hs]); // slot -1
+    _ = blobs.cdhashOf(.sha256, code_resources, &dg).?;
+    @memcpy(cdbuf[hash_off - 3 * hs ..][0..hs], dg[0..hs]); // slot -3
+
+    const cd = (try blobs.parseCodeDirectory(arena, 0, cdbuf[0..total], &Limits.default, &d)).?;
+    var sig: blobs.Signature = .empty;
+    const img = fakeImage(&file);
+
+    // Without the bundle's files the two slots stay unknown -- and `ok()` used to stop there.
+    const bare = verify(&img, &sig, &cd, &Limits.default, &d);
+    try std.testing.expectEqual(@as(?bool, null), bare.special.info_plist);
+    try std.testing.expectEqual(@as(?bool, null), bare.special.resources);
+
+    // Both files intact: verified, and the verdict still holds.
+    var good = verify(&img, &sig, &cd, &Limits.default, &d);
+    verifyBundleSlots(&good, &cd, .{ .info_plist = @as(?[]const u8, info_plist), .code_resources = @as(?[]const u8, code_resources) }, &d);
+    try std.testing.expectEqual(@as(?bool, true), good.special.info_plist);
+    try std.testing.expectEqual(@as(?bool, true), good.special.resources);
+    try std.testing.expectEqual(@as(u32, 0), good.special_mismatches);
+    try std.testing.expect(good.ok());
+
+    // One edited byte in Info.plist: MISMATCH, and the verdict must now be false.
+    var bad = verify(&img, &sig, &cd, &Limits.default, &d);
+    verifyBundleSlots(&bad, &cd, .{ .info_plist = @as(?[]const u8, info_plist ++ " "), .code_resources = @as(?[]const u8, code_resources) }, &d);
+    try std.testing.expectEqual(@as(?bool, false), bad.special.info_plist);
+    try std.testing.expectEqual(@as(u32, 1), bad.special_mismatches);
+    try std.testing.expect(!bad.ok());
+
+    // Sealed but the file is gone counts as a mismatch too.
+    var gone = verify(&img, &sig, &cd, &Limits.default, &d);
+    verifyBundleSlots(&gone, &cd, .{ .info_plist = @as(?[]const u8, null), .code_resources = @as(?[]const u8, code_resources) }, &d);
+    try std.testing.expectEqual(@as(?bool, false), gone.special.info_plist);
+    try std.testing.expect(!gone.ok());
 }

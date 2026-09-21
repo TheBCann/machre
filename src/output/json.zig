@@ -253,6 +253,13 @@ pub fn endArches(js: *Stringify) Error!void {
 }
 /// Best-effort close of every open container down to `depth` (used after an internal error so the
 /// document is always well-formed).
+///
+/// It CANNOT tell an array from an object in a release build. `Stringify.nesting_stack` carries that
+/// bit only while safety checks are on -- std declares it `void` for ReleaseFast/ReleaseSmall and
+/// documents that the hint "is ignored and is always treated as `.assumed_correct`" there -- so the
+/// `void` arm below assumes object and would close an array with `}`. A caller that knows a
+/// container's kind must close that container itself; `envelopeEnd` unwinds only to the "arches"
+/// array and then closes it through `endArches`.
 pub fn closeAll(js: *Stringify, depth: usize) Error!void {
     while (js.indent_level > depth) {
         if (js.next_punctuation == .colon) try js.write(null);
@@ -262,7 +269,11 @@ pub fn closeAll(js: *Stringify, depth: usize) Error!void {
 }
 /// ],"diagnostics":[...],"diagnostics_dropped":n,"exit_code":n}   (`bundle` is written by the commands that analyse one)
 pub fn envelopeEnd(js: *Stringify, d: *const Diagnostics, exit_code: u8, lossy: u32) Error!void {
-    try closeAll(js, 1);
+    // Stop at 2 and close "arches" as the array it is. `closeAll(js, 1)` would close it with `}` in
+    // a release build (see its doc comment), so `"arches": []` came out as `"arches": [}` -- every
+    // ReleaseFast/ReleaseSmall build emitted invalid JSON on any path that left the array open.
+    try closeAll(js, 2);
+    try endArches(js);
     try diagnostics(js, d);
     try int(js, "diagnostics_dropped", d.dropped);
     try int(js, "sanitized_strings", lossy);
@@ -315,4 +326,33 @@ fn js_extras(js: *Stringify, a: Allocator) Error!void {
     try hexOpt(js, "hnone", null);
     try isoTime(js, "t", 0x68c3a1b2);
     try truncated(js, 12);
+}
+
+test "json: an empty \"arches\" array closes as an array in every build mode" {
+    // Regression: envelopeEnd used closeAll(js, 1), and closeAll cannot tell an array from an
+    // object once `Stringify.nesting_stack` is `void` (ReleaseFast/ReleaseSmall), so it closed the
+    // empty "arches" array with `}`. `machre info --json /nonexistent/x` -- any path that reaches
+    // envelopeEnd without calling endArches -- emitted `"arches": [},` and failed to parse.
+    //
+    // The sibling test above closes "arches" explicitly, which is exactly why it never caught this.
+    var arena = std.heap.ArenaAllocator.init(std.testing.allocator);
+    defer arena.deinit();
+    const a = arena.allocator();
+    var buf: [4096]u8 = undefined;
+    var w: std.Io.Writer = .fixed(&buf);
+    var s = sink.Sink.init(.json, &w, .{ .pretty_json = false }, a);
+    var d = Diagnostics.init(a, 8);
+    var file: LoadedFile = .{ .path = "x", .path_z = "x", .bytes = "", .size = 0, .mtime_unix = 0, .is_dir = false, .container = .not_macho };
+
+    try envelopeBegin(&s.json, a, "info", &file, null);
+    // No endArches: the array is still open, as on the not_macho path.
+    try envelopeEnd(&s.json, &d, 3, 0);
+    try s.flush();
+
+    const out = w.buffered();
+    try std.testing.expect(std.mem.find(u8, out, "\"arches\":[]") != null);
+    try std.testing.expect(std.mem.find(u8, out, "[}") == null);
+    var parsed = try std.json.parseFromSlice(std.json.Value, std.testing.allocator, out, .{});
+    defer parsed.deinit();
+    try std.testing.expectEqual(@as(i64, 3), parsed.value.object.get("exit_code").?.integer);
 }

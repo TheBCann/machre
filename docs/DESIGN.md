@@ -2250,7 +2250,9 @@ pub const Verification = struct {
 };
 /// Recomputes every code slot over `img.r.bytes[0..code_limit]` with the CD's hash type and compares; also hashes the
 /// requirements/entitlements(XML,DER)/launch-constraint blobs against special slots -2/-5/-7/-8..; Info.plist/CodeResources
-/// (slots -1/-3) are filled in by bundle.zig via `verifySpecialSlot`.
+/// (slots -1/-3) are sealed by path, not by a blob in this file, so `verifyBundleSlots` fills them
+/// from the bundle's files on disk -- call it whenever a bundle path is known, or `ok()` cannot
+/// see a tampered Info.plist or CodeResources.
 pub fn verify(img: *const Image, sig: *const blobs.Signature, cd: *const blobs.CodeDirectory, limits: *const Limits, diags: *Diagnostics) Verification;
 /// Hash `bytes` with the CD's hash type and compare with special slot `n` (1-based; -n in codesign terms).
 pub fn verifySpecialSlot(cd: *const blobs.CodeDirectory, n: u32, bytes: []const u8) ?bool;
