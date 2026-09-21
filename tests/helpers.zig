@@ -3,21 +3,22 @@ const std = @import("std");
 const build_options = @import("build_options");
 const machre = @import("machre");
 
-/// Derived from the manifest FILE path (addOptionPath cannot hash a directory): two dirname() calls.
+/// All four are absolute, joined against the build root in build.zig. They used to be derived here
+/// with dirname() from an `addOptionPath` value, which stopped being absolute in Zig dev.2257.
 pub fn corpusDir() []const u8 {
-    const truth = std.fs.path.dirname(build_options.corpus_manifest) orelse unreachable; // .../tests/corpus/truth
-    return std.fs.path.dirname(truth) orelse unreachable; // .../tests/corpus
+    return build_options.corpus_dir;
 }
 pub fn truthDir() []const u8 {
-    return std.fs.path.dirname(build_options.corpus_manifest) orelse unreachable;
+    return build_options.truth_dir;
 }
 pub fn srcDir() []const u8 {
-    return std.fs.path.dirname(build_options.src_root) orelse unreachable;
+    return build_options.src_dir;
 }
-/// .../tests/golden (sibling of tests/corpus).
+/// .../tests/golden (sibling of tests/corpus). Takes an allocator it no longer needs so the ~8
+/// `try helpers.goldenDir(arena)` call sites stay untouched.
 pub fn goldenDir(arena: std.mem.Allocator) ![]const u8 {
-    const tests = std.fs.path.dirname(corpusDir()) orelse unreachable;
-    return std.fmt.allocPrint(arena, "{s}/golden", .{tests});
+    _ = arena;
+    return build_options.golden_dir;
 }
 pub fn openCorpus(io: std.Io) !std.Io.Dir {
     return std.Io.Dir.openDirAbsolute(io, corpusDir(), .{});

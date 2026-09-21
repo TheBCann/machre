@@ -62,7 +62,12 @@ pub fn dylibs(arena: Allocator, img: *const Image, limits: *const Limits, diags:
             diags.warn(.imports, .count_clamped, c.offset, "more than limits.max_dylibs {d} dylib load commands; clamped", .{limits.max_dylibs});
             break;
         }
-        const d = (try loadcmds.decodeDylib(arena, c, ordinal, diags)) orelse continue;
+        const d = (try loadcmds.decodeDylib(arena, c, ordinal, diags)) orelse {
+            // The ordinal is still spent -- dyld counts load commands, not successful decodes --
+            // so the list now has a hole. `dylibFor` resolves by stored ordinal, not position.
+            diags.warn(.imports, .cmdsize_invalid, c.offset, "dylib load command is too small to decode; ordinal {d} will not resolve", .{ordinal});
+            continue;
+        };
         try list.append(arena, .{
             .ordinal = ordinal,
             .cmd = c.cmd,
@@ -113,14 +118,26 @@ const Dedup = struct {
     }
 };
 
+/// Resolve a positive library ordinal to its `DylibRef`, matching `DylibRef.ordinal`.
+///
+/// `dl` is NOT indexable by `ordinal - 1`. `dylibs()` spends an ordinal on every dylib load
+/// command but drops the ones `decodeDylib` rejects, so a single malformed LC_LOAD_DYLIB leaves
+/// a hole and shifts every later entry -- which would silently attribute an import to the wrong
+/// library. Ordinals are assigned in ascending order and never repeat, so the positional guess is
+/// exact whenever nothing was dropped, and the scan settles the rest.
 fn dylibFor(dl: []const DylibRef, ordinal: i32) ?*const DylibRef {
     if (ordinal <= 0) return null;
-    const i: usize = @intCast(ordinal - 1);
-    if (i >= dl.len) return null;
-    return &dl[i];
+    const want = std.math.cast(u16, ordinal) orelse return null;
+    const guess: usize = @intCast(ordinal - 1);
+    if (guess < dl.len and dl[guess].ordinal == want) return &dl[guess];
+    for (dl) |*d| {
+        if (d.ordinal == want) return d;
+    }
+    return null;
 }
 
-/// Attribution: chained/legacy bind ordinal -> dl[ordinal-1]; nlist-only -> GET_LIBRARY_ORDINAL(n_desc).
+/// Attribution: chained/legacy bind ordinal -> the DylibRef whose `.ordinal` matches (see
+/// `dylibFor`, NOT dl[ordinal-1]); nlist-only -> GET_LIBRARY_ORDINAL(n_desc).
 pub fn imports(arena: Allocator, img: *const Image, syms: *const SymbolTable, fix: *const FixupTable, dl: []const DylibRef, limits: *const Limits, diags: *Diagnostics) Allocator.Error!ImportTable {
     _ = img;
     var out = ImportTable.empty;
@@ -288,10 +305,7 @@ pub fn ordinalName(buf: *[32]u8, ordinal: i32, dl: []const DylibRef) []const u8 
         -2 => "flat-namespace",
         -3 => "weak-lookup",
         else => blk: {
-            if (ordinal > 0) {
-                const i: usize = @intCast(ordinal - 1);
-                if (i < dl.len) break :blk dl[i].short_name;
-            }
+            if (dylibFor(dl, ordinal)) |d| break :blk d.short_name;
             break :blk std.fmt.bufPrint(buf, "<bad ordinal {d}>", .{ordinal}) catch "<bad ordinal>";
         },
     };
@@ -315,4 +329,31 @@ test "imports: ordinalName covers the specials and out-of-range ordinals" {
     try std.testing.expectEqual(@as(i32, 3), ordinalFromDesc(3));
     try std.testing.expectEqualStrings("libSystem", version.dylibShortName("/usr/lib/libSystem.B.dylib"));
     try std.testing.expectEqualStrings("Foundation", version.dylibShortName("/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation"));
+}
+
+test "imports: a gap in the ordinals does not shift attribution onto the wrong dylib" {
+    // Regression: dylibFor/ordinalName indexed dl[ordinal-1]. `dylibs()` spends an ordinal on
+    // every dylib load command but drops the ones decodeDylib rejects, so one malformed
+    // LC_LOAD_DYLIB made every later import resolve to its neighbour -- a crafted binary could
+    // make an import appear to come from a benign library. Ordinal 2 is the dropped one here.
+    const mk = struct {
+        fn f(ord: u16, short: []const u8) DylibRef {
+            return .{ .ordinal = ord, .cmd = 0xc, .path = short, .short_name = short, .current_version = 0, .compat_version = 0, .timestamp = 0, .weak = false, .reexport = false, .upward = false, .delayed_init = false };
+        }
+    }.f;
+    const dl = [_]DylibRef{ mk(1, "libSystem"), mk(3, "libEvil") };
+    var buf: [32]u8 = undefined;
+
+    // The hole resolves to nothing -- NOT to the entry that happens to sit at that index.
+    try std.testing.expect(dylibFor(&dl, 2) == null);
+    try std.testing.expectEqualStrings("<bad ordinal 2>", ordinalName(&buf, 2, &dl));
+    // And the shifted entry is still reachable by its real ordinal.
+    try std.testing.expectEqualStrings("libEvil", dylibFor(&dl, 3).?.short_name);
+    try std.testing.expectEqualStrings("libEvil", ordinalName(&buf, 3, &dl));
+    // The unshifted prefix and the specials are unaffected.
+    try std.testing.expectEqualStrings("libSystem", dylibFor(&dl, 1).?.short_name);
+    try std.testing.expect(dylibFor(&dl, 4) == null and dylibFor(&dl, 0) == null);
+    // An ordinal past u16 cannot match any DylibRef.ordinal and must not be @intCast into one.
+    try std.testing.expect(dylibFor(&dl, 0x1_0001) == null);
+    try std.testing.expectEqualStrings("<bad ordinal 65537>", ordinalName(&buf, 0x1_0001, &dl));
 }

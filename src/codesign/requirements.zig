@@ -440,6 +440,13 @@ fn exprBytes(blob: []const u8, diags: *Diagnostics) []const u8 {
     if (kind != exprForm and !diags.has(.requirements, .unknown_value))
         diags.warn(.requirements, .unknown_value, null, "requirement kind {d} is not exprForm", .{kind});
     const end = @min(@as(u64, len), blob.len);
+    // `len` counts the 12-byte header, so anything below it is malformed -- and `blob[12..end]`
+    // would trap with start > end rather than yield an empty expression.
+    if (end < 12) {
+        if (!diags.has(.requirements, .blob_malformed))
+            diags.warn(.requirements, .blob_malformed, null, "requirement blob declares length {d} (< 12, its own header)", .{len});
+        return blob[0..0];
+    }
     return blob[12..@intCast(end)];
 }
 
@@ -484,7 +491,8 @@ pub fn parseSet(arena: Allocator, bytes: []const u8, limits: *const Limits, diag
     var i: u64 = 0;
     while (i < count) : (i += 1) {
         const rtype = r.u32At(12 + i * 8, .big) orelse break;
-        const off = r.u32At(16 + i * 8, .big) orelse break;
+        // u64 for the same reason as blobs.zig's slot offset: `off + 8` wraps at u32 width.
+        const off: u64 = r.u32At(16 + i * 8, .big) orelse break;
         if (off + 8 > total) {
             diags.warn(.requirements, .blob_malformed, off, "requirement {d} lies outside the blob", .{i});
             continue;
@@ -645,4 +653,44 @@ test "requirements: truncation and absurd input never trap" {
     var bad = [_]u8{ 0, 0, 0, 2, 0xff, 0xff, 0xff, 0xff };
     var d3 = Diagnostics.init(arena, 32);
     try std.testing.expectEqualStrings("/* malformed */", try prettyPrint(arena, &bad, &Limits.default, &d3));
+}
+
+test "requirements: an entry offset near maxInt(u32) is rejected, not wrapped" {
+    // Regression: `off + 8 > total` at u32 width trapped on the add before it could reject.
+    var arena_state = std.heap.ArenaAllocator.init(std.testing.allocator);
+    defer arena_state.deinit();
+    const arena = arena_state.allocator();
+    for ([_]u32{ 0xffff_ffff, 0xffff_fff8, 0x8000_0000 }) |bad_off| {
+        var d = Diagnostics.init(arena, 16);
+        var buf: [20]u8 = undefined;
+        @memset(&buf, 0);
+        std.mem.writeInt(u32, buf[0..4], CSMAGIC_REQUIREMENTS, .big);
+        std.mem.writeInt(u32, buf[4..8], buf.len, .big);
+        std.mem.writeInt(u32, buf[8..12], 1, .big); // one entry
+        std.mem.writeInt(u32, buf[12..16], 3, .big); // kSecDesignatedRequirementType
+        std.mem.writeInt(u32, buf[16..20], bad_off, .big);
+        const set = try parseSet(arena, &buf, &Limits.default, &d);
+        try std.testing.expectEqual(@as(usize, 0), set.requirements.len);
+        try std.testing.expect(d.has(.requirements, .blob_malformed));
+    }
+}
+
+test "requirements: a declared length below its own header yields no expression" {
+    // Regression: exprBytes clamped `end` to the declared length and then sliced blob[12..end],
+    // so a length under 12 gave start > end -- a trap, not an empty expression.
+    var arena_state = std.heap.ArenaAllocator.init(std.testing.allocator);
+    defer arena_state.deinit();
+    const arena = arena_state.allocator();
+    for ([_]u32{ 0, 1, 8, 11 }) |bad_len| {
+        var d = Diagnostics.init(arena, 16);
+        var buf: [16]u8 = undefined;
+        @memset(&buf, 0);
+        std.mem.writeInt(u32, buf[0..4], CSMAGIC_REQUIREMENT, .big);
+        std.mem.writeInt(u32, buf[4..8], bad_len, .big);
+        std.mem.writeInt(u32, buf[8..12], 1, .big); // exprForm
+        try std.testing.expectEqualStrings("", try prettyPrint(arena, &buf, &Limits.default, &d));
+        // Reachable through the set path too -- parseSet treats a bare requirement as designated.
+        _ = try parseSet(arena, &buf, &Limits.default, &d);
+        try std.testing.expect(d.has(.requirements, .blob_malformed));
+    }
 }

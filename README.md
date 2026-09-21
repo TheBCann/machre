@@ -1,7 +1,7 @@
 # machre — Mach-O reverse-engineering and triage tool
 
 A robustness-first static analysis tool for macOS Mach-O files (thin, fat/universal, bundles), written in
-Zig `0.17.0-dev.1154`. Every byte is read through a bounds-checked reader, every count is clamped, every
+Zig `0.17.0-dev.2257`. Every byte is read through a bounds-checked reader, every count is clamped, every
 structural problem becomes a diagnostic instead of a crash, and the shipped build is ReleaseSafe. The
 design is in `docs/DESIGN.md`; the JSON contract in `docs/json-schema.md`.
 

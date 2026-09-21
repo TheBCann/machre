@@ -1,6 +1,7 @@
 # machre — Binding design (synthesis of design-B with grafts from A and C)
 
-Target toolchain: Zig `0.17.0-dev.1154+ba5420896`, macOS 26.3 arm64, SDK 26.5, Capstone 5.0.8 (optional).
+Target toolchain: Zig `0.17.0-dev.2257+3bfb29994`, macOS 26.3 arm64, SDK 26.5, Capstone 5.0.8 (optional).
+(Retargeted from `0.17.0-dev.1154+ba5420896`; see §11 for the build-root path change that forced it.)
 This is the single binding design for implementation. It follows design-B (robustness-first, the judges'
 winner) and merges the ideas the judges asked for from A (library-first) and C (analyst-output-first). Every
 judge-reported defect is resolved in §13.2 (fixed, or explicitly rejected with a reason).
@@ -76,7 +77,7 @@ Owner column = the work package that implements the file (§12). WP0 creates eve
 ```
 machre/
   build.zig                              WP0   §11 (verbatim from skeleton-reference)
-  build.zig.zon                          WP0   .{ .name = .machre, .version = "0.1.0", .fingerprint = 0xee7caf0ceabb3411, .minimum_zig_version = "0.17.0-dev.1154", .paths = .{ "build.zig", "build.zig.zon", "src", "tests", "README.md", "docs" } }
+  build.zig.zon                          WP0   .{ .name = .machre, .version = "0.1.0", .fingerprint = 0xee7caf0ceabb3411, .minimum_zig_version = "0.17.0-dev.2257", .paths = .{ "build.zig", "build.zig.zon", "src", "tests", "README.md", "docs" } }
   README.md                              WP0   build/run/test, subcommand table, exit codes, JSON conventions
   docs/DESIGN.md                         —     this file
   docs/json-schema.md                    WP9   normative per-command JSON key inventory (§6), checked by golden tests
@@ -2065,7 +2066,8 @@ pub const ExportTable = struct {
 
 pub fn dylibs(arena: Allocator, img: *const Image, limits: *const Limits, diags: *Diagnostics) Allocator.Error![]const DylibRef;
 pub fn rpaths(arena: Allocator, img: *const Image, limits: *const Limits, diags: *Diagnostics) Allocator.Error![]const []const u8;
-/// Attribution: chained/legacy bind ordinal -> dl[ordinal-1]; nlist-only -> GET_LIBRARY_ORDINAL(n_desc).
+/// Attribution: chained/legacy bind ordinal -> the DylibRef whose `.ordinal` matches (see
+/// `dylibFor`, NOT dl[ordinal-1]); nlist-only -> GET_LIBRARY_ORDINAL(n_desc).
 pub fn imports(arena: Allocator, img: *const Image, syms: *const SymbolTable, fix: *const FixupTable, dl: []const DylibRef, limits: *const Limits, diags: *Diagnostics) Allocator.Error!ImportTable;
 pub fn exports(arena: Allocator, img: *const Image, syms: *const SymbolTable, trie: ?*const ExportTrie, limits: *const Limits, diags: *Diagnostics) Allocator.Error!ExportTable;
 /// "self", "main-executable", "flat-namespace", "weak-lookup", short name, or "<bad ordinal N>".
@@ -4884,8 +4886,9 @@ the top of this document). Facts it relies on: `standardOptimizeOption(.{ .prefe
 registered *first* and wins when given — both `zig build --release` and `zig build -Doptimize=ReleaseSafe`
 produce ReleaseSafe (and `--release=fast` still yields ReleaseSafe, verified with `--verbose`); ONE options module
 (`opts.createModule()`, Options.zig:436) imported everywhere with `addImport` (two `addOptions` calls fail with
-`file exists in modules 'build_options' and 'build_options0'`); `addOptionPath` (Options.zig:424) targets FILES
-(`summary.json`, `src/root.zig`), never directories; frameworks/capstone are linked on `lib_mod` only and
+`file exists in modules 'build_options' and 'build_options0'`); `addOptionPath` (Options.zig:431) targets FILES
+(`summary.json`), never directories, and since dev.2257 its emitted VALUE is build-root-relative, so the
+absolute paths the harness needs are joined from `b.root` instead (11.1); frameworks/capstone are linked on `lib_mod` only and
 propagate to the executable and to every test binary that imports it; Capstone auto-detection only on native
 builds; `link_libc` on macOS unconditionally (xattr/dyld externs are in libSystem; `init.gpa` becomes
 `c_allocator` in release).
@@ -5003,8 +5006,28 @@ pub fn build(b: *std.Build) void {
 ```
 
 `build.zig.zon`: `.{ .name = .machre, .version = "0.1.0", .fingerprint = 0xee7caf0ceabb3411, .minimum_zig_version
-= "0.17.0-dev.1154", .dependencies = .{}, .paths = .{ "build.zig", "build.zig.zon", "src", "tests", "README.md",
+= "0.17.0-dev.2257", .dependencies = .{}, .paths = .{ "build.zig", "build.zig.zon", "src", "tests", "README.md",
 "docs" } }` (the fingerprint is the one this nightly generated for the skeleton; keep it).
+
+### 11.1 Build-root-relative option paths (Zig dev.2257)
+
+`std.Build.Step.Options.addOptionPath` used to emit an ABSOLUTE path. As of `0.17.0-dev.2257+3bfb29994` it
+emits the build-root-RELATIVE sub-path: `std/Build/Serialize.zig:41` serializes a `.src_path` LazyPath as
+`sp.sub_path` alone, discarding the root. The same is true of its two new siblings, `addOptionPathDirectory`
+and `addOptionPathUntracked` (both added 2026-09-17), so none of them can supply an absolute path.
+
+This broke the whole filesystem-touching half of the suite at once: `tests/helpers.zig` took `dirname()` of
+the emitted value and handed the result to `Io.Dir.openDirAbsolute`, which asserts `isAbsolute` -- 40 crashes
+across corpus/robustness/sanitize/deps/golden, all one cause.
+
+Resolution: build.zig joins each path against `b.root` (a `Cache.Path`; `joinString` resolves a sub-path
+against its root dir) and passes the absolute result as a plain `addOption([]const u8, ..)`. `b.build_root`
+was removed in the same window, and `b.graph.path(.build_root, ..)` asserts `base != .build_root`
+(Build.zig:174), so `b.root` is the only route. `corpus_dir`, `truth_dir`, `golden_dir`, `src_dir` and
+`corpus_manifest` are all absolute; `tests/helpers.zig` returns them verbatim and derives nothing.
+
+One `addOptionPath("corpus_manifest_dep", ..)` remains, declared purely for its dependency edge -- its value
+is unused. Without it, regenerating the corpus would rewrite `summary.json` without re-running the tests.
 
 Usage summary for the README: `zig build` (Debug), `zig build --release` or `zig build -Doptimize=ReleaseSafe`
 (shipped), `zig build -Dcapstone=false`, `zig build -Dcapstone-static=false` (dynamic libcapstone + `LC_RPATH`),

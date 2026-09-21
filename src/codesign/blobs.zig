@@ -239,7 +239,10 @@ pub fn parseSuperBlob(arena: Allocator, r: Reader, dataoff: u32, datasize: u32, 
     var i: u64 = 0;
     while (i < count) : (i += 1) {
         const slot = r.u32At(12 + i * 8, .big) orelse break;
-        const off = r.u32At(16 + i * 8, .big) orelse break;
+        // u64, not u32: every use below is arithmetic on a file-derived offset. As a u32,
+        // `off + 8` wraps for off >= 0xfffffff8 (so a slot at 0xffffffff sails past this bounds
+        // check) and `dataoff + off` wraps for any large pair -- both are attacker-controlled.
+        const off: u64 = r.u32At(16 + i * 8, .big) orelse break;
         if (off + 8 > total) {
             diags.warn(.codesign, .blob_malformed, dataoff + off, "blob for slot 0x{x} at offset {d} lies outside the SuperBlob", .{ slot, off });
             sig.truncated = true;
@@ -263,7 +266,7 @@ pub fn parseSuperBlob(arena: Allocator, r: Reader, dataoff: u32, datasize: u32, 
             trunc = true;
         }
         const bytes = r.sliceAt(off, avail) orelse continue;
-        try refs.append(arena, .{ .slot = slot, .offset = off, .magic = magic, .length = blen, .bytes = bytes, .truncated = trunc });
+        try refs.append(arena, .{ .slot = slot, .offset = @intCast(off), .magic = magic, .length = blen, .bytes = bytes, .truncated = trunc });
 
         const payload: []const u8 = if (bytes.len > 8) bytes[8..] else &.{};
         switch (slot) {
@@ -623,4 +626,29 @@ test "blobs: absurd header fields are clamped, not trusted" {
     const cd = (try parseCodeDirectory(arena, 0, &cdbuf, &Limits.default, &d)).?;
     try std.testing.expectEqual(@as(usize, 0), cd.code_hashes.len);
     try std.testing.expect(cd.hashes_truncated);
+}
+
+test "blobs: a slot offset near maxInt(u32) is rejected, not wrapped" {
+    // Regression: `off + 8 > total` used to be evaluated at u32 width, so 0xffffffff + 8 wrapped
+    // to 7 and the bounds check passed -- in a safety build the `+` itself trapped first. Both
+    // the slot offset and `dataoff` are attacker-controlled (LC_CODE_SIGNATURE).
+    var arena_state = std.heap.ArenaAllocator.init(std.testing.allocator);
+    defer arena_state.deinit();
+    const arena = arena_state.allocator();
+    for ([_]u32{ 0xffff_ffff, 0xffff_fff8, 0x8000_0000 }) |bad_off| {
+        var d = Diagnostics.init(arena, 16);
+        var buf: [20]u8 = undefined;
+        @memset(&buf, 0);
+        std.mem.writeInt(u32, buf[0..4], CSMAGIC_EMBEDDED_SIGNATURE, .big);
+        std.mem.writeInt(u32, buf[4..8], buf.len, .big);
+        std.mem.writeInt(u32, buf[8..12], 1, .big); // one slot
+        std.mem.writeInt(u32, buf[12..16], extra.CSSLOT_REQUIREMENTS, .big);
+        std.mem.writeInt(u32, buf[16..20], bad_off, .big);
+        // `dataoff` is large too: `dataoff + off` was a second u32 add on the same line.
+        const sig = (try parseSuperBlob(arena, Reader.init(&buf, 0), 0xffff_f000, buf.len, &Limits.default, &d)).?;
+        try std.testing.expect(sig.truncated);
+        try std.testing.expectEqual(@as(usize, 0), sig.blobs.len);
+        try std.testing.expect(sig.requirements == null);
+        try std.testing.expect(d.has(.codesign, .blob_malformed));
+    }
 }

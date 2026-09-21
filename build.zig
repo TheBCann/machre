@@ -23,6 +23,14 @@ pub fn build(b: *std.Build) void {
     const have_security = b.option(bool, "security", "Link Security/CoreFoundation (default: true on macOS)") orelse is_macos;
     const update_golden = b.option(bool, "update-golden", "Rewrite tests/golden/*.txt from current output") orelse false;
 
+    // `b.root` is the build root as a `Cache.Path`; `joinString` resolves a sub-path against it.
+    // (`b.build_root` was removed in this window, and `b.graph.path(.build_root, ..)` asserts.)
+    const rootJoin = struct {
+        fn f(bb: *std.Build, sub_path: []const u8) []const u8 {
+            return bb.root.joinString(bb.allocator, sub_path) catch @panic("OOM");
+        }
+    }.f;
+
     // ---- build_options: ONE module, imported by every compilation. `Module.addOptions` calls
     //      `createModule()` per call and two modules over one options.zig fail with
     //      "file exists in modules 'build_options' and 'build_options0'". ----
@@ -31,10 +39,21 @@ pub fn build(b: *std.Build) void {
     opts.addOption(bool, "have_security", have_security);
     opts.addOption(bool, "update_golden", update_golden);
     opts.addOption([]const u8, "version", "0.1.0");
-    // addOptionPath hashes its target as a FILE (a directory fails: `file_hash IsDir`), so we pass
-    // files and derive directories with std.fs.path.dirname in tests/helpers.zig.
-    opts.addOptionPath("corpus_manifest", b.path("tests/corpus/truth/summary.json"));
-    opts.addOptionPath("src_root", b.path("src/root.zig"));
+    // Absolute paths for the test harness, joined against the build root here rather than derived
+    // in tests/helpers.zig. Zig 0.17.0-dev.2257 changed `addOptionPath` (and its new siblings
+    // `addOptionPathDirectory`/`addOptionPathUntracked`) to emit a build-root-RELATIVE sub_path --
+    // std.Build/Serialize.zig:41 serializes a `.src_path` LazyPath as `sp.sub_path` alone. It used
+    // to resolve to an absolute path, and tests/helpers.zig feeds these straight to
+    // `Io.Dir.openDirAbsolute` (which asserts `isAbsolute`) and into machre's own argv, so a
+    // relative value trips an assert in every filesystem-touching suite.
+    opts.addOption([]const u8, "corpus_dir", rootJoin(b, "tests/corpus"));
+    opts.addOption([]const u8, "truth_dir", rootJoin(b, "tests/corpus/truth"));
+    opts.addOption([]const u8, "golden_dir", rootJoin(b, "tests/golden"));
+    opts.addOption([]const u8, "src_dir", rootJoin(b, "src"));
+    opts.addOption([]const u8, "corpus_manifest", rootJoin(b, "tests/corpus/truth/summary.json"));
+    // Declared only for its dependency edge; the emitted (relative) value is unused. Regenerating
+    // the corpus rewrites summary.json, which must re-run the tests rather than report them cached.
+    opts.addOptionPath("corpus_manifest_dep", b.path("tests/corpus/truth/summary.json"));
     const options_mod = opts.createModule();
 
     // ---- library module (everything under src/ except main.zig) ----
