@@ -130,6 +130,9 @@ pub fn runRow(gpa: std.mem.Allocator, io: std.Io, row: Row) !void {
 
 test "golden: every row" {
     const gpa = std.testing.allocator;
+    // git does not store xattrs, so a fresh clone lacks the fixture's quarantine value. Apply it here:
+    // test order across imported files is not guaranteed, so darwin.rows.zig's test may run after this one.
+    try helpers.ensureQuarantineXattr(gpa, std.testing.io);
     var failures: usize = 0;
     var skipped: usize = 0;
     for (all_rows) |rows| for (rows) |row| {
