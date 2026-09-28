@@ -8,3 +8,13 @@ default.metallib
 
 # macOS Finder metadata.
 .DS_Store
+
+# macOS AppleDouble files (appear when the tree is copied through a non-HFS volume).
+._*
+
+# Development scaffolding kept locally, not published: agent workflow scripts,
+# the pre-implementation contract skeleton and the rejected design drafts.
+.claude/
+.workflow/
+skeleton-reference/
+docs/design-candidates/

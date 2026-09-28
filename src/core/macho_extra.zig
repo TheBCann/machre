@@ -1,5 +1,5 @@
 //! core/macho_extra.zig — declarations std.macho lacks (all `extern struct`, little-endian on disk,
-//! offsets from docs/format-notes.md). Data only; no logic. Imports: std only.
+//! offsets from docs/internals/format-notes.md). Data only; no logic. Imports: std only.
 const std = @import("std");
 
 pub const fat_arch_64 = extern struct { cputype: i32, cpusubtype: i32, offset: u64, size: u64, @"align": u32, reserved: u32 };

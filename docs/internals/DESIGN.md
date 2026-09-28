@@ -3944,7 +3944,7 @@ tests/corpus/hello-c: Mach-O 64-bit executable arm64 (thin), 50424 bytes
 `--- machre:` sections are additive; `--otool-compat` prints only lines 1–14.
 
 ```
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-c
+Executable=tests/corpus/hello-c
 Identifier=hello-c
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded

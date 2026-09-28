@@ -1,9 +1,9 @@
 # Zig API notes for machre (verified on this machine)
 
-- Zig: `0.17.0-dev.1154+ba5420896` at `/Users/bcann/.zig-versions/nightly/zig`; std at `/Users/bcann/.zig-versions/nightly/lib/std`.
+- Zig: `0.17.0-dev.1154+ba5420896` at `~/.zig-versions/nightly/zig`; std at `~/.zig-versions/nightly/lib/std`.
 - Host: macOS 26.3 arm64, SDK 26.5 (`xcrun --show-sdk-path`).
 - Everything below was verified by reading the std source at the paths cited and by building and running the probe project:
-  - `/private/tmp/claude-501/-Users-bcann-programming-mac-security/9135d7a5-d466-4310-b16a-780257c75456/scratchpad/probe-zig-api/` (`build.zig`, `src/main.zig`)
+  - a throwaway `probe-zig-api/` project (`build.zig`, `src/main.zig`; not kept)
   - `zig build run -- /bin/ls`, `zig build test` (6/6 pass), `zig build -Doptimize=ReleaseSafe`, `zig build -Doptimize=ReleaseFast -Dcapstone=true run` all succeed.
   - Output cross-checked against `shasum -a 256`, `shasum`, `codesign -dv --verbose=2`, `otool -l`, `xattr -p`: sha256/sha1 of `/bin/ls` match exactly, identifier `com.apple.ls`, platform 26, 20 load commands, Discord team id `53Q6R32WPB`, ad-hoc binary flags `0x20002`.
 
@@ -630,7 +630,7 @@ quarantine: null
 ## 15. Completeness-critic additions (verified 2026-09-11 19:45, probe `scratchpad/critic/`)
 
 Everything below was compiled and run on this machine with the same nightly. Probe project:
-`/private/tmp/claude-501/-Users-bcann-programming-mac-security/9135d7a5-d466-4310-b16a-780257c75456/scratchpad/critic/`
+a throwaway `critic/` project (not kept)
 (`build.zig`, `src/main.zig`, `src/sec.zig`, `walk.zig`); captured output in `run.txt`, `run-extra.txt`.
 
 ### 15.1 CORRECTION to section 9: `std.time.epoch.EpochSeconds` exists

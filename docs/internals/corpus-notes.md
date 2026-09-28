@@ -18,7 +18,7 @@ bash tests/corpus/gen/truth.sh   # re-capture Apple-tool output + regenerate tru
 `build.sh` uses `/usr/bin/clang` (Apple clang; NOT the Homebrew llvm `clang` that is first on
 PATH here — it targets the same triple but is a different linker/driver), `lipo`, `codesign`,
 `plutil`, `xattr`, `python3`, and the Zig nightly at `$ZIG` (default
-`/Users/bcann/.zig-versions/nightly/zig`). Intermediates go to a `mktemp -d` dir that is removed
+`zig` on PATH). Intermediates go to a `mktemp -d` dir that is removed
 on exit. Two consecutive runs were verified to produce identical SHA-256 for all 52 files
 (see "Reproducibility" below for the flag that makes this true).
 

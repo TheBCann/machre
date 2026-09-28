@@ -101,6 +101,8 @@ budget — reported, never a trap).
 - [`docs/json-schema.md`](docs/json-schema.md): every key in the `--json` output, the triage rule ids and
   the exit codes.
 - `machre help <command>`: flags for one command.
+- [`docs/internals/`](docs/internals/): the design and research notes machre was built from, for
+  contributors.
 
 ## Layout
 
@@ -120,7 +122,7 @@ src/cmd/<name>.zig          one file per subcommand (text + JSON rendering)
 tests/                      corpus facts, golden diffs against Apple tools, robustness/fuzz, deps policy
 tests/corpus/               fixtures built from source by tests/corpus/gen/, malformed/ inputs, truth/ from Apple tools
 examples/                   command transcripts (examples/gen.sh regenerates them)
-docs/                       tutorial and JSON schema
+docs/                       tutorial, JSON schema; internals/ holds the design and research notes
 ```
 
 ## License

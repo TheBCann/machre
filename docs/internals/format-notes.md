@@ -901,7 +901,7 @@ from Apple docs; not observed live).
   `codesign -d -r-`: `designated => identifier "com.apple.ls" and anchor apple`. Entitlements: none.
 - `vtool -show`: `LC_BUILD_VERSION platform MACOS minos 11.0 sdk 26.3 ntools 1 tool LD version 1230.4`; `LC_SOURCE_VERSION version 475.0`.
 
-### 9.2 `/Users/bcann/programming/mac-security/enumerateProcess` (thin arm64, 35 KB, ad hoc linker-signed, with stabs)
+### 9.2 `enumerateProcess` (thin arm64, 35 KB, ad hoc linker-signed, with stabs)
 - header: cputype 0x0100000c sub 0, filetype 2, ncmds 17, sizeofcmds 1056, flags 0x00200085.
 - LCs: `__PAGEZERO`; `__TEXT` 0x100000000/0x4000 (4 sects: `__text` 0x100000460 size 0x334 off 1120; `__stubs` 0x100000794 0x9c off 1940 res2 12;
   `__cstring` 0x100000830 0xa9; `__unwind_info` 0x1000008dc 0x60); `__DATA_CONST` 0x100004000/0x4000 file 16384 flags 0x10 (`__got` 0x100004000 0x88 flags 6 res1 13);
