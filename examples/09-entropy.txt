@@ -1,0 +1,13 @@
+$ machre entropy tests/corpus/high-entropy
+  file         6.276 bits/byte over 99536 bytes
+  segments     5
+    __PAGEZERO    0+0          0.000  0.0%
+    __TEXT        0+16384      0.394  16.5%
+    __DATA_CONST  16384+16384  0.001  16.5%
+    __RANDOM      32768+65536  7.997  65.8%
+    __LINKEDIT    98304+1232   6.685  1.2%
+  tells        2
+    [30] high_entropy_segment  segment __RANDOM entropy 7.997 bits/byte over 65.8% of the slice (65536 bytes)
+    [10] nonstandard_segment_order  unexpected segment __RANDOM at index 3 before __LINKEDIT
+  diagnostics  none
+[exit 0]

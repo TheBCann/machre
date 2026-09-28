@@ -3,9 +3,6 @@
 A hands-on tour of `machre`, a Mach-O reverse-engineering and triage tool.
 Every example is real output from the built binary.
 
-Web version (formatted, with the full rule table):
-https://claude.ai/code/artifact/2391adf4-2e67-4fea-9ea5-26df0282065e
-
 ## 1. Build
 
 ```

@@ -1,0 +1,9 @@
+$ machre entitlements tests/corpus/hello-entitled
+entitlements: 5 keys (source both, XML payload 506 B, DER blob 249 B)
+  com.apple.application-identifier = MACHRE.hello-entitled
+  com.apple.security.cs.allow-jit = true   [dangerous: writable+executable memory is allowed]
+  com.apple.security.cs.disable-library-validation = true   [dangerous: any signed library may be loaded into the process (injection)]
+  com.apple.security.get-task-allow = true   [dangerous: any process may attach a debugger and read/write memory]
+  com.apple.security.network.client = true
+  diagnostics  none
+[exit 0]

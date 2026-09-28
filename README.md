@@ -1,9 +1,27 @@
 # machre — Mach-O reverse-engineering and triage tool
 
 A robustness-first static analysis tool for macOS Mach-O files (thin, fat/universal, bundles), written in
-Zig `0.17.0-dev.2257`. Every byte is read through a bounds-checked reader, every count is clamped, every
-structural problem becomes a diagnostic instead of a crash, and the shipped build is ReleaseSafe. The
-design is in `docs/DESIGN.md`; the JSON contract in `docs/json-schema.md`.
+Zig. Every byte is read through a bounds-checked reader, every count is clamped, every structural problem
+becomes a diagnostic instead of a crash, and the shipped build is ReleaseSafe.
+
+```
+$ machre triage tests/corpus/fake-upx
+machre triage: tests/corpus/fake-upx [arm64]
+LEVEL: SUSPICIOUS (score 60, 2 categories)            trust: INVALID SIGNATURE
+Signing     [HIGH]   sig.invalid       embedded CodeDirectory does not match the file: 1/13 page hashes mismatch (first page 0 @ 0x0); Security: errSecCSSignatureFailed (-67061)
+Packing     [MEDIUM] pack.names        segment named UPX_DATA (UPX marker) at LC index 2
+Signing     [LOW]    sig.adhoc         ad hoc, linker-signed; no certificate chain, not notarized
+Corroboration: packing tell (UPX_DATA) is corroborated by a broken signature -> file was modified after linking.
+```
+
+## Requirements
+
+- macOS (arm64 or x86_64) with the Xcode command-line tools. The Security.framework verdicts,
+  notarization check and quarantine xattrs are macOS-only; `-Dsecurity=false` builds a pure-Zig binary.
+- Zig nightly, `0.17.0-dev.2257` or newer (tested with `0.17.0-dev.2307`). The std API still changes
+  between nightlies, so a much newer build may need small fixes.
+- Optional: Capstone (`brew install capstone`) for full x86_64 disassembly. Without it machre uses its
+  built-in arm64 decoder and an x86_64 length decoder.
 
 ## Build
 
@@ -30,7 +48,7 @@ zig build test-corpus               # tests/facts/*.zig against tests/corpus/tru
 zig build test-golden               # tests/golden/*.rows.zig: otool/nm/dyld_info/codesign diffs + JSON key inventory
 zig build test-robustness           # malformed x command matrix, 256-mutant sweep per fixture, budget tests, fuzzers
 zig build test-robustness --fuzz    # loop the std.testing.fuzz Smith fuzzers
-zig build test-deps                 # import-graph policy (DESIGN.md §4)
+zig build test-deps                 # import-graph policy between modules
 ```
 
 The corpus lives in `tests/corpus` (fixtures, `malformed/`, `truth/` with Apple-tool output and
@@ -74,38 +92,37 @@ Exit codes: 0 ok · 1 usage · 2 I/O · 3 not a Mach-O (or `--arch` absent) · 4
 5 limits (`--max-file-size`) · 6 feature unavailable · 20 triage threshold · 70 internal (OOM past the arena
 budget — reported, never a trap).
 
+## Documentation and examples
+
+- [`docs/TUTORIAL.md`](docs/TUTORIAL.md): a hands-on tour, from the first look at a file to a worked
+  investigation, what to look for, common traps and scripting.
+- [`examples/`](examples/): real transcripts of every major command against the test corpus, including
+  hostile inputs, `--json` output with `jq`, and CI gating with `--fail-on`.
+- [`docs/json-schema.md`](docs/json-schema.md): every key in the `--json` output, the triage rule ids and
+  the exit codes.
+- `machre help <command>`: flags for one command.
+
 ## Layout
 
 ```
-build.zig, build.zig.zon    build graph (DESIGN.md §11); one build_options module shared by every compilation
+build.zig, build.zig.zon    build graph; one build_options module shared by every compilation
 src/main.zig, src/root.zig  entry point; library root that references every declaration at comptime
 src/core/                   kernel (std only): reader, limits + budget allocator, diagnostics, arch, sanitize,
-                            fmt, version tables, macho_extra, load-command walker, segments, fat, file, image
-src/macho/                  symbols, chained fixups, export trie, legacy dyld info, function starts, fixups, imports
+                            fmt, version tables, load-command walker, segments, fat, file, image
+src/macho/                  symbols, chained fixups, export trie, legacy dyld info, function starts, imports
 src/codesign/               ASN.1, SuperBlob/CodeDirectory, hashes, requirements, entitlements, CMS
 src/darwin/                 Security.framework verdict, xattrs/quarantine, dylib resolution (macOS only)
 src/objc/ src/strings/ src/plist/ src/bundle/ src/disasm/ src/analysis/   ObjC, strings, plists, bundles,
                             disassembly, entropy, the memoising Analysis facade, triage
 src/output/                 Sink, JSON conventions (envelope, hex/sanitised strings), text tables
-src/cli/                    flag parser, Context/Command/ExitCode leaf, dispatcher + framing
+src/cli/                    flag parser, Context/Command/ExitCode, dispatcher
 src/cmd/<name>.zig          one file per subcommand (text + JSON rendering)
-tests/                      helpers, truth-section comparators, corpus facts, golden rows, robustness, deps policy
-docs/                       DESIGN.md, json-schema.md, research notes
+tests/                      corpus facts, golden diffs against Apple tools, robustness/fuzz, deps policy
+tests/corpus/               fixtures built from source by tests/corpus/gen/, malformed/ inputs, truth/ from Apple tools
+examples/                   command transcripts (examples/gen.sh regenerates them)
+docs/                       tutorial and JSON schema
 ```
 
-Work-package status (DESIGN.md §12): every work package (WP0-WP9) is implemented and integrated. Three
-DESIGN claims described a different corpus than the shipped one and were corrected against it at integration
-(each carries a note in `docs/DESIGN.md`): §5.4/§5.5's `fake-upx` numbers (1 bad page hash at page 0, max
-segment entropy 5.16 `__LINKEDIT`), and §4.16's `@rpath/libhello.dylib`, which resolves to `on_disk` for the
-bare `hello-usedylib` because `tests/corpus/libhello.dylib` sits next to it and the fixture's first `LC_RPATH`
-is `@executable_path`. DESIGN §12/WP1's claim that the `/bin/ls` x86_64 slice carries `LC_VERSION_MIN_MACOSX`
-is also false on this machine (both slices use `LC_BUILD_VERSION`, x86_64 minos 10.14 as §10.3 says);
-`tests/golden/core.rows.zig` covers the `LC_VERSION_MIN_MACOSX` renderer with a synthetic 48-byte Mach-O
-diffed against `otool -h -l` on the same bytes instead.
+## License
 
-WP0 decisions not spelled out in DESIGN.md §4: `cmd/*.zig` may import other `cmd/*.zig` renderers (shared
-header/segment JSON), `cli/cli.zig` imports `bundle/bundle.zig` (`mainExecutable`) and `darwin/xattr.zig`
-(the envelope's `file.xattrs`/`file.quarantine`/`file.translocated`, §6.1), `plist/plist.zig` imports
-`plist/bplist.zig` and `plist/xml.zig` (§4.20 puts `parseAny` there, so it must dispatch), the
-`--max-arena-bytes` global flag exists for budget tests, and the top-level `bundle` key is written only by the
-commands that analyse a bundle (`json.endArches` closes the `arches` array before top-level payloads).
+MIT; see [LICENSE](LICENSE).

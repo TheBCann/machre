@@ -1,0 +1,14 @@
+$ machre imports tests/corpus/hello-usedylib
+hello-usedylib: 4 imports from 2 dylibs (chained)
+   1  @rpath/libhello.dylib
+   2  /usr/lib/libSystem.B.dylib
+  rpath        @executable_path
+  rpath        @executable_path/../Frameworks
+  _hello_add     libhello  1    1  0x100004000
+  _hello_global  libhello  1    1  0x100004008
+  _hello_mul     libhello  1    1  0x100004010
+  _hello_print   libhello  1    1  0x100004018
+  resolve  @rpath/libhello.dylib -> tests/corpus/libhello.dylib (on_disk@executable_path)
+  resolve  /usr/lib/libSystem.B.dylib -> /usr/lib/libSystem.B.dylib (shared_cache)
+  diagnostics  none
+[exit 0]

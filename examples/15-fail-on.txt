@@ -1,0 +1,3 @@
+$ machre triage --fail-on=suspicious -q tests/corpus/fake-upx > /dev/null; echo "exit code: $?"
+exit code: 20
+[exit 0]

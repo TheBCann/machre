@@ -1,0 +1,40 @@
+$ machre codesign tests/corpus/hello-adhoc
+Executable=tests/corpus/hello-adhoc
+Identifier=com.machre.corpus.hello-adhoc
+Format=Mach-O thin (arm64)
+CodeDirectory v=20400 size=310 flags=0x2(adhoc) hashes=4+2 location=embedded
+Hash type=sha256 size=32
+CandidateCDHash sha256=1dba56183f99c72be01ad6fc7bed021e979d3e54
+CandidateCDHashFull sha256=1dba56183f99c72be01ad6fc7bed021e979d3e5485fffbd2f7847c755fce51a5
+Hash choices=sha256
+CMSDigest=1dba56183f99c72be01ad6fc7bed021e979d3e5485fffbd2f7847c755fce51a5
+CMSDigestType=2
+CDHash=1dba56183f99c72be01ad6fc7bed021e979d3e54
+Signature=adhoc
+Info.plist=not bound
+TeamIdentifier=not set
+Sealed Resources=none
+Internal requirements count=0 size=12
+--- machre: embedded signature (LC_CODE_SIGNATURE dataoff=49888 datasize=18368) ---
+SuperBlob magic=0xfade0cc0 length=366 count=3
+  slot 0x0     CodeDirectory     offset 36     length 310    magic 0xfade0c02
+  slot 0x2     Requirements      offset 346    length 12     magic 0xfade0c01
+  slot 0x10000 CMS signature     offset 358    length 8      magic 0xfade0b01
+CodeDirectory page size=16384 (2^14)  code limit=49888  code slots=4  special slots=2  platform=0
+  exec segment base=0x0 limit=0x4000 flags=0x1 (main-binary)
+  page hashes: 4/4 match the file on disk
+Designated requirement (synthesized, empty requirements blob):
+  designated => cdhash H"1dba56183f99c72be01ad6fc7bed021e979d3e54"
+Entitlements: none (no XML blob, no DER blob)
+Certificates: none (no CMS blob)
+--- machre: Security.framework ---
+SecStaticCodeCheckValidity(kSecCSCheckAllArchitectures | kSecCSEnforceRevocationChecks)   = 0 errSecSuccess
+  anchor apple                                                     = -67050 errSecCSReqFailed
+  anchor apple generic                                             = -67050 errSecCSReqFailed
+  Developer ID (certificate leaf[field.1.2.840.113635.100.6.1.13]) = -67050 errSecCSReqFailed
+  Mac App Store (certificate leaf[field.1.2.840.113635.100.6.1.9]) = -67050 errSecCSReqFailed
+  notarized                                                        = -67050 errSecCSReqFailed
+kSecCodeInfoFlags=0x2  kSecCodeInfoFormat="Mach-O thin (arm64)"  kSecCodeInfoIdentifier="com.machre.corpus.hello-adhoc"
+Trust ladder: AD HOC -- signature proves integrity only, not identity
+  diagnostics  none
+[exit 0]

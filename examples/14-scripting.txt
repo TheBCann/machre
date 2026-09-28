@@ -1,0 +1,6 @@
+$ machre triage --json tests/corpus/fake-upx | jq -r '.arches[].triage | .level, (.findings[] | "\(.severity)\t\(.id)")'
+suspicious
+high	sig.invalid
+medium	pack.names
+low	sig.adhoc
+[exit 0]

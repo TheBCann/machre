@@ -1,6 +1,6 @@
 # machre JSON schema (schema 1)
 
-Normative key inventory for every `--json` / `--json-compact` document (DESIGN.md §6). The envelope is
+Normative key inventory for every `--json` / `--json-compact` document. The envelope is
 identical for every command; the per-command payload lives under the command's own name. The golden
 `json_keys` rows in `tests/golden/*.rows.zig` check the listed keys against real output, and
 `tests/facts/triage.zig` checks that this file names every command, every triage rule id and every exit
@@ -215,7 +215,7 @@ instructions[{address,size,bytes,mnemonic,operands,kind,target,comment,comment_k
 
 `instructions[].valid` is `false` for a word the decoder could not name (printed `.inst 0x…` on arm64,
 `db 0x..` on x86_64, `kind: "invalid"`); a `.long` jump-table record is `valid: true` with `kind: "data"`
-and a resolved `target`. DESIGN.md §5.6(d): the two spellings are deliberately distinct and must not be
+and a resolved `target`. The two spellings are deliberately distinct and must not be
 collapsed.
 
 ### `functions`

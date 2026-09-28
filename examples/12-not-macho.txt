@@ -1,0 +1,5 @@
+$ machre info tests/corpus/malformed/truncated-header.bin
+  diagnostics  1 (1 errors, 0 warnings, 0 info)
+    [error] header.truncated @0x0: slice 0: Mach-O header truncated
+machre: tests/corpus/malformed/truncated-header.bin: slice 0: Mach-O header truncated
+[exit 3]

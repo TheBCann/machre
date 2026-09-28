@@ -1,0 +1,189 @@
+$ machre triage --json tests/corpus/fake-upx
+{
+  "machre": {
+    "version": "0.1.0",
+    "schema": 1,
+    "command": "triage",
+    "capstone": true,
+    "security": true
+  },
+  "file": {
+    "path": "tests/corpus/fake-upx",
+    "size": 50424,
+    "sha256": "4e9bbf4291f03685e4338290b96665cec840fd0ab4ac0522c80d64b26387fd92",
+    "mtime": "2026-09-12T10:39:52Z",
+    "mtime_unix": 1789209592,
+    "container": "thin",
+    "fat": null,
+    "xattrs": [],
+    "quarantine": null,
+    "translocated": false
+  },
+  "arches": [
+    {
+      "arch": "arm64",
+      "index": 0,
+      "offset_in_file": 0,
+      "size": 50424,
+      "cputype": "0x100000c",
+      "cpusubtype": "0x0",
+      "caps": "0x0",
+      "valid": true,
+      "triage": {
+        "score": 60,
+        "level": "suspicious",
+        "categories_hit": [
+          "signature",
+          "packing"
+        ],
+        "findings": [
+          {
+            "id": "sig.invalid",
+            "category": "signature",
+            "severity": "high",
+            "weight": 35,
+            "score": 35,
+            "title": "signature does not match the file",
+            "detail": "embedded CodeDirectory does not match the file: 1/13 page hashes mismatch (first page 0 @ 0x0); Security: errSecCSSignatureFailed (-67061)",
+            "evidence": [],
+            "corroborates": "pack.names"
+          },
+          {
+            "id": "pack.names",
+            "category": "packing",
+            "severity": "medium",
+            "weight": 25,
+            "score": 25,
+            "title": "packer segment/section name",
+            "detail": "segment named UPX_DATA (UPX marker) at LC index 2",
+            "evidence": [],
+            "corroborates": null
+          },
+          {
+            "id": "sig.adhoc",
+            "category": "signature",
+            "severity": "low",
+            "weight": 10,
+            "score": 0,
+            "title": "ad hoc signature",
+            "detail": "ad hoc, linker-signed; no certificate chain, not notarized",
+            "evidence": [],
+            "corroborates": null
+          }
+        ],
+        "positives": [],
+        "corroboration": [
+          "packing tell (UPX_DATA) is corroborated by a broken signature -> file was modified after linking."
+        ],
+        "not_flagged": [
+          "entropy (max 5.16 __LINKEDIT)",
+          "imports present (6)",
+          "symbols present (12)",
+          "no quarantine xattr",
+          "PIE",
+          "no RWX segment"
+        ],
+        "summary": {
+          "signed": true,
+          "trust": "INVALID SIGNATURE",
+          "notarized": false,
+          "hardened_runtime": false,
+          "quarantined": false,
+          "packed_hint": true,
+          "encrypted": false,
+          "imports": 6,
+          "exports": 5,
+          "symbols": 12,
+          "dylibs": 1,
+          "objc_classes": 0,
+          "arch": "arm64"
+        },
+        "exit_code": 0
+      }
+    }
+  ],
+  "triage": {
+    "score": 60,
+    "level": "suspicious",
+    "categories_hit": [
+      "signature",
+      "packing"
+    ],
+    "findings": [
+      {
+        "id": "sig.invalid",
+        "category": "signature",
+        "severity": "high",
+        "weight": 35,
+        "score": 35,
+        "title": "signature does not match the file",
+        "detail": "embedded CodeDirectory does not match the file: 1/13 page hashes mismatch (first page 0 @ 0x0); Security: errSecCSSignatureFailed (-67061)",
+        "evidence": [],
+        "corroborates": "pack.names"
+      },
+      {
+        "id": "pack.names",
+        "category": "packing",
+        "severity": "medium",
+        "weight": 25,
+        "score": 25,
+        "title": "packer segment/section name",
+        "detail": "segment named UPX_DATA (UPX marker) at LC index 2",
+        "evidence": [],
+        "corroborates": null
+      },
+      {
+        "id": "sig.adhoc",
+        "category": "signature",
+        "severity": "low",
+        "weight": 10,
+        "score": 0,
+        "title": "ad hoc signature",
+        "detail": "ad hoc, linker-signed; no certificate chain, not notarized",
+        "evidence": [],
+        "corroborates": null
+      }
+    ],
+    "positives": [],
+    "corroboration": [
+      "packing tell (UPX_DATA) is corroborated by a broken signature -> file was modified after linking."
+    ],
+    "not_flagged": [
+      "entropy (max 5.16 __LINKEDIT)",
+      "imports present (6)",
+      "symbols present (12)",
+      "no quarantine xattr",
+      "PIE",
+      "no RWX segment"
+    ],
+    "summary": {
+      "signed": true,
+      "trust": "INVALID SIGNATURE",
+      "notarized": false,
+      "hardened_runtime": false,
+      "quarantined": false,
+      "packed_hint": true,
+      "encrypted": false,
+      "imports": 6,
+      "exports": 5,
+      "symbols": 12,
+      "dylibs": 1,
+      "objc_classes": 0,
+      "arch": "arm64"
+    },
+    "exit_code": 0
+  },
+  "diagnostics": [
+    {
+      "severity": "error",
+      "module": "codesign",
+      "code": "hash_mismatch",
+      "offset": 0,
+      "message": "code page 0 hash does not match the file (offset 0x0)"
+    }
+  ],
+  "diagnostics_dropped": 0,
+  "sanitized_strings": 0,
+  "exit_code": 0
+}
+[exit 0]

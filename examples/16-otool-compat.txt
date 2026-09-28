@@ -1,0 +1,3 @@
+$ diff <(machre loadcmds --otool-compat tests/corpus/hello-c) <(otool -h -l tests/corpus/hello-c) && echo identical
+identical
+[exit 0]
