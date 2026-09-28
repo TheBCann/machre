@@ -1823,7 +1823,7 @@ Load command 12
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - hello-objc =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-objc
+Executable=tests/corpus/hello-objc
 Identifier=hello-objc
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=547 flags=0x20002(adhoc,linker-signed) hashes=14+0 location=embedded
@@ -1842,11 +1842,11 @@ Internal requirements=none
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml hello-objc =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-objc
+Executable=tests/corpus/hello-objc
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - hello-objc =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-objc
+Executable=tests/corpus/hello-objc
 # designated => cdhash H"fda49950afdcd730ad4162c8ab544794e843ed40"
 --- exit=0
 

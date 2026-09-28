@@ -455,8 +455,8 @@
     "code_directory_line": "20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-c: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-c: satisfies its Designated Requirement"
+     "tests/corpus/hello-c: valid on disk",
+     "tests/corpus/hello-c: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -465,7 +465,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-c: rejected"
+     "tests/corpus/hello-c: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -873,7 +873,7 @@
     "sealed_resources": null,
     "verify_exit": 1,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-x86_64: code object is not signed at all",
+     "tests/corpus/hello-x86_64: code object is not signed at all",
      "In architecture: x86_64"
     ],
     "entitlements_keys": null
@@ -883,7 +883,7 @@
     "assessment": "rejected",
     "source": "no usable signature",
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-x86_64: rejected",
+     "tests/corpus/hello-x86_64: rejected",
      "source=no usable signature"
     ]
    },
@@ -896,7 +896,7 @@
    "bundle": null,
    "size": 83192,
    "sha256": "a45ec4f98dd4b2ecbda29774fe232713c7d454ccace14770181c900b2bb2913e",
-   "file": "Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64:Mach-O 64-bit executable arm64]\n/Users/bcann/programming/mac-security/machre/tests/corpus/hello-fat (for architecture x86_64):\tMach-O 64-bit executable x86_64\n/Users/bcann/programming/mac-security/machre/tests/corpus/hello-fat (for architecture arm64):\tMach-O 64-bit executable arm64",
+   "file": "Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64:Mach-O 64-bit executable arm64]\ntests/corpus/hello-fat (for architecture x86_64):\tMach-O 64-bit executable x86_64\ntests/corpus/hello-fat (for architecture arm64):\tMach-O 64-bit executable arm64",
    "container": "fat",
    "fat_arches": [
     {
@@ -1734,7 +1734,7 @@
     "code_directory_line": "20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded",
     "verify_exit": 1,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-fat: code object is not signed at all"
+     "tests/corpus/hello-fat: code object is not signed at all"
     ],
     "entitlements_keys": null
    },
@@ -1743,7 +1743,7 @@
     "assessment": "rejected",
     "source": "no usable signature",
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-fat: rejected",
+     "tests/corpus/hello-fat: rejected",
      "source=no usable signature"
     ]
    },
@@ -2555,8 +2555,8 @@
     "code_directory_line": "20400 size=547 flags=0x20002(adhoc,linker-signed) hashes=14+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-objc: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-objc: satisfies its Designated Requirement"
+     "tests/corpus/hello-objc: valid on disk",
+     "tests/corpus/hello-objc: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -2565,7 +2565,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-objc: rejected"
+     "tests/corpus/hello-objc: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -2958,8 +2958,8 @@
     "code_directory_line": "20400 size=519 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib: satisfies its Designated Requirement"
+     "tests/corpus/libhello.dylib: valid on disk",
+     "tests/corpus/libhello.dylib: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -2968,7 +2968,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib: rejected"
+     "tests/corpus/libhello.dylib: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -3382,8 +3382,8 @@
     "code_directory_line": "20400 size=391 flags=0x20002(adhoc,linker-signed) hashes=9+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib: satisfies its Designated Requirement"
+     "tests/corpus/hello-usedylib: valid on disk",
+     "tests/corpus/hello-usedylib: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -3392,7 +3392,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib: rejected"
+     "tests/corpus/hello-usedylib: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -3866,8 +3866,8 @@
     "code_directory_line": "20400 size=310 flags=0x2(adhoc) hashes=4+2 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-adhoc: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-adhoc: satisfies its Designated Requirement"
+     "tests/corpus/hello-adhoc: valid on disk",
+     "tests/corpus/hello-adhoc: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -3876,7 +3876,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-adhoc: rejected"
+     "tests/corpus/hello-adhoc: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -4372,8 +4372,8 @@
     "code_directory_line": "20400 size=473 flags=0x2(adhoc) hashes=4+7 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-entitled: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-entitled: satisfies its Designated Requirement"
+     "tests/corpus/hello-entitled: valid on disk",
+     "tests/corpus/hello-entitled: satisfies its Designated Requirement"
     ],
     "entitlements_keys": [
      "com.apple.application-identifier",
@@ -4388,7 +4388,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-entitled: rejected"
+     "tests/corpus/hello-entitled: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -4796,7 +4796,7 @@
     "sealed_resources": null,
     "verify_exit": 1,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-unsigned: code object is not signed at all",
+     "tests/corpus/hello-unsigned: code object is not signed at all",
      "In architecture: arm64"
     ],
     "entitlements_keys": null
@@ -4806,7 +4806,7 @@
     "assessment": "rejected",
     "source": "no usable signature",
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-unsigned: rejected",
+     "tests/corpus/hello-unsigned: rejected",
      "source=no usable signature"
     ]
    },
@@ -5208,8 +5208,8 @@
     "code_directory_line": "20400 size=901 flags=0x20002(adhoc,linker-signed) hashes=25+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy: satisfies its Designated Requirement"
+     "tests/corpus/high-entropy: valid on disk",
+     "tests/corpus/high-entropy: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -5218,7 +5218,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy: rejected"
+     "tests/corpus/high-entropy: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -5632,8 +5632,8 @@
     "code_directory_line": "20400 size=516 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed: satisfies its Designated Requirement"
+     "tests/corpus/fake-packed: valid on disk",
+     "tests/corpus/fake-packed: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -5642,7 +5642,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed: rejected"
+     "tests/corpus/fake-packed: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -6101,7 +6101,7 @@
     "code_directory_line": "20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded",
     "verify_exit": 1,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/fake-upx: invalid signature (code or signature have been modified)",
+     "tests/corpus/fake-upx: invalid signature (code or signature have been modified)",
      "In architecture: arm64"
     ],
     "entitlements_keys": null
@@ -6111,7 +6111,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/fake-upx: invalid signature (code or signature have been modified)"
+     "tests/corpus/fake-upx: invalid signature (code or signature have been modified)"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -6770,8 +6770,8 @@
     "code_directory_line": "20400 size=450 flags=0x20002(adhoc,linker-signed) hashes=11+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-zig: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-zig: satisfies its Designated Requirement"
+     "tests/corpus/hello-zig: valid on disk",
+     "tests/corpus/hello-zig: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -6780,7 +6780,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-zig: rejected"
+     "tests/corpus/hello-zig: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -7275,8 +7275,8 @@
     "code_directory_line": "20400 size=516 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/legacy-bind: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/legacy-bind: satisfies its Designated Requirement"
+     "tests/corpus/legacy-bind: valid on disk",
+     "tests/corpus/legacy-bind: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -7285,7 +7285,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/legacy-bind: rejected"
+     "tests/corpus/legacy-bind: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -7744,8 +7744,8 @@
     "code_directory_line": "20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-quarantined: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-quarantined: satisfies its Designated Requirement"
+     "tests/corpus/hello-quarantined: valid on disk",
+     "tests/corpus/hello-quarantined: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -7754,7 +7754,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/hello-quarantined: rejected"
+     "tests/corpus/hello-quarantined: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",
@@ -8583,10 +8583,10 @@
     "code_directory_line": "20400 size=336 flags=0x2(adhoc) hashes=4+3 location=embedded",
     "verify_exit": 0,
     "verify_output": [
-     "--prepared:/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib",
-     "--validated:/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app: valid on disk",
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app: satisfies its Designated Requirement"
+     "--prepared:tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib",
+     "--validated:tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib",
+     "tests/corpus/Hello.app: valid on disk",
+     "tests/corpus/Hello.app: satisfies its Designated Requirement"
     ],
     "entitlements_keys": null
    },
@@ -8595,7 +8595,7 @@
     "assessment": "rejected",
     "source": null,
     "raw": [
-     "/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app: rejected"
+     "tests/corpus/Hello.app: rejected"
     ]
    },
    "cross_check": "identifier, cdhash and CS flags agree between python parser and codesign",

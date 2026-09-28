@@ -676,7 +676,7 @@ Load command 12
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - hello-entitled =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-entitled
+Executable=tests/corpus/hello-entitled
 Identifier=com.machre.corpus.hello-entitled
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=473 flags=0x2(adhoc) hashes=4+7 location=embedded
@@ -711,12 +711,12 @@ Internal requirements count=0 size=12
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml hello-entitled =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-entitled
+Executable=tests/corpus/hello-entitled
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>com.apple.application-identifier</key><string>MACHRE.hello-entitled</string><key>com.apple.security.cs.allow-jit</key><true/><key>com.apple.security.cs.disable-library-validation</key><true/><key>com.apple.security.get-task-allow</key><true/><key>com.apple.security.network.client</key><true/></dict></plist>
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - hello-entitled =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-entitled
+Executable=tests/corpus/hello-entitled
 # designated => cdhash H"43dad8517620dc4a94fe35dc2abe6481fd2148ca"
 --- exit=0
 

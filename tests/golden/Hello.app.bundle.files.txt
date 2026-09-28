@@ -14,7 +14,7 @@ tests/corpus/Hello.app: app bundle, 4 files, 143079 bytes
   ticket       none
   profile      none
   security     not evaluated (--no-security)
-  files        4 of 9 entries
+  files        4 of 8 entries
      2437  Contents/_CodeSignature/CodeResources
     72272  Contents/MacOS/Hello
     67872  Contents/Frameworks/libhello.dylib

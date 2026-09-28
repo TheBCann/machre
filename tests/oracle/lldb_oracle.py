@@ -9,8 +9,9 @@ Function starts: lldb symbol range must begin exactly at machre's start.
 ObjC: live runtime IMP of every method/class method == machre's decoded imp; class must exist.
 """
 import json, os, re, struct, subprocess
-M = "/Users/bcann/programming/mac-security/machre/zig-out/bin/machre"
-CORP = "/Users/bcann/programming/mac-security/machre/tests/corpus"
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+M = os.environ.get("MACHRE", os.path.join(ROOT, "zig-out", "bin", "machre"))
+CORP = os.path.join(ROOT, "tests", "corpus")
 ENV = dict(os.environ, _ZO_DOCTOR="0")
 FIX = ["hello-c","hello-objc","hello-usedylib","legacy-bind","hello-zig","hello-adhoc","hello-entitled",
        "hello-fat","hello-quarantined","hello-unsigned","fake-upx","fake-packed","high-entropy"]

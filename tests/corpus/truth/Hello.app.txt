@@ -1823,7 +1823,7 @@ Load command 12
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - Hello.app =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/MacOS/Hello
+Executable=tests/corpus/Hello.app/Contents/MacOS/Hello
 Identifier=com.machre.corpus.Hello
 Format=app bundle with Mach-O thin (arm64)
 CodeDirectory v=20400 size=336 flags=0x2(adhoc) hashes=4+3 location=embedded
@@ -1842,17 +1842,17 @@ Internal requirements count=0 size=12
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml Hello.app =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/MacOS/Hello
+Executable=tests/corpus/Hello.app/Contents/MacOS/Hello
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - Hello.app =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/MacOS/Hello
+Executable=tests/corpus/Hello.app/Contents/MacOS/Hello
 # designated => cdhash H"299d8d10a0a1388165b948d94d22a8ef80494065"
 --- exit=0
 
 ===== /usr/bin/codesign --verify --verbose=4 --strict Hello.app =====
---prepared:/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
---validated:/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
+--prepared:tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
+--validated:tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
 Hello.app: valid on disk
 Hello.app: satisfies its Designated Requirement
 --- exit=0
@@ -1899,7 +1899,7 @@ Hello.app/Contents/Info.plist
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv Hello.app/Contents/Frameworks/libhello.dylib =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
+Executable=tests/corpus/Hello.app/Contents/Frameworks/libhello.dylib
 Identifier=libhello-55554944b088136359fc3f74998c5cfa3243722e
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=330 flags=0x2(adhoc) hashes=4+2 location=embedded

@@ -592,7 +592,7 @@ Load command 12
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - fake-packed =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed
+Executable=tests/corpus/fake-packed
 Identifier=fake-packed
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=516 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
@@ -611,11 +611,11 @@ Internal requirements=none
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml fake-packed =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed
+Executable=tests/corpus/fake-packed
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - fake-packed =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-packed
+Executable=tests/corpus/fake-packed
 # designated => cdhash H"1d3a8ef42a641b1e2db1f7edf9d3c11fcacef551"
 --- exit=0
 

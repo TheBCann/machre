@@ -32,7 +32,7 @@ malformed/bogus-ncmds.bin [arm64]:
 -- file:
 malformed/bogus-ncmds.bin: Mach-O 64-bit executable arm64
 -- codesign -dv:
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/malformed/bogus-ncmds.bin
+Executable=tests/corpus/malformed/bogus-ncmds.bin
 Identifier=hello-c
 
 ===== malformed/chained-fixups-absurd.bin =====
@@ -52,7 +52,7 @@ malformed/chained-fixups-absurd.bin [arm64]:
 -- file:
 malformed/chained-fixups-absurd.bin: Mach-O 64-bit executable arm64
 -- codesign -dv:
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/malformed/chained-fixups-absurd.bin
+Executable=tests/corpus/malformed/chained-fixups-absurd.bin
 Identifier=hello-c
 
 ===== malformed/chained-starts-segcount-huge.bin =====
@@ -72,7 +72,7 @@ malformed/chained-starts-segcount-huge.bin [arm64]:
 -- file:
 malformed/chained-starts-segcount-huge.bin: Mach-O 64-bit executable arm64
 -- codesign -dv:
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/malformed/chained-starts-segcount-huge.bin
+Executable=tests/corpus/malformed/chained-starts-segcount-huge.bin
 Identifier=hello-c
 
 ===== malformed/cmdsize-huge.bin =====
@@ -130,7 +130,7 @@ malformed/dyldinfo-bind-past-eof.bin [arm64]:
 -- file:
 malformed/dyldinfo-bind-past-eof.bin: Mach-O 64-bit executable arm64
 -- codesign -dv:
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/malformed/dyldinfo-bind-past-eof.bin
+Executable=tests/corpus/malformed/dyldinfo-bind-past-eof.bin
 Identifier=legacy-bind
 
 ===== malformed/empty.bin =====
@@ -196,7 +196,7 @@ malformed/nsects-huge.bin [arm64]:
 -- file:
 malformed/nsects-huge.bin: Mach-O 64-bit executable arm64
 -- codesign -dv:
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/malformed/nsects-huge.bin
+Executable=tests/corpus/malformed/nsects-huge.bin
 Identifier=hello-c
 
 ===== malformed/section-offset-past-eof.bin =====
@@ -215,7 +215,7 @@ malformed/section-offset-past-eof.bin [arm64]:
 -- file:
 malformed/section-offset-past-eof.bin: Mach-O 64-bit executable arm64
 -- codesign -dv:
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/malformed/section-offset-past-eof.bin
+Executable=tests/corpus/malformed/section-offset-past-eof.bin
 Identifier=hello-c
 
 ===== malformed/sizeofcmds-too-big.bin =====
@@ -253,7 +253,7 @@ malformed/symtab-nsyms-huge.bin [arm64]:
 -- file:
 malformed/symtab-nsyms-huge.bin: Mach-O 64-bit executable arm64
 -- codesign -dv:
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/malformed/symtab-nsyms-huge.bin
+Executable=tests/corpus/malformed/symtab-nsyms-huge.bin
 Identifier=hello-c
 
 ===== malformed/symtab-stroff-past-eof.bin =====
@@ -273,7 +273,7 @@ malformed/symtab-stroff-past-eof.bin [arm64]:
 -- file:
 malformed/symtab-stroff-past-eof.bin: Mach-O 64-bit executable arm64
 -- codesign -dv:
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/malformed/symtab-stroff-past-eof.bin
+Executable=tests/corpus/malformed/symtab-stroff-past-eof.bin
 Identifier=hello-c
 
 ===== malformed/truncated-header.bin =====

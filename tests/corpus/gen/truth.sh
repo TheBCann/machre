@@ -126,7 +126,7 @@ echo "[truth] malformed-tool-reactions.txt"
     /usr/bin/ld -v 2>&1 | /usr/bin/head -2; echo
     /usr/bin/xcrun --show-sdk-version; /usr/bin/xcrun --show-sdk-path; echo
     /usr/bin/xcodebuild -version 2>/dev/null; echo
-    "${ZIG:-/Users/bcann/.zig-versions/nightly/zig}" version
+    "${ZIG:-zig}" version
     python3 --version
 } > "$T/TOOLS.txt"
 echo "[truth] TOOLS.txt"

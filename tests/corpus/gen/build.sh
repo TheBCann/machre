@@ -11,7 +11,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CORPUS="$(cd "$HERE/.." && pwd)"
 SRC="$HERE/src"
 CC="${CC:-/usr/bin/clang}"                       # Apple clang (NOT Homebrew llvm)
-ZIG="${ZIG:-/Users/bcann/.zig-versions/nightly/zig}"
+ZIG="${ZIG:-zig}"                                 # nightly zig on PATH, or set ZIG
 CODESIGN=/usr/bin/codesign
 LIPO=/usr/bin/lipo
 PLUTIL=/usr/bin/plutil
@@ -93,7 +93,9 @@ if /usr/bin/otool -l legacy-bind | /usr/bin/grep -q LC_DYLD_CHAINED_FIXUPS; then
 # ---------------------------------------------------------------- h. app bundle
 log "Hello.app"
 rm -rf Hello.app
-mkdir -p Hello.app/Contents/MacOS Hello.app/Contents/Frameworks Hello.app/Contents/Resources
+# No Contents/Resources: git cannot store an empty directory, so a clone would lack it and the
+# bundle walk (tests/golden/Hello.app.bundle.files.txt) would count a different number of entries.
+mkdir -p Hello.app/Contents/MacOS Hello.app/Contents/Frameworks
 cp -f hello-objc Hello.app/Contents/MacOS/Hello
 cp -f libhello.dylib Hello.app/Contents/Frameworks/libhello.dylib
 cp -f "$SRC/Info.plist" Hello.app/Contents/Info.plist

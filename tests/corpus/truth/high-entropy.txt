@@ -583,7 +583,7 @@ Load command 12
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - high-entropy =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy
+Executable=tests/corpus/high-entropy
 Identifier=high-entropy
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=901 flags=0x20002(adhoc,linker-signed) hashes=25+0 location=embedded
@@ -602,11 +602,11 @@ Internal requirements=none
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml high-entropy =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy
+Executable=tests/corpus/high-entropy
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - high-entropy =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/high-entropy
+Executable=tests/corpus/high-entropy
 # designated => cdhash H"087d0597bfbcbc47220b6b598dc76d322f046470"
 --- exit=0
 

@@ -1249,7 +1249,7 @@ Load command 12
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - hello-fat =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-fat
+Executable=tests/corpus/hello-fat
 Identifier=hello-c
 Format=Mach-O universal (x86_64 arm64)
 CodeDirectory v=20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
@@ -1268,11 +1268,11 @@ Internal requirements=none
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml hello-fat =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-fat
+Executable=tests/corpus/hello-fat
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - hello-fat =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-fat
+Executable=tests/corpus/hello-fat
 hello-fat: code object is not signed at all
 --- exit=1
 

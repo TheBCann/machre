@@ -676,7 +676,7 @@ Load command 12
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - fake-upx =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-upx
+Executable=tests/corpus/fake-upx
 Identifier=hello-c
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=512 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
@@ -695,11 +695,11 @@ Internal requirements=none
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml fake-upx =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-upx
+Executable=tests/corpus/fake-upx
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - fake-upx =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/fake-upx
+Executable=tests/corpus/fake-upx
 # designated => cdhash H"f865cf1cb3b65e2cf68e9a8625a7abda5f83ee5b"
 --- exit=0
 

@@ -20074,7 +20074,7 @@ Load command 13
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - hello-zig =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-zig
+Executable=tests/corpus/hello-zig
 Identifier=hello-zig
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=450 flags=0x20002(adhoc,linker-signed) hashes=11+0 location=embedded
@@ -20093,11 +20093,11 @@ Internal requirements=none
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml hello-zig =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-zig
+Executable=tests/corpus/hello-zig
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - hello-zig =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-zig
+Executable=tests/corpus/hello-zig
 # designated => cdhash H"deaf15170719d741e0b5445882874d9745a8e9e0"
 --- exit=0
 

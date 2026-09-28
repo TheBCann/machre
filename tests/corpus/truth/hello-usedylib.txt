@@ -582,7 +582,7 @@ Load command 11
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - hello-usedylib =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib
+Executable=tests/corpus/hello-usedylib
 Identifier=hello-usedylib
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=391 flags=0x20002(adhoc,linker-signed) hashes=9+0 location=embedded
@@ -601,11 +601,11 @@ Internal requirements=none
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml hello-usedylib =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib
+Executable=tests/corpus/hello-usedylib
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - hello-usedylib =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/hello-usedylib
+Executable=tests/corpus/hello-usedylib
 # designated => cdhash H"2385051fdeb552a081236b0fa5f77ef55010187e"
 --- exit=0
 

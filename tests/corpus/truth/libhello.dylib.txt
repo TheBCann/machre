@@ -573,7 +573,7 @@ Load command 11
 --- exit=0
 
 ===== /usr/bin/codesign -dvvv --entitlements - libhello.dylib =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib
+Executable=tests/corpus/libhello.dylib
 Identifier=libhello.dylib
 Format=Mach-O thin (arm64)
 CodeDirectory v=20400 size=519 flags=0x20002(adhoc,linker-signed) hashes=13+0 location=embedded
@@ -592,11 +592,11 @@ Internal requirements=none
 --- exit=0
 
 ===== /usr/bin/codesign -d --entitlements - --xml libhello.dylib =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib
+Executable=tests/corpus/libhello.dylib
 --- exit=0
 
 ===== /usr/bin/codesign -d -r - libhello.dylib =====
-Executable=/Users/bcann/programming/mac-security/machre/tests/corpus/libhello.dylib
+Executable=tests/corpus/libhello.dylib
 # designated => cdhash H"cca7ad289c7d46892c071b76cdd25a431df06b7d"
 --- exit=0
 
